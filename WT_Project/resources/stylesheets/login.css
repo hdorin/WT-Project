@@ -1,0 +1,48 @@
+﻿#bodyMain {
+    //text-align: center;
+}
+
+    #bodyMain #lgnPanel {
+        border: 9px solid #ccc;
+        width: 200px;
+        height:300px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        border-radius: 10px;
+        border-color: blue;
+    }
+
+        #bodyMain #lgnPanel h1 {
+            //color:yellow;
+        }
+
+        #bodyMain #lgnPanel #userField, #passField {
+            background-color: lightblue;
+        }
+
+        #bodyMain #lgnPanel h2 {
+            color: black;
+            text-align:left;
+            font-size:15px;
+            margin-left:25px;
+            margin-bottom: 2px;
+            
+        }
+        #bodyMain #lgnPanel #lgnButton{
+            background-color:orangered;
+            top:100px;
+            margin-top: 25px;
+            //color: orangered;
+            font-size:18px;
+            width:50%;
+        }
+        
+        #bodyMain #lgnPanel #frgtPass {
+            margin-top: 20px;
+            
+            //float:left;
+        }
+
+
+        

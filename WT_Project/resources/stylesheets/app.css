@@ -132,7 +132,7 @@ header {
     .topnav .firstrow #btnLogin {
         background: url(/resources/images/btn-login.png) no-repeat 5px 5px #484B4F;
         width: 100px;
-        float: right;
+        float: left;
         cursor: pointer;
         border-radius: 50px;
         padding: 10px 20px 10px 0;
@@ -147,10 +147,31 @@ header {
 
         .topnav .firstrow #btnLogin:hover {
             background-image: url(/resources/images/btn-login-hover.png);
-            background-position: 65px 5px;
-            text-indent: 20px;
+            
+            //background-position: 65px 5px;
+            //text-indent: 20px;
         }
+.topnav .firstrow #btnReg{
+    background: url(/resources/images/btn-login.png) no-repeat 5px 5px #484B4F;
+    width: 100px;
+    float: left;
+    cursor: pointer;
+    border-radius: 50px;
+    padding: 10px 20px 10px 0;
+    color: White;
+    font-size: 14px;
+    text-align: left;
+    text-indent: 36px;
+    display: block;
+    margin-top: 50px;
+    margin-left: 50px;
+}
 
+    .topnav .firstrow #btnReg:hover {
+        background-image: url(/resources/images/btn-login-hover.png);
+        //background-position: 65px 5px;
+        //text-indent: 20px;
+    }
 
 footer {
     text-align: center;
