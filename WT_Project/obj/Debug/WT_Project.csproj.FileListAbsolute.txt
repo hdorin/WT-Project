@@ -1,0 +1,6 @@
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT_Project\WT_Project\bin\TypeScriptHTMLApp1.dll
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT_Project\WT_Project\bin\TypeScriptHTMLApp1.pdb
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT_Project\WT_Project\obj\Debug\WT_Project.csprojResolveAssemblyReference.cache
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT_Project\WT_Project\obj\Debug\WT_Project.csproj.CoreCompileInputs.cache
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT_Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.dll
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT_Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.pdb
