@@ -1,48 +1,64 @@
 ﻿#bodyMain {
-    //text-align: center;
+
 }
 
+    #bodyMain #siteLogo {
+        text-align: center;
+        margin-top: -10px;
+        margin-bottom: -10px;
+    }
+        #bodyMain #siteLogo img {
+            width: 240px;
+            height: auto;
+            
+        }
+
     #bodyMain #lgnPanel {
-        border: 9px solid #ccc;
-        width: 200px;
-        height:300px;
+        
+        text-align:center;
         margin-left: auto;
         margin-right: auto;
-        text-align: center;
-        border-radius: 10px;
-        border-color: blue;
+        background-color: #fff3da;
+        padding: 8px;
+        width: 200px;
+        margin-top: 10px;
+        box-sizing: border-box;
+        border-radius: 6px;
+        box-shadow: 0 0px 6px 0 #5f94f8, 0 10px 15px 0 rgba(126, 126, 126, 0.12), 0 -2px 6px 1px rgba(199, 199, 199, 0.55) inset, 0 2px 4px 2px rgba(255, 255, 255, 0.83) inset; 
+        
     }
 
         #bodyMain #lgnPanel h1 {
             //color:yellow;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-family: Cambria;
+            color: #3D4597;
         }
 
         #bodyMain #lgnPanel #userField, #passField {
-            background-color: lightblue;
+            background-color: #d2dfff;
         }
 
         #bodyMain #lgnPanel h2 {
             color: black;
-            text-align:left;
-            font-size:15px;
-            margin-left:25px;
+            text-align: left;
+            font-size: 15px;
+            margin-left: 18px;
             margin-bottom: 2px;
-            
         }
-        #bodyMain #lgnPanel #lgnButton{
-            background-color:orangered;
-            top:100px;
+
+        #bodyMain #lgnPanel #lgnButton {
+            background-color: #F3781E;
+            top: 100px;
             margin-top: 25px;
             //color: orangered;
-            font-size:18px;
-            width:50%;
+            font-size: 18px;
+            width: 50%;
         }
-        
+
         #bodyMain #lgnPanel #frgtPass {
-            margin-top: 20px;
-            
+            margin-top: 10px;
+            margin-bottom: 10px;
             //float:left;
         }
-
-
-        

@@ -21,7 +21,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
     <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -56,6 +56,7 @@
     <TypeScriptSourceRoot />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="login.html" />
     <Content Include="resources\images\btn-login-hover.png" />
     <Content Include="resources\images\btn-login.png" />
     <Content Include="resources\images\favicon\site.webmanifest" />
@@ -82,6 +83,7 @@
     <Content Include="resources\javascript\app.js" />
     <Content Include="resources\stylesheets\app.css" />
     <Content Include="index.html" />
+    <Content Include="resources\stylesheets\login.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
