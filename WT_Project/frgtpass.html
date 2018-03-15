@@ -1,9 +1,8 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Login Page</title>
+    <title>Forgot Password Page</title>
     <link rel="stylesheet" href="resources/stylesheets/frgtpass.css" type="text/css" />
 </head>
 <body id="bodyMain">
@@ -12,17 +11,13 @@
             <img src="/resources/images/logo.jpg" alt="Site logo" />
         </a>
     </div>
-    <div id="lgnPanel">
-        <h1>Login</h1>
-
+    <div id="frgtPanel">
+        <h1>Reset your password</h1>
+        <p>If this is a valid and registered email address, we will send you a link to reset your password.</p>
         <h2>Email</h2>
-        <input id="userField" />
-        <h2>Password</h2>
-        <input id="passField" type="password" style="" />
-        <input id="lgnButton" type="submit" value="Login" />
-        <div id="frgtPass">
-            <a  href="#">I forgot my password</a>
-        </div>
+        <input id="userField" type="email"/>
+        <input id="sendButton" type="submit" value="Send" />
+
     </div>
 
 </body>
