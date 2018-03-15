@@ -21,7 +21,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
     <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -56,20 +56,10 @@
     <TypeScriptSourceRoot />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="frgtpass.html" />
     <Content Include="login.html" />
-    <Content Include="register.html" />
-    <Content Include="resources\images\bg.jpg" />
     <Content Include="resources\images\btn-login-hover.png" />
     <Content Include="resources\images\btn-login.png" />
-    <Content Include="resources\images\car.png" />
-    <Content Include="resources\images\clock.png" />
-    <Content Include="resources\images\contact-new.png" />
-    <Content Include="resources\images\favs.png" />
-    <Content Include="resources\images\home.png" />
-    <Content Include="resources\images\services.png" />
     <Content Include="resources\images\favicon\site.webmanifest" />
-    <Content Include="resources\documents\EULA.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -88,21 +78,12 @@
     <Content Include="resources\images\favicon\favicon.ico" />
     <Content Include="resources\images\favicon\mstile-150x150.png" />
     <Content Include="resources\images\favicon\safari-pinned-tab.svg" />
-    <Content Include="resources\images\user_add.png" />
     <Content Include="resources\images\logo.jpg" />
-    <Content Include="resources\images\menu_bg.gif" />
-    <Content Include="resources\images\menu_divider.gif" />
-    <Content Include="resources\images\menu_left.gif" />
-    <Content Include="resources\images\menu_right.gif" />
-    <Content Include="resources\images\menu_title_bg.gif" />
     <Content Include="resources\images\searchbutton.png" />
     <Content Include="resources\javascript\app.js" />
     <Content Include="resources\stylesheets\app.css" />
     <Content Include="index.html" />
-    <Content Include="resources\stylesheets\frgtpass.css" />
     <Content Include="resources\stylesheets\login.css" />
-    <Content Include="resources\stylesheets\register.css" />
-    <Content Include="resources\stylesheets\searchbar.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -130,7 +111,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>10202</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:10312/</IISUrl>
+          <IISUrl>http://localhost:10202/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -2,17 +2,7 @@
 }
 
 body {
-    background: url(../images/bg.jpg) no-repeat #fff center top;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
-    margin: 0px auto auto auto;
-    color: #000;
     font-family: 'Segoe UI', sans-serif;
-    width: 1024px;
-    height: auto;
-    margin: auto;
-    padding: 0px;
 }
 
 header {
@@ -23,177 +13,110 @@ header {
 /* Add a black background color to the top navigation bar */
 .topnav {
     overflow: hidden;
+    background-color: white;
 }
 
     .topnav .firstrow {
         display: inline-block;
     }
 
-#advsearch {
-    float: left;
-    display: inline-block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    margin-top: 46px;
-    margin-left: 0px;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-
-#logo {
-    float: left;
-    margin-left: 0px;
-    height: 130px;
-    width: 190px;
-}
-
-/************ MENU TAB ***************/
-
-#menu_tab {
-    width: 1000px;
-    height: 50px;
-    background-color: #fff;
-}
-
-.left_menu_corner {
-    width: 9px;
-    height: 50px;
-    float: left;
-    background: url(../images/menu_left.gif) no-repeat center;
-}
-
-.right_menu_corner {
-    width: 9px;
-    height: 50px;
-    float: left;
-    background: url(../images/menu_right.gif) no-repeat center;
-}
-
-ul.menu {
-    list-style-type: none;
-    float: left;
-    display: block;
-    width: 982px;
-    margin: 0px;
-    padding: 0px;
-    background: url(../images/menu_bg.gif) repeat-x;
-}
-
-    ul.menu li {
-        display: inline;
-        font-size: 11px;
-        font-weight: bold;
-        line-height: 50px;
-    }
-
-        ul.menu li.divider {
-            display: inline;
-            width: 2px;
-            height: 50px;
+        .topnav .firstrow #advsearch {
             float: left;
-            background: url(../images/menu_divider.gif) no-repeat center;
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            margin-top: 50px;
+            margin-left: 12px;
+            text-decoration: none;
+            font-size: 14px;
         }
 
-a.nav1:link, a.nav1:visited {
-    display: block;
-    float: left;
-    padding: 0px 8px 0px 22px;
-    margin: 0 14px 0 14px;
-    height: 50px;
-    text-decoration: none;
-    background: url(../images/home.png) no-repeat left;
-    color: #676d77;
-}
+    .topnav .navbuttons {
+        clear: both;
+        margin-left: 50px;
+    }
 
-a.nav2:link, a.nav2:visited {
-    display: block;
-    float: left;
-    padding: 0px 8px 0px 22px;
-    margin: 0 14px 0 14px;
-    height: 50px;
-    text-decoration: none;
-    background: url(../images/services.png) no-repeat left;
-    color: #676d77;
-}
+    .topnav #logo {
+        float: left;
+        margin-left: 20px;
+        height: 130px;
+        width: 190px;
+    }
 
-a.nav3:link, a.nav3:visited {
-    display: block;
-    float: left;
-    padding: 0px 8px 0px 22px;
-    margin: 0 14px 0 14px;
-    height: 50px;
-    text-decoration: none;
-    background: url(../images/favs.png) no-repeat left;
-    color: #676d77;
-}
+    /* Style the links inside the navigation bar */
+    .topnav .navbuttons a {
+        float: left;
+        display: inline-block;
+        color: black;
+        text-align: center;
+        padding: 10px 16px;
+        margin-top: 5px;
+        margin-left: 12px;
+        text-decoration: none;
+        font-size: 16px;
+    }
 
-a.nav4:link, a.nav4:visited {
-    display: block;
-    float: left;
-    padding: 0px 8px 0px 22px;
-    margin: 0 14px 0 14px;
-    height: 50px;
-    text-decoration: none;
-    background: url(../images/clock.png) no-repeat left;
-    color: #676d77;
-}
+        /* Change the color of links on hover */
+        .topnav .navbuttons a:hover {
+            background-color: #ddd;
+            color: black;
+        }
 
-a.nav5:link, a.nav5:visited {
-    display: block;
-    float: left;
-    padding: 0px 8px 0px 22px;
-    margin: 0 14px 0 14px;
-    height: 50px;
-    text-decoration: none;
-    background: url(../images/user_add.png) no-repeat left;
-    color: #676d77;
-}
+        /* Style the "active" element to highlight the current page */
+        .topnav .navbuttons a.active {
+            background-color: #2196F3;
+            color: white;
+        }
 
-a.nav6:link, a.nav6:visited {
-    display: block;
-    float: left;
-    padding: 0px 8px 0px 22px;
-    margin: 0 14px 0 14px;
-    height: 50px;
-    text-decoration: none;
-    background: url(../images/car.png) no-repeat left;
-    color: #676d77;
-}
+    /* Style the search box inside the navigation bar */
+    .topnav .searchbar {
+        float: left;
+        vertical-align: middle;
+        white-space: nowrap;
+        position: relative;
+        background-color: #fffbf8;
+        padding: 8px;
+        width: 325px;
+        margin-top: 50px;
+        box-sizing: border-box;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px 0 rgba(72, 72, 72, 0.83), 0 10px 15px 0 rgba(126, 126, 126, 0.12), 0 -2px 6px 1px rgba(199, 199, 199, 0.55) inset, 0 2px 4px 2px rgba(255, 255, 255, 0.83) inset;
+    }
 
-a.nav7:link, a.nav7:visited {
-    display: block;
-    float: left;
-    padding: 0px 8px 0px 22px;
-    margin: 0 14px 0 14px;
-    height: 50px;
-    text-decoration: none;
-    background: url(../images/contact-new.png) no-repeat left;
-    color: #676d77;
-}
+        .topnav .searchbar input {
+            width: 250px;
+            height: 30px;
+            padding-left: 15px;
+            border-radius: 6px;
+            border: none;
+            color: #0F0D0D;
+            font-weight: 500;
+            background-color: #E2EFF7;
+            box-shadow: 0 -2px 2px 0 rgba(199, 199, 199, 0.55), 0 1px 1px 0 #fff, 0 2px 2px 1px #fafafa, 0 2px 4px 0 #b2b2b2 inset, 0 -1px 1px 0 #f2f2f2 inset, 0 15px 15px 0 rgba(41, 41, 41, 0.09) inset;
+        }
 
-a.nav1:hover, a.nav2:hover, a.nav3:hover, a.nav4:hover, a.nav5:hover, a.nav6:hover {
-    color: #333333;
-}
+        .topnav .searchbar button {
+            width: 35px;
+            height: 30px;
+            background-image: url(/resources/images/searchbutton.png);
+            background-repeat: no-repeat;
+            background-position-x: 10px;
+            background-position-y: 5px;
+            background-color: transparent;
+            background-size: 20px 20px;
+            border: none;
+            cursor: pointer;
+        }
 
-
-li.currencies {
-    width: 180px;
-    float: left;
-    padding: 0 0 0 15px;
-    _padding: 12px 0 0 15px;
-    color: #676d77;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-/************ END OF MENU TAB ***************/
+        .topnav .searchbar input:focus {
+            outline: 0;
+        }
 
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 600px) {
-    #btnLogin, #btnReg, #menu_tab, .topnav .firstrow [type=text] {
+    .topnav .navbuttons a, .topnav .firstrow [type=text] {
         float: none;
         display: inline-block;
         text-align: left;
@@ -206,9 +129,30 @@ li.currencies {
         border: 1px solid #ccc;
     }
 }
+    .topnav .firstrow #btnLogin {
+        background: url(/resources/images/btn-login.png) no-repeat 5px 5px #484B4F;
+        width: 100px;
+        float: left;
+        cursor: pointer;
+        border-radius: 50px;
+        padding: 10px 20px 10px 0;
+        color: White;
+        font-size: 14px;
+        text-align: left;
+        text-indent: 40px;
+        display: block;
+        margin-top: 50px;
+        margin-left: 50px;
+    }
 
-#btnLogin {
-    background: url(/resources/images/btn-login.png) no-repeat 5px 7px #e29817;
+        .topnav .firstrow #btnLogin:hover {
+            background-image: url(/resources/images/btn-login-hover.png);
+            
+            //background-position: 65px 5px;
+            //text-indent: 20px;
+        }
+.topnav .firstrow #btnReg{
+    background: url(/resources/images/btn-login.png) no-repeat 5px 5px #484B4F;
     width: 100px;
     float: left;
     cursor: pointer;
@@ -217,47 +161,17 @@ li.currencies {
     color: White;
     font-size: 14px;
     text-align: left;
-    text-indent: 45px;
+    text-indent: 36px;
     display: block;
     margin-top: 50px;
-    margin-left: 15px;
-    text-decoration: none;
+    margin-left: 50px;
 }
 
-    #btnLogin:hover {
+    .topnav .firstrow #btnReg:hover {
         background-image: url(/resources/images/btn-login-hover.png);
-        /*background-position: 65px 5px;
-            text-indent: 20px;*/
+        //background-position: 65px 5px;
+        //text-indent: 20px;
     }
-
-#btnReg {
-    background: url(/resources/images/btn-login.png) no-repeat 5px 7px #e29817;
-    width: 100px;
-    float: left;
-    cursor: pointer;
-    border-radius: 50px;
-    padding: 10px 20px 10px 0;
-    color: White;
-    font-size: 14px;
-    text-align: left;
-    text-indent: 40px;
-    display: block;
-    margin-top: 50px;
-    margin-left: 20px;
-    text-decoration: none;
-}
-
-    #btnReg:hover {
-        background-image: url(/resources/images/btn-login-hover.png);
-        /*background-position: 65px 5px;
-        text-indent: 20px;*/
-    }
-
-
-
-
-
-
 
 footer {
     text-align: center;
