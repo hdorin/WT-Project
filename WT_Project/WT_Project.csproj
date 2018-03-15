@@ -56,10 +56,13 @@
     <TypeScriptSourceRoot />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="frgtpass.html" />
     <Content Include="login.html" />
+    <Content Include="product.html" />
     <Content Include="resources\images\btn-login-hover.png" />
     <Content Include="resources\images\btn-login.png" />
     <Content Include="resources\images\favicon\site.webmanifest" />
+    <Content Include="resources\documents\EULA.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -83,7 +86,12 @@
     <Content Include="resources\javascript\app.js" />
     <Content Include="resources\stylesheets\app.css" />
     <Content Include="index.html" />
+    <Content Include="resources\stylesheets\frgtpass.css" />
     <Content Include="resources\stylesheets\login.css" />
+    <Content Include="resources\stylesheets\product.css" />
+    <Content Include="resources\stylesheets\products.css" />
+    <Content Include="resources\stylesheets\register.css" />
+    <Content Include="resources\stylesheets\searchbar.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
