@@ -2,24 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="resources/stylesheets/product.css" type="text/css">
     <title>Product</title>
+    <link rel="stylesheet" href="resources/stylesheets/product.css" type="text/css"/>
+    <link rel="stylesheet" href="resources/stylesheets/app.css" type="text/css"/>
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="resources/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="resources/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="resources/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
 
 </head>
 <body>
-    <div class="grid">
-
-        <div class="title">Title</div>
-        <div class="header">Header</div>
-        <div class="sidebar">Sidebar</div>
-        <div class="content">
-            <p>A</p>
-            <p>B</p>
+<header>
+    <div class="topnav">
+        <div class="firstrow">
+            <a href="index.html"><img id="logo" src="resources/images/logo.jpg" alt="Site Logo"/></a>
+            <div class="searchbar">
+                <input type="text" placeholder="Search...">
+                <button type="submit" value="search">&nbsp;</button>
+            </div>
+            <a id="advsearch" href="#">Advanced search</a>
+            <a id="btnLogin" href="login.html">Login</a>
+            <a id="btnReg" href="register.html">Register</a>
         </div>
-        <div class="footer">Footer</div>
-    </div>
 
-</body>
+        <div class="navbuttons">
+            <a class="active" href="#">Products</a>
+            <a href="#">HOT</a>
+            <a href="#">New Deals</a>
+            <a href="#">Last Minute!</a>
+            <a href="#">Info</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="wrapper">
+        <section class="index-links">
+            <a href="cases.html">
+                <div>
+                    <div class="slider">
+                        <figure>
+                            <div class="slide"><img src="resources/images/product1.png"></div>
+                            <div class="slide"><img src="resources/images/product2.png"></div>
+                            <div class="slide"><img src="resources/images/product3.jpg"></div>
+                            <div class="slide"><img src="resources/images/product4.jpg"></div>
+                            <div class="slide"><img src="resources/images/product5.jpg"></div>
+                        </figure>
+                    </div>
+                    <h3>Product bear/beer</h3>
+                    <p>Price: INF</p>
+                </div>
+                <h3>Description</h3>
+                <p>Here is where we talk about how awsome is this product and how isnt't going to work when you buy it.</p>
+
+
+            </a>
+        </section>
+    </div>
+</main>
+<footer>
+    @2018 Prototype
+</footer>
 </html>
