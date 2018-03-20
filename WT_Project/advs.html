@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>AuctioX</title>
+
+    <link rel="stylesheet" href="resources/stylesheets/app.css" type="text/css" />
+    <link rel="stylesheet" href="resources/stylesheets/searchbar.css" type="text/css" />
+    <link rel="stylesheet" href="resources//stylesheets/abt.css" type="text/css" />
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="resources\images\favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="resources\images\favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="resources\images\favicon/favicon-16x16.png" />
+    <link rel="manifest" href="resources\images\favicon/site.webmanifest" />
+    <link rel="mask-icon" href="resources\images\favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <script src="resources/javascript/app.js"></script>
+</head>
+
+<body>
+    <header>
+
+        <div class="topnav">
+            <div class="firstrow">
+                <a href="index.html"><img id="logo" src="/resources/images/logo.jpg" alt="Site Logo" /></a>
+
+                <div class="searchbarUnit">
+                    <form class="form-wrapper cf">
+                        <input type="text" placeholder="What are you looking for?" required>
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+
+                <a id="advsearch" href="#">Advanced search</a>
+                <a id="btnLogin" href="login.html">Login</a>
+                <a id="btnReg" href="register.html">Register</a>
+            </div> <!--FIRST ROW-->
+
+            <div id="menu_tab">
+                <div class="left_menu_corner"></div>
+                <ul class="menu">
+                    <li><a href="#" class="nav1"> Home</a></li>
+                    <li class="divider"></li>
+                    <!--Drop down menue-hover for products START-->
+                    <!--All of the .css stuff is in the abt.css folder-->
+                    <div>
+                        <div class="dropdown">
+                            <Button class="dropbtn">Products</Button>
+                            <div class="dropdown-content">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </div>
+                        <!--Drop down menue-hover for products END-->
+                        <li class="divider"></li>
+
+                    </div>
+
+
+
+                    <li><a href="#" class="nav3">Specials</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" class="nav4">Last Minute!</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" class="nav5">My account</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" class="nav6">Shipping</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" class="nav7">Info</a></li>
+                    <li class="divider"></li>
+                    <li class="currencies">
+                        Currencies
+                        <select>
+                            <option>RON</option>
+                            <option>US Dollar</option>
+                            <option>Euro</option>
+                        </select>
+                    </li>
+                </ul>
+                <div class="right_menu_corner"></div>
+            </div><!--MENU_TAB-->
+
+        </div><!--TOPNAV-->
+
+
+    </header>
+
+
+    <fieldset class="advSfldset">
+
+
+        <legend class="advSleg">What are you looking for?</legend>
+
+        <div>
+            <input type="checkbox" unchecked />
+            <label class="advSlbl"> category 1</label>
+        </div>
+        <div>
+            <input type="checkbox" unchecked />
+            <label class="advSlbl"> category 1</label>
+        </div>
+        <div>
+            <input type="checkbox" unchecked />
+            <label class="advSlbl"> category 1</label>
+        </div>
+        <div>
+            <input type="checkbox" unchecked />
+            <label class="advSlbl"> category 1</label>
+        </div>
+        <div>
+            <input type="checkbox" />
+            <label class="advSlbl"> category 1</label>
+        </div>
+
+
+        <legend class="advSleg">What's the price range you're interested?</legend>
+        <div>
+            <input type="checkbox" />
+            <label class="advSlbl"> category 1</label>
+        </div>
+        <div>
+            <input type="checkbox" unchecked />
+            <label class="advSlbl"> category 1</label>
+        </div>
+        <div>
+            <input type="checkbox" unchecked />
+            <label class="advSlbl"> category 1</label>
+        </div>
+        <div>
+            <input type="checkbox" unchecked />
+            <label class="advSlbl"> category 1</label>
+        </div>
+        <div>
+            <input type="checkbox" unchecked />
+            <label class="advSlbl"> category 1</label>
+        </div>
+
+        <form>
+
+            <br />
+            <input type="text" name="search" placeholder="Search here..">
+            </input>
+                
+        </form>
+
+
+    </fieldset>
+    <footer>
+        <hr />
+        @2018 Prototype
+    </footer>
+
+
+
+</body>
+
+
+</html>

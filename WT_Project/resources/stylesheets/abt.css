@@ -1,0 +1,78 @@
+﻿.para{
+    font-size : inherit;
+    font-style : oblique;
+}
+
+/*button*/
+.dropdown {
+    float: left; /*allign the button on the right*/
+    overflow: hidden; /*remove the overflow*/
+}
+
+    /* drp_down button */
+    .dropdown .dropbtn {
+        font-size: inherit;
+        border: none;
+        outline: black;
+        color: black;
+        padding: 17px 20px;
+        background-color: inherit; /* inherit colour from superiour classes*/
+        font-family: inherit; /* used for mobile */
+        margin: 0; /* mobile use */
+    }
+
+    /*colour used for hovering over the drp_down bttn*/
+    a:hover, .dropdown:hover .dropbtn {
+        background-color: none;
+    }
+
+/* button content ,HIDDEN! */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 5%; /* used for the with of the links inside the hover button*/
+    /*
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  used for shadow on the box
+*/
+    /* z-index: 1; used for stack index if neccesary*/
+}
+
+    /* links situated in the drp_down button */
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+        /* used only for the links inside the drp_down button to have a effect when hovering */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+/* drp_down menue when hovering */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*advanced search label*/
+.advSlbl{
+    font-size:130%;
+    font-family:Arial, Helvetica, sans-serif;
+}
+/*advanced search field set*/
+.advSfldset{
+    display:inline-block;
+}
+/*advanced search legend*/
+.advSleg {
+    font-size: 130%;
+    font-family: Arial, Helvetica, sans-serif;
+    display:inline-block;
+}
+
+
