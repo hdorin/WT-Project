@@ -4,30 +4,33 @@
 }
 
 /*button*/
-.dropdown {
+.dropdown1 {
     float: left; /*allign the button on the right*/
     overflow: hidden; /*remove the overflow*/
+    padding:inherit;
+    
 }
 
     /* drp_down button */
-    .dropdown .dropbtn {
+    .dropdown1 .dropbtn1 {
+        background: url(../images/services.png) no-repeat left;
         font-size: inherit;
         border: none;
-        outline: black;
-        color: black;
-        padding: 17px 20px;
+        padding: 17px 8px 20px 24px;
         background-color: inherit; /* inherit colour from superiour classes*/
         font-family: inherit; /* used for mobile */
         margin: 0; /* mobile use */
+        font-weight: bold;
+        color: #676d77;
     }
 
     /*colour used for hovering over the drp_down bttn*/
-    a:hover, .dropdown:hover .dropbtn {
+    a:hover, .dropdown1:hover .dropbtn1 {
         background-color: none;
     }
 
 /* button content ,HIDDEN! */
-.dropdown-content {
+.dropdown-content1 {
     display: none;
     position: absolute;
     background-color: white;
@@ -40,7 +43,7 @@
 }
 
     /* links situated in the drp_down button */
-    .dropdown-content a {
+    .dropdown-content1 a {
         float: none;
         color: black;
         padding: 12px 16px;
@@ -50,14 +53,82 @@
     }
 
         /* used only for the links inside the drp_down button to have a effect when hovering */
-        .dropdown-content a:hover {
+        .dropdown-content1 a:hover {
             background-color: #ddd;
         }
 
 /* drp_down menue when hovering */
-.dropdown:hover .dropdown-content {
+.dropdown1:hover .dropdown-content1 {
     display: block;
 }
+
+
+
+/*button*/
+.dropdown2 {
+    float: left; /*allign the button on the right*/
+    overflow: hidden; /*remove the overflow*/
+    padding: inherit;
+}
+
+    /* drp_down button */
+    .dropdown2 .dropbtn2 {
+        
+        font-size: inherit;
+        border: none;
+        outline: black;
+        color: black;
+        padding: 17px 8px 20px 24px;
+        background-color: inherit; /* inherit colour from superiour classes*/
+        font-family: inherit; /* used for mobile */
+        margin: 0; /* mobile use */
+        font-weight: bold;
+        color: #676d77;
+        background: url(../images/contact-new.png) no-repeat left;
+    }
+
+    /*colour used for hovering over the drp_down bttn*/
+    a:hover, .dropdown2:hover .dropbtn2 {
+        background-color: none;
+    }
+
+/* button content ,HIDDEN! */
+.dropdown-content2 {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 5%; /* used for the with of the links inside the hover button*/
+    /*
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  used for shadow on the box
+*/
+    /* z-index: 1; used for stack index if neccesary*/
+}
+
+    /* links situated in the drp_down button */
+    .dropdown-content2 a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+        /* used only for the links inside the drp_down button to have a effect when hovering */
+        .dropdown-content2 a:hover {
+            background-color: #ddd;
+        }
+
+/* drp_down menue when hovering */
+.dropdown2:hover .dropdown-content2 {
+    display: block;
+}
+
+
+
+
+
 
 /*advanced search label*/
 .advSlbl{

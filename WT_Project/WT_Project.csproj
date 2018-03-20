@@ -56,6 +56,9 @@
     <TypeScriptSourceRoot />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="about.html" />
+    <Content Include="advs.html" />
+    <Content Include="contact.html" />
     <Content Include="frgtpass.html" />
     <Content Include="login.html" />
     <Content Include="register.html" />
@@ -97,6 +100,7 @@
     <Content Include="resources\images\menu_title_bg.gif" />
     <Content Include="resources\images\searchbutton.png" />
     <Content Include="resources\javascript\app.js" />
+    <Content Include="resources\stylesheets\abt.css" />
     <Content Include="resources\stylesheets\app.css" />
     <Content Include="index.html" />
     <Content Include="resources\stylesheets\frgtpass.css" />

@@ -38,3 +38,10 @@ D:\Project\WT-Project\WT_Project\obj\Debug\WT_Project.csprojResolveAssemblyRefer
 D:\Project\WT-Project\WT_Project\obj\Debug\WT_Project.csproj.CoreCompileInputs.cache
 D:\Project\WT-Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.dll
 D:\Project\WT-Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.pdb
+C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\bin\TypeScriptHTMLApp1.dll.config
+C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\bin\TypeScriptHTMLApp1.dll
+C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\bin\TypeScriptHTMLApp1.pdb
+C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\obj\Debug\WT_Project.csprojResolveAssemblyReference.cache
+C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\obj\Debug\WT_Project.csproj.CoreCompileInputs.cache
+C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.dll
+C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.pdb
