@@ -159,12 +159,14 @@
     display: block;
     width: 19%;
     /*  height:900000%;*/
+    border-radius: 15px;
     box-shadow: inset 0px 0px 3px 5px white;
 }
 .blocks_a{
     display:inline-block;
 }
 .pad{
+    
     padding-top:13px;
     padding-bottom:13px;
     padding-left:13px;
