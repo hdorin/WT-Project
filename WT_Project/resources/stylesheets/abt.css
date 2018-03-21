@@ -134,6 +134,7 @@
 .advSlbl{
     font-size:130%;
     font-family:Arial, Helvetica, sans-serif;
+    display:inline-block;
 }
 /*advanced search field set*/
 .advSfldset{
@@ -144,6 +145,28 @@
     font-size: 130%;
     font-family: Arial, Helvetica, sans-serif;
     display:inline-block;
+    padding-left:5px;
 }
-
-
+.lgdLiv {
+    background: rgba(255,175,75,1);
+    background: -moz-linear-gradient(45deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 80%, rgba(255,146,10,1) 83%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,175,75,1)), color-stop(80%, rgba(255,146,10,1)), color-stop(83%, rgba(255,146,10,1)));
+    background: -webkit-linear-gradient(45deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 80%, rgba(255,146,10,1) 83%);
+    background: -o-linear-gradient(45deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 80%, rgba(255,146,10,1) 83%);
+    background: -ms-linear-gradient(45deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 80%, rgba(255,146,10,1) 83%);
+    background: linear-gradient(45deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 80%, rgba(255,146,10,1) 83%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a', GradientType=1 );
+    display: block;
+    width: 19%;
+    /*  height:900000%;*/
+    box-shadow: inset 0px 0px 3px 5px white;
+}
+.blocks_a{
+    display:inline-block;
+}
+.pad{
+    padding-top:13px;
+    padding-bottom:13px;
+    padding-left:13px;
+    padding-right:13px;
+}
