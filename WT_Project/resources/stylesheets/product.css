@@ -11,31 +11,6 @@
     margin-left: 150px;
 }
 
-.vertical-center {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.index-banner h2 {
-    font-family: Arial Black;
-    font-size: 60px;
-    font-weight: 900;
-    line-height: 70px;
-    text-shadow: 2px 2px 8px #111;
-    color: #fff;
-    text-align: center;
-}
-
-.index-banner h1 {
-    font-family: Calibri Light;
-    font-size: 28px;
-    font-weight: 500;
-    font-style: italic;
-    line-height: 40px;
-    color: #fff;
-    text-align: center;
-    text-shadow: 2px 2px 8px #111;
-}
 
 .index-links div {
 
@@ -64,15 +39,6 @@
     float: left;
 
 }
-.index-boxlink-square {
-    width: calc(25% - 20px) !important;
-
-}
-
-.index-boxlink-rectangle {
-    width: calc(50% - 20px) !important;
-
-}
 
 .slider {
     overflow: hidden;
@@ -85,7 +51,7 @@
 }
 
 .slider figure img {
-    width: 100%;
+    width: fit-content;
     float: left;
 }
 
@@ -94,10 +60,10 @@
     width: 500%;
     margin: 0;
     left: 0;
-    animation: 20s ravi infinite;
+    animation: 20s sldr infinite;
 }
 
-@keyframes ravi {
+@keyframes sldr {
     0% {
         left: 0;
     }
