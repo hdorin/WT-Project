@@ -63,6 +63,7 @@
     <Content Include="frgtpass.html" />
     <Content Include="login.html" />
     <Content Include="myAccount.html" />
+    <Content Include="myitems.html" />
     <Content Include="product.html" />
     <Content Include="products.html" />
     <Content Include="product_page\css\style.css" />
@@ -77,6 +78,7 @@
     <Content Include="product_page\license.txt" />
     <Content Include="product_page\README.txt" />
     <Content Include="register.html" />
+    <Content Include="resources\images\bag.jpg" />
     <Content Include="resources\images\bg.jpg" />
     <Content Include="resources\images\btn-login-hover.png" />
     <Content Include="resources\images\btn-login.png" />
@@ -107,6 +109,8 @@
     <Content Include="resources\images\favicon\favicon.ico" />
     <Content Include="resources\images\favicon\mstile-150x150.png" />
     <Content Include="resources\images\favicon\safari-pinned-tab.svg" />
+    <Content Include="resources\images\speakers.jpg" />
+    <Content Include="resources\images\speakers2.jpg" />
     <Content Include="resources\images\userphoto.png" />
     <Content Include="resources\images\user_add.png" />
     <Content Include="resources\images\logo.jpg" />
@@ -123,6 +127,7 @@
     <Content Include="resources\stylesheets\frgtpass.css" />
     <Content Include="resources\stylesheets\login.css" />
     <Content Include="resources\stylesheets\myAccount.css" />
+    <Content Include="resources\stylesheets\myitems.css" />
     <Content Include="resources\stylesheets\product.css" />
     <Content Include="resources\stylesheets\products.css" />
     <Content Include="resources\stylesheets\register.css" />
