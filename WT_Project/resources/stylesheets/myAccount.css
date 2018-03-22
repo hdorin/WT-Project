@@ -140,7 +140,6 @@
     bottom: 30px;
     box-shadow: 0px 1px 0px 0px #f0f7fa;
     background: linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
-    //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bdef', endColorstr='#019ad2',GradientType=0);
     background-color: #33bdef;
     border-radius: 6px;
     border: 1px solid #057fd0;
@@ -157,7 +156,6 @@
 
     .addnewcard:hover {
         background: linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
-        //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#019ad2', endColorstr='#33bdef',GradientType=0);
         background-color: #019ad2;
     }
 
@@ -168,12 +166,8 @@
 
     /*******************************/
 
-.accordion ul li .content .addressbox .transparent_btn {
+.accordion ul li .content .addressbox .liSpec .transparent_btn {
     display: inline-block;
-    float: right;
-    margin-left: 15px;
-    position:relative;
-    bottom: 6px;
     padding: 6px 10px;
     border: 1px solid #FFF;
     text-decoration: none;
@@ -187,7 +181,7 @@
     border-color: #aeddf5;
 }
 
-    .accordion ul li .content .addressbox .transparent_btn:hover {
+    .accordion ul li .content .addressbox .liSpec .transparent_btn:hover {
         background-color: rgba(174, 221, 245, 0.3);
         color: #FFF;
     }
@@ -198,3 +192,10 @@
     margin-top: 25px;
     padding: 8px 8px 8px 8px;
 }
+
+    .accordion ul li .content .addressbox .liSpec {
+        float: right;
+        margin-left: 15px;
+        position: relative;
+        bottom: 6px;
+    }
