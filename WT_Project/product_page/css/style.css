@@ -7,7 +7,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: #eee url("../img/bg.jpg");
+    background: #ffffff url("../img/bg.jpg") no-repeat;
 
     /*background: #eee url("https://previews.123rf.com/images/welcomia/welcomia1502/welcomia150200057/36163221-cool-abstract-aqua-splash-isolated-on-white-background-blue-dirty-paint-splash-backdrop-element-.jpg");*/
 }
