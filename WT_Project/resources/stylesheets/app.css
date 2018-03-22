@@ -256,9 +256,35 @@ li.currencies {
 
 
 
+/*--------------footer----------------*/
+.footer {
+    position: relative;
+    width: 1000px;
+    clear: both;
+    height: 55px;
+    border-radius: 5px;
+    background-color: #ccc;
+}
 
+.right_footer {
+    float: right;
+    padding: 15px 30px 0 0;
+}
 
+    .right_footer a {
+        padding: 0 0 0 7px;
+        text-decoration: none;
+        color: #666666;
+    }
 
-footer {
+        .right_footer a:hover {
+            text-decoration: underline;
+        }
+
+.left_footer {
+    float: left;
+    width: 200px;
     text-align: center;
+    color: #666666;
+    padding: 10px 0 0 60px;
 }

@@ -65,6 +65,17 @@
     <Content Include="myAccount.html" />
     <Content Include="product.html" />
     <Content Include="products.html" />
+    <Content Include="product_page\css\style.css" />
+    <Content Include="product_page\img\bg.jpg" />
+    <Content Include="product_page\img\product1.png" />
+    <Content Include="product_page\img\product2.png" />
+    <Content Include="product_page\img\product3.jpg" />
+    <Content Include="product_page\img\product4.jpg" />
+    <Content Include="product_page\img\product5.jpg" />
+    <Content Include="product_page\index.html" />
+    <Content Include="product_page\js\index.js" />
+    <Content Include="product_page\license.txt" />
+    <Content Include="product_page\README.txt" />
     <Content Include="register.html" />
     <Content Include="resources\images\bg.jpg" />
     <Content Include="resources\images\btn-login-hover.png" />
@@ -74,6 +85,7 @@
     <Content Include="resources\images\contact-new.png" />
     <Content Include="resources\images\favs.png" />
     <Content Include="resources\images\home.png" />
+    <Content Include="resources\images\payment.gif" />
     <Content Include="resources\images\services.png" />
     <Content Include="resources\images\favicon\site.webmanifest" />
     <Content Include="resources\documents\EULA.pdf" />
