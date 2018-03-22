@@ -29,7 +29,7 @@
     }
 
         #bodyMain #lgnPanel h1 {
-            //color:yellow;
+         
             margin-top: 10px;
             margin-bottom: 10px;
             font-family: Cambria;
@@ -58,7 +58,7 @@
             background-color: #F3781E;
             top: 100px;
             margin-top: 25px;
-            //color: orangered;
+            
             font-size: 18px;
             width: 50%;
             border-radius: 5px;
