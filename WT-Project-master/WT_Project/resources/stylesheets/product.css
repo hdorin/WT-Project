@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+.wrapper {
+    display: block;
+    margin-left: 150px;
+}
+
+.vertical-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.index-banner h2 {
+    font-family: Arial Black;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 70px;
+    text-shadow: 2px 2px 8px #111;
+    color: #fff;
+    text-align: center;
+}
+
+.index-banner h1 {
+    font-family: Calibri Light;
+    font-size: 28px;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 8px #111;
+}
+
+.index-links div {
+
+    margin: 16px 16px 0;
+    width: calc(100% - 32px);
+    /*height: 150px;*/
+    height: fit-content;
+    background-color: #f2f2f2;
+    overflow: hidden;
+}
+
+
+.index-links div h3 {
+    font-family: Bahnschrift;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 100px;
+    /*margin-left: 20px;*/
+    color: #111;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.index-links div img {
+    margin: 10px 10px 10px 10px;
+    float: left;
+
+}
+.index-boxlink-square {
+    width: calc(25% - 20px) !important;
+
+}
+
+.index-boxlink-rectangle {
+    width: calc(50% - 20px) !important;
+
+}
+
+.slider {
+    overflow: hidden;
+    height: 400px;
+}
+
+.slider figure div {
+    float: left;
+    width: 20%;
+}
+
+.slider figure img {
+    width: 100%;
+    float: left;
+}
+
+.slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s ravi infinite;
+}
+
+@keyframes ravi {
+    0% {
+        left: 0;
+    }
+    10% {
+        left: 50%;
+    }
+    20% {
+        left: -100%;
+    }
+    40% {
+        left: -200%;
+    }
+    60% {
+        left: -300%;
+    }
+    80% {
+        left: -400%;
+    }
+    90% {
+        left: -450%;
+    }
+    95% {
+        left: -500%
+    }
+}

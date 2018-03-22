@@ -1,0 +1,59 @@
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT_Project\WT_Project\bin\TypeScriptHTMLApp1.dll
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT_Project\WT_Project\bin\TypeScriptHTMLApp1.pdb
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT_Project\WT_Project\obj\Debug\WT_Project.csprojResolveAssemblyReference.cache
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT_Project\WT_Project\obj\Debug\WT_Project.csproj.CoreCompileInputs.cache
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT_Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.dll
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT_Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.pdb
+D:\haloc\OneDrive\Protected\Web Technologies\Project\WT_Project\bin\TypeScriptHTMLApp1.dll.config
+D:\haloc\OneDrive\Protected\Web Technologies\Project\WT_Project\bin\TypeScriptHTMLApp1.dll
+D:\haloc\OneDrive\Protected\Web Technologies\Project\WT_Project\bin\TypeScriptHTMLApp1.pdb
+D:\haloc\OneDrive\Protected\Web Technologies\Project\WT_Project\obj\Debug\WT_Project.csprojResolveAssemblyReference.cache
+D:\haloc\OneDrive\Protected\Web Technologies\Project\WT_Project\obj\Debug\WT_Project.csproj.CoreCompileInputs.cache
+D:\haloc\OneDrive\Protected\Web Technologies\Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.dll
+D:\haloc\OneDrive\Protected\Web Technologies\Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.pdb
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-master\WT_Project\bin\TypeScriptHTMLApp1.dll
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-master\WT_Project\bin\TypeScriptHTMLApp1.pdb
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-master\WT_Project\obj\Debug\WT_Project.csproj.CoreCompileInputs.cache
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-master\WT_Project\obj\Debug\TypeScriptHTMLApp1.dll
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-master\WT_Project\obj\Debug\TypeScriptHTMLApp1.pdb
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-master\WT_Project\obj\Debug\WT_Project.csprojResolveAssemblyReference.cache
+D:\haloc\Desktop\WT-Project-93651ac732697935ee462d55e8c6ad6897cd105d\WT_Project\bin\TypeScriptHTMLApp1.dll.config
+D:\haloc\Desktop\WT-Project-93651ac732697935ee462d55e8c6ad6897cd105d\WT_Project\bin\TypeScriptHTMLApp1.dll
+D:\haloc\Desktop\WT-Project-93651ac732697935ee462d55e8c6ad6897cd105d\WT_Project\bin\TypeScriptHTMLApp1.pdb
+D:\haloc\Desktop\WT-Project-93651ac732697935ee462d55e8c6ad6897cd105d\WT_Project\obj\Debug\WT_Project.csprojResolveAssemblyReference.cache
+D:\haloc\Desktop\WT-Project-93651ac732697935ee462d55e8c6ad6897cd105d\WT_Project\obj\Debug\WT_Project.csproj.CoreCompileInputs.cache
+D:\haloc\Desktop\WT-Project-93651ac732697935ee462d55e8c6ad6897cd105d\WT_Project\obj\Debug\TypeScriptHTMLApp1.dll
+D:\haloc\Desktop\WT-Project-93651ac732697935ee462d55e8c6ad6897cd105d\WT_Project\obj\Debug\TypeScriptHTMLApp1.pdb
+D:\Web Technologies\WT-Project\WT_Project\bin\TypeScriptHTMLApp1.dll.config
+D:\Web Technologies\WT-Project\WT_Project\bin\TypeScriptHTMLApp1.dll
+D:\Web Technologies\WT-Project\WT_Project\bin\TypeScriptHTMLApp1.pdb
+D:\Web Technologies\WT-Project\WT_Project\obj\Debug\WT_Project.csproj.CoreCompileInputs.cache
+D:\Web Technologies\WT-Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.dll
+D:\Web Technologies\WT-Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.pdb
+D:\Web Technologies\WT-Project\WT_Project\obj\Debug\WT_Project.csprojResolveAssemblyReference.cache
+D:\Project\WT-Project\WT_Project\bin\TypeScriptHTMLApp1.dll.config
+D:\Project\WT-Project\WT_Project\bin\TypeScriptHTMLApp1.dll
+D:\Project\WT-Project\WT_Project\bin\TypeScriptHTMLApp1.pdb
+D:\Project\WT-Project\WT_Project\obj\Debug\WT_Project.csprojResolveAssemblyReference.cache
+D:\Project\WT-Project\WT_Project\obj\Debug\WT_Project.csproj.CoreCompileInputs.cache
+D:\Project\WT-Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.dll
+D:\Project\WT-Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.pdb
+C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\bin\TypeScriptHTMLApp1.dll.config
+C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\bin\TypeScriptHTMLApp1.dll
+C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\bin\TypeScriptHTMLApp1.pdb
+C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\obj\Debug\WT_Project.csprojResolveAssemblyReference.cache
+C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\obj\Debug\WT_Project.csproj.CoreCompileInputs.cache
+C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.dll
+C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.pdb
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-b8a35cc4287e26291a79e767e6a0e7291268e0cd\WT_Project\bin\TypeScriptHTMLApp1.dll
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-b8a35cc4287e26291a79e767e6a0e7291268e0cd\WT_Project\bin\TypeScriptHTMLApp1.pdb
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-b8a35cc4287e26291a79e767e6a0e7291268e0cd\WT_Project\obj\Debug\WT_Project.csproj.CoreCompileInputs.cache
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-b8a35cc4287e26291a79e767e6a0e7291268e0cd\WT_Project\obj\Debug\TypeScriptHTMLApp1.dll
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-b8a35cc4287e26291a79e767e6a0e7291268e0cd\WT_Project\obj\Debug\TypeScriptHTMLApp1.pdb
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-b8a35cc4287e26291a79e767e6a0e7291268e0cd\WT_Project\obj\Debug\WT_Project.csprojResolveAssemblyReference.cache
+C:\Users\tda_m\Desktop\WT-Project-master\WT_Project\bin\TypeScriptHTMLApp1.dll
+C:\Users\tda_m\Desktop\WT-Project-master\WT_Project\bin\TypeScriptHTMLApp1.pdb
+C:\Users\tda_m\Desktop\WT-Project-master\WT_Project\obj\Debug\WT_Project.csprojResolveAssemblyReference.cache
+C:\Users\tda_m\Desktop\WT-Project-master\WT_Project\obj\Debug\WT_Project.csproj.CoreCompileInputs.cache
+C:\Users\tda_m\Desktop\WT-Project-master\WT_Project\obj\Debug\TypeScriptHTMLApp1.dll
+C:\Users\tda_m\Desktop\WT-Project-master\WT_Project\obj\Debug\TypeScriptHTMLApp1.pdb

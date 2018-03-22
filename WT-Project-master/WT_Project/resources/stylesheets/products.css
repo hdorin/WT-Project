@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.wrapper {
+    display: block;
+    margin-left: 150px;
+}
+
+.wrapper button {
+    margin: 5px 25px 10px 0;
+}
+
+.index-links div {
+    margin: 16px 16px 0;
+    width: calc(100% - 32px);
+    height: fit-content;
+    background-color: #A4BDC1;
+    overflow: hidden;
+}
+
+.index-links div h3 {
+    font-family: Bahnschrift, serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 100px;
+    color: #111;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.index-links div img {
+    margin: 10px 10px 10px 10px;
+    float: left;
+}
+
+.index-links div div {
+    text-align: right;
+    float: right;
+}
+
