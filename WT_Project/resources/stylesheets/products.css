@@ -45,7 +45,6 @@
     margin: 16px 16px 0;
     width: calc(100% - 32px);
     height: fit-content;
-    /*background-color: #A4BDC1;*/
     background: #ffffff url("../images/bg.jpg") no-repeat;
     overflow: hidden;
 }
