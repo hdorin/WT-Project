@@ -18,6 +18,12 @@
             margin-left: -5px;
             float: left
         }
+        #bodyMain #checkoutBox #productImage {
+            margin:10px;
+            width: 250px;
+            height: auto;
+            float: left
+        }
 #heading1 {
     height: 120px;
     text-align: center;
