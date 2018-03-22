@@ -7,7 +7,7 @@
 .dropdown1 {
     float: left; /*allign the button on the right*/
     overflow: hidden; /*remove the overflow*/
-    padding:inherit;
+    padding:0px 8px 0px 16px;
     
 }
 
@@ -68,7 +68,7 @@
 .dropdown2 {
     float: left; /*allign the button on the right*/
     overflow: hidden; /*remove the overflow*/
-    padding: inherit;
+    padding: 0px 8px 0px 16px;
 }
 
     /* drp_down button */
