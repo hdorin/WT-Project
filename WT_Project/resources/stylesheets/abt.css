@@ -26,7 +26,7 @@
 
     /*colour used for hovering over the drp_down bttn*/
     a:hover, .dropdown1:hover .dropbtn1 {
-        background-color: none;
+        background-color: transparent;
     }
 
 /* button content ,HIDDEN! */
@@ -92,7 +92,7 @@
 
     /*colour used for hovering over the drp_down bttn*/
     a:hover, .dropdown2:hover .dropbtn2 {
-        background-color: none;
+        background-color: transparent;
     }
 
 /* button content ,HIDDEN! */

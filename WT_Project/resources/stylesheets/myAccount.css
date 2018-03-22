@@ -28,7 +28,7 @@
         display: block;
         font-size: 16px;
         line-height: 16px;
-        // background: #D95B43;
+        /*background: #D95B43;*/
         background: linear-gradient(to bottom, rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 51%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%);
         border: 1px solid #542437;
         color: #542437;
