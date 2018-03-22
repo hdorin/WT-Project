@@ -11,6 +11,31 @@
     margin-left: 150px;
 }
 
+.vertical-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.index-banner h2 {
+    font-family: Arial Black;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 70px;
+    text-shadow: 2px 2px 8px #111;
+    color: #fff;
+    text-align: center;
+}
+
+.index-banner h1 {
+    font-family: Calibri Light;
+    font-size: 28px;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 8px #111;
+}
 
 .index-links div {
 
@@ -37,10 +62,14 @@
 .index-links div img {
     margin: 10px 10px 10px 10px;
     float: left;
+
+}
+.index-boxlink-square {
+    width: calc(25% - 20px) !important;
+
 }
 
-.index-links div div {
-    text-align: right;
-    float: right;
-}
+.index-boxlink-rectangle {
+    width: calc(50% - 20px) !important;
 
+}

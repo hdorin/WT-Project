@@ -45,3 +45,9 @@ C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\obj\Debug\WT_Project.cspro
 C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\obj\Debug\WT_Project.csproj.CoreCompileInputs.cache
 C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.dll
 C:\Users\manol\Documents\GitHub\WT-Project\WT_Project\obj\Debug\TypeScriptHTMLApp1.pdb
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-b8a35cc4287e26291a79e767e6a0e7291268e0cd\WT_Project\bin\TypeScriptHTMLApp1.dll
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-b8a35cc4287e26291a79e767e6a0e7291268e0cd\WT_Project\bin\TypeScriptHTMLApp1.pdb
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-b8a35cc4287e26291a79e767e6a0e7291268e0cd\WT_Project\obj\Debug\WT_Project.csproj.CoreCompileInputs.cache
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-b8a35cc4287e26291a79e767e6a0e7291268e0cd\WT_Project\obj\Debug\TypeScriptHTMLApp1.dll
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-b8a35cc4287e26291a79e767e6a0e7291268e0cd\WT_Project\obj\Debug\TypeScriptHTMLApp1.pdb
+C:\Users\tda_m\Desktop\Facultate\2nd year\Sem2\Web Technologies\WT-Project-b8a35cc4287e26291a79e767e6a0e7291268e0cd\WT_Project\obj\Debug\WT_Project.csprojResolveAssemblyReference.cache
