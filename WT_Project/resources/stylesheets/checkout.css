@@ -1,11 +1,11 @@
 ﻿#bodyMain {
 }
 
-@media (max-width: 719px) {
-    #bodyMain #checkoutBox {/*modificat*/
+@media (max-width: 719px) { /*Ecran mic*/
+    #bodyMain #checkoutBox { /*modificat*/
         margin-top: 50px;
-        width: 380px;
-        height: 1050px;
+        width: 450px;
+        height: 970px;
         background-color: #f7f7f7;
         margin-left: auto;
         margin-right: auto;
@@ -90,11 +90,11 @@
     }
 }
 
-@media (min-width: 720px) {
+@media (min-width: 720px) { /*Ecran mare*/
     #bodyMain #checkoutBox {
         margin-top: 50px;
         width: 700px;
-        height: 550px;
+        height: 450px;
         background-color: #f7f7f7;
         margin-left: auto;
         margin-right: auto;
