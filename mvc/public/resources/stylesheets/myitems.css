@@ -1,0 +1,32 @@
+/**********  CART  ************/
+.cart {
+    display: block;
+    position: relative;
+    margin-top: 5%;
+    margin-left: 1%;
+    font-size: 14px;
+    font-family: 'Courier New';
+    font-weight:bold;
+}
+    
+.cart .table{
+    border-spacing:20px;
+    text-align:center;
+}
+
+    .cart .title{
+        color: #261636;
+        text-decoration: underline;
+        text-decoration-style: wavy;
+    }
+
+
+
+
+#removeBtn {
+    border-radius: 3px;
+    border: none;
+    padding: 4px 4px 4px 4px;
+    background-color: #ff5c5c;
+    color: #000000;
+}

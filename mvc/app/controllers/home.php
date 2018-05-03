@@ -1,5 +1,5 @@
 <?php
-
+/*AICI ADAUGAM PGINI*/
 class Home extends Controller
 {
     public function index($name = '')
@@ -8,5 +8,6 @@ class Home extends Controller
         $user->name = $name;
         $this->view('home/index', ['name' => $user->name]);
     }
+
 
 }

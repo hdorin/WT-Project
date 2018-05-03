@@ -1,1 +1,1 @@
-This it the index of views <?=$data['name']?>
+This it the index of vieeeeeeeeews <?=$data['name']?>
