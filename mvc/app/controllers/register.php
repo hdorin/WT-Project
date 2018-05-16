@@ -1,10 +1,11 @@
 <?php
 class Register extends Controller
 {
-    public function index($name = '')
+    public function index()
     {
         $this->view('home/register',[]);
     }
+
 
 
 }
