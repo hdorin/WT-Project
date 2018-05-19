@@ -5,13 +5,14 @@
     <meta charset="utf-8" />
     <title>Register Page</title>
     <link rel="stylesheet" href="resources/stylesheets/register.css" type="text/css" />
+    <link rel="stylesheet" href="resources/stylesheets/app.css" type="text/css" />
     <link rel="apple-touch-icon" sizes="180x180" href="resources/images/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="resources/images/favicon/favicon-16x16.png" />
 </head>
 <body id="bodyMain">
     <div id="siteLogo">
-        <a  href="index.html">
+        <a  href="index">
             <img src="resources/images/logo.jpg" alt="Site logo" />
         </a>
     </div>
@@ -33,5 +34,8 @@
         </div>
         <input id="regButton" type="submit" value="Register" />
     </form>
-</body>
-</html>
+<?php
+
+include 'footer.php';
+
+?>

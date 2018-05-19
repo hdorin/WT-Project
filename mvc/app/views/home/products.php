@@ -9,7 +9,7 @@
 <main>
     <div class="wrapper">
         <section class="index-links">
-            <a href="product_page/index" class="image-class">
+            <a href="product_page" class="image-class">
                 <div>
                     <img src="resources/images/product1.png" width="250" height="155" alt="beer">
                     <h3>Product bear</h3>
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </a>
-            <a href="product_page/index" class="image-class">
+            <a href="product_page" class="image-class">
                 <div>
                     <img src="resources/images/product2.png" width="250" height="155" alt="bear">
                     <h3>Product beer</h3>

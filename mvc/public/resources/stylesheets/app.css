@@ -208,7 +208,7 @@ li.currencies {
 }
 
 #btnLogin {
-    background: url(/resources/images/btn-login.png) no-repeat 5px 7px #e29817;
+    background: url(../images/btn-login.png) no-repeat 5px 7px #e29817;
     width: 100px;
     float: left;
     cursor: pointer;
@@ -225,13 +225,13 @@ li.currencies {
 }
 
     #btnLogin:hover {
-        background-image: url(/resources/images/btn-login-hover.png);
+        background-image: url(../images//btn-login-hover.png);
         /*background-position: 65px 5px;
             text-indent: 20px;*/
     }
 
 #btnReg {
-    background: url(/resources/images/btn-login.png) no-repeat 5px 7px #e29817;
+    background: url(../images//btn-login.png) no-repeat 5px 7px #e29817;
     width: 100px;
     float: left;
     cursor: pointer;
@@ -248,7 +248,7 @@ li.currencies {
 }
 
     #btnReg:hover {
-        background-image: url(/resources/images/btn-login-hover.png);
+        background-image: url(../images//btn-login-hover.png);
         /*background-position: 65px 5px;
         text-indent: 20px;*/
     }
