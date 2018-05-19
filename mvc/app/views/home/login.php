@@ -14,13 +14,13 @@
             <img src="resources/images/logo.jpg" alt="Site logo" />
         </a>
     </div>
-    <form id="lgnPanel">
+    <form id="lgnPanel" action="http://localhost/mvc/public/login/process" method="POST">
 
         <h1>Login</h1>
         <h2>Email</h2>
-        <input id="userField" type="email" required/>
+        <input id="emailField" name="emailField" type="email" required/>
         <h2>Password</h2>
-        <input id="passField" type="password" required/>
+        <input id="passField" name="passField" type="password" required/>
         <input id="lgnButton" type="submit" value="Login" />
         <div id="frgtPass">
             <a href="frgtpass">I forgot my password</a>

@@ -37,7 +37,7 @@
             color: #3D4597;
         }
 
-        #bodyMain #regPanel #nameField, #userField, #passField1, #passField2 {
+        #bodyMain #regPanel #nameField, #emailField, #passField1, #passField2 {
             background-color: #d2dfff;
             width: 240px;
             box-sizing: border-box;

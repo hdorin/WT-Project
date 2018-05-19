@@ -3,9 +3,53 @@ class Register extends Controller
 {
     public function index()
     {
-        $this->view('home/register',[]);
+        if(empty($_SESSION["error"])==1){
+            $error="";
+        }else{
+            $error=$_SESSION["error"];
+        }
+        $this->view('home/register',['error' => $error]);
+        $_SESSION["error"]="";
     }
+    public function reload($data=''){
+        $_SESSION["error"]=$data;
+        $newURL="../register";
+        header('Location: '.$newURL);
 
+    }
+    public function process(){
+        if(empty($_POST["nameField"])==1){
+            echo "You did not enter a name!";
+            $this->reload("You did not enter a name!");
+        }
+        $name=$_POST["nameField"];
+        if(empty($_POST["emailField"])==1){
+            echo "You did not enter an email!";
+            $this->reload("You did not enter an email!");
+        }
+        $email=$_POST["emailField"];
+        if(empty($_POST["passField1"])==1){
+            echo "You did not enter a password!";
+            $this->reload("You did not enter a password!");
+        }
+        $pass1=$_POST["passField1"];
+        if(empty($_POST["passField2"])==1){
+            echo "You did not confirm the password!";
+            $this->reload("You did not confirm the password!");
+        }
+        $pass2=$_POST["passField2"];
+        if(isset($_POST["acceptEULA"])==0){
+            $this->reload("You did not accept the EULA!");
+        }
+        //$pass1=md5($pass);
+        if(strcmp($pass1,$pass2)!=0){
+            $this->reload("Passwords do not match!");
+        }
+        echo $name;
+        echo $email ;
+        echo $pass1;
+        echo $pass2;
+    }
 
 
 }

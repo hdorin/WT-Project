@@ -37,7 +37,7 @@
             color: #3D4597;
         }
 
-        #bodyMain #lgnPanel #userField, #passField {
+        #bodyMain #lgnPanel #emailField, #passField {
             background-color: #d2dfff;
             width: 240px;
             box-sizing: border-box;

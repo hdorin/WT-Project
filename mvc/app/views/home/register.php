@@ -15,19 +15,20 @@
             <img src="resources/images/logo.jpg" alt="Site logo" />
         </a>
     </div>
-    <form id="regPanel">
+    <form id="regPanel" action="http://localhost/mvc/public/register/process" method="POST" >
+        
         <h1>Register</h1>
-
+        <p id="errorMsg"><?=$data['error']?></p>
         <h2>Name</h2>
-        <input id="nameField" type="text" required/>
+        <input id="nameField" name="nameField" type="text" required/>
         <h2>Email</h2>
-        <input id="userField" type="email" required/>
+        <input id="emailField" name="emailField" type="email" required/>
         <h2>Password</h2>
-        <input id="passField1" type="password" required />
+        <input id="passField1" name="passField1" type="password" required />
         <h2>Confirm Password</h2>
-        <input id="passField2" type="password" required />
-        <div id="acceptEULA">
-            <input type="checkbox" required/>
+        <input id="passField2" name="passField2" type="password" required />
+        <div id="acceptEULA" >
+            <input type="checkbox" name="acceptEULA" required/>
             I have read and accept the <a href="resources/documents/EULA.pdf">EULA</a>
         </div>
         <input id="regButton" type="submit" value="Register" />
