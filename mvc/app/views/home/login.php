@@ -17,6 +17,7 @@
     <form id="lgnPanel" action="http://localhost/mvc/public/login/process" method="POST">
 
         <h1>Login</h1>
+        <p id="errorMsg"><?=$data['error']?></p>
         <h2>Email</h2>
         <input id="emailField" name="emailField" type="email" required/>
         <h2>Password</h2>
