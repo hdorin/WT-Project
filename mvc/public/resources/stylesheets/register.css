@@ -72,8 +72,6 @@
             padding: 2px;
         }
 
-    #bodyMain #regPanel div#acceptEULA {
+    #bodyMain #regPanel #acceptEULA {
         margin-top:10px;
-
-
     }

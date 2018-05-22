@@ -48,7 +48,29 @@ class Register extends Controller
         echo $name;
         echo $email ;
         echo $pass1;
-        echo $pass2;
+        $pass1=md5($pass1);
+        $this->create_account($name,$email,$pass1);
+    }
+    public function create_account($name,$email,$pass){
+        $link = mysqli_connect("localhost", "root", "", "test");
+ 
+        // Check connection
+        if($link === false){
+            die("ERROR: Could not connect. " . mysqli_connect_error());
+        }
+ 
+        $sql = $link->prepare('INSERT INTO USERS (name, email, password) VALUES (?, ?, ?)');
+        $sql->bind_param('sss', $name,$email,$pass); 
+        if($sql->execute() == true){
+            $newURL="../login";
+            $_SESSION["error"]="Please login!";
+            header('Location: '.$newURL);
+            $_SESSION["userId"]=$userId;
+        }else{
+            $this->reload("Email address already in use!");
+        }
+        
+        mysqli_close($link);
     }
 
 

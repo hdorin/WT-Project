@@ -29,9 +29,37 @@ class Login extends Controller
         }
         $pass=$_POST["passField"];
         $pass=md5($pass);
-        echo $email ;
-        echo $pass;
+        //echo $email ;
+         //echo $pass;
+        $this->check_data($email,$pass);
     }
+    public function check_data($email,$pass){
+        $link = mysqli_connect("localhost", "root", "", "test");
+ 
+        if($link === false){
+            die("ERROR: Could not connect. " . mysqli_connect_error());
+        }
+ 
+        $sql = $link->prepare('SELECT name FROM users WHERE email=? AND password=?');
+        $sql->bind_param('ss', $email,$pass); 
+        $sql->execute();
+        $sql->bind_result($userId);
+        $sql->fetch();
 
-
+        if(empty($userId)){
+            $this->reload("Invalid email or password!");
+        }else{
+            $newURL="../";
+            header('Location: '.$newURL);
+            $_SESSION["userId"]=$userId;
+            if(isset($_POST["rememberMe"])){
+                $rand_nr=(string)random_int(0,1000000000);
+                $rand_nr=$rand_nr . (string)random_int(0,1000000000);
+                $rand_nr=$rand_nr . (string)random_int(0,1000000000);
+                setcookie("AuthenticationId", $rand_nr );
+            }
+        }
+        
+        mysqli_close($link);
+    }
 }

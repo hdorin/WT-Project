@@ -23,6 +23,11 @@
         <input id="emailField" name="emailField" type="email" required/>
         <h2>Password</h2>
         <input id="passField" name="passField" type="password" required/>
+        
+        <div id="rememberMe" >
+            <input type="checkbox" name="rememberMe"/>
+            Remember Me<br>
+        </div>
         <input id="lgnButton" type="submit" value="Login" />
         <div id="frgtPass">
             <a href="frgtpass">I forgot my password</a>

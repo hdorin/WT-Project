@@ -63,12 +63,16 @@
             margin-bottom: 2px;
         }
 
+        #bodyMain #lgnPanel #rememberMe {
+            margin-top:5px;
+            font-size: 13px;
+        }
+        
         #bodyMain #lgnPanel #lgnButton {
             background-color: #F3781E;
             top: 100px;
-            margin-top: 25px;
-            
-            font-size: 18px;
+            margin-top: 15px;
+            font-size: 20px;
             width: 50%;
             border-radius: 5px;
             padding: 2px;
