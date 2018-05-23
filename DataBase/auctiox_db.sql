@@ -164,7 +164,7 @@ CREATE TABLE `prod_category` (
 
 CREATE TABLE `users` (
   `id` int(20) UNSIGNED NOT NULL,
-  `username` varchar(50) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
   `passw` varchar(50) NOT NULL,
   `type` char(1) NOT NULL,
@@ -240,7 +240,7 @@ ALTER TABLE `prod_category`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`,`username`,`email`);
+  ADD PRIMARY KEY (`id`,`email`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
