@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2018 at 10:41 AM
+-- Generation Time: May 23, 2018 at 10:13 PM
 -- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -80,6 +80,18 @@ CREATE TABLE `categories` (
   `tile` varchar(50) NOT NULL,
   `image` varchar(50) NOT NULL,
   `description` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cookies`
+--
+
+CREATE TABLE `cookies` (
+  `id` int(20) NOT NULL,
+  `value` varchar(50) NOT NULL,
+  `user_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -201,6 +213,14 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `cookies`
+--
+ALTER TABLE `cookies`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `value` (`value`),
+  ADD KEY `value_2` (`value`);
+
+--
 -- Indexes for table `images`
 --
 ALTER TABLE `images`
@@ -240,7 +260,24 @@ ALTER TABLE `prod_category`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`,`email`);
+  ADD PRIMARY KEY (`id`,`email`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cookies`
+--
+ALTER TABLE `cookies`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=751;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

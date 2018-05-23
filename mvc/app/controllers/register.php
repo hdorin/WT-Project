@@ -15,8 +15,8 @@ class Register extends Controller
         $_SESSION["error"]=$data;
         $newURL="../register";
         header('Location: '.$newURL);
-
     }
+    
     public function process(){
         if(empty($_POST["nameField"])==1){
             echo "You did not enter a name!";
@@ -59,7 +59,7 @@ class Register extends Controller
             die("ERROR: Could not connect. " . mysqli_connect_error());
         }
  
-        $sql = $link->prepare('INSERT INTO USERS (name, email, password) VALUES (?, ?, ?)');
+        $sql = $link->prepare('INSERT INTO USERS (name, email, passw) VALUES (?, ?, ?)');
         $sql->bind_param('sss', $name,$email,$pass); 
         if($sql->execute() == true){
             $newURL="../login";

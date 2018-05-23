@@ -33,10 +33,12 @@
                         <button type="submit">Search</button>
                     </form>
                 </div>
-
+                
                 <a id="advsearch" href="advs">Advanced search</a>
                 <a id="btnLogin" href="login">Login</a>
                 <a id="btnReg" href="register">Register</a>
+                <p id="welcome"><?=empty($data['userName']) ? '' : 'Welcome: ' . $data['userName'] . '!'?></p>
+                
             </div> <!--FIRST ROW-->
 
             <div id="menu_tab">
