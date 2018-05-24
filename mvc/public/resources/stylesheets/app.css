@@ -27,6 +27,7 @@ header {
 
     .topnav .firstrow {
         display: inline-block;
+        width:100%;
     }
 
 #advsearch {
@@ -287,4 +288,25 @@ li.currencies {
     text-align: center;
     color: #666666;
     padding: 10px 0 0 60px;
+}
+
+#welcome{
+    display: block;
+    margin-top: 60px;
+    margin-left: 8%;
+    font-size: 15px;
+    float: left;
+    width:14%;
+    text-decoration: overline;
+    color: #D8461E;
+}
+#btnLogout{
+    display: block;
+    margin-top: 60px;
+    margin-left: 2%;
+    text-decoration: underline;
+    float: left;
+    
+    
+    
 }

@@ -35,9 +35,16 @@
                 </div>
                 
                 <a id="advsearch" href="advs">Advanced search</a>
-                <a id="btnLogin" href="login">Login</a>
-                <a id="btnReg" href="register">Register</a>
-                <p id="welcome"><?=empty($data['userName']) ? '' : 'Welcome: ' . $data['userName'] . '!'?></p>
+                <?php
+                    if(empty($data['userId'])==true){
+                        echo '<a id="btnLogin" href="login">Login</a>
+                        <a id="btnReg" href="register">Register</a>';
+                    }else{
+                        echo '<p id="welcome">'.' Welcome, '. $data["userName"] . '!</p>
+                        <a id="btnLogout">Logout</a>';
+                    }
+                ?>
+                
                 
             </div> <!--FIRST ROW-->
 

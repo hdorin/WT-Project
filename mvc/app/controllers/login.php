@@ -47,22 +47,25 @@ class Login extends Controller
     public function check_data($email,$pass){
         $link = $this->auctiox_db_connect();
  
-        $sql = $link->prepare('SELECT id FROM users WHERE email=? AND passw=?');
+        $sql = $link->prepare('SELECT id,name FROM users WHERE email=? AND passw=?');
         $sql->bind_param('ss', $email,$pass); 
         $sql->execute();
-        $sql->bind_result($userId);
+        $sql->bind_result($userId,$userName);
         $sql->fetch();
         mysqli_close($link);
-
+        
         if(empty($userId)){
             $this->reload("Invalid email or password!");
         }else{
-            $newURL="../";
-            header('Location: '.$newURL);
+            
             $_SESSION["userId"]=$userId;
+            $_SESSION["userName"]=$userName;
+            //die ($_SESSION["userName"]);
             if(isset($_POST["rememberMe"])){
                 $this->remember_user($userId);
             }
+            $newURL="../";
+            header('Location: '.$newURL);
         }
     }
 }

@@ -1,11 +1,19 @@
 <?php
+//session_start();
 class Home extends Controller
 {
-    private $userName="";
     public function index()
     {
         $this->check_authentication_cookie();
-        $this->view('home/index', ['userName' => $this->userName]);
+        //die ($_SESSION["userName"]."User");
+        if(isset($_SESSION["userId"])==true){
+            $userId=$_SESSION["userId"];
+            $userName=$_SESSION["userName"];
+        }else{
+            $userName="";
+            $userId="";
+        }
+        $this->view('home/index', ['userName' => $userName,'userId' => $userId]);
         
     }
     public function check_authentication_cookie(){
@@ -17,14 +25,15 @@ class Home extends Controller
             $sql = $link->prepare('SELECT user_id,name FROM cookies c JOIN users u ON u.id=c.user_id WHERE value=?');
             $sql->bind_param('s', $cookie_value); 
             $sql->execute();
-            $sql->bind_result($userId,$this->userName);
+            $sql->bind_result($userId,$userName);
             $sql->fetch();
             mysqli_close($link);
 
             if(empty($userId)){
-                echo "User not found!";
+                //echo "User not found!";
             }else{
                 $_SESSION["userId"]=$userId;
+                $_SESSION["userName"]=$userName;
             }
         }
         
