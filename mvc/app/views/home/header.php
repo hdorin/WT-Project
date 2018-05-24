@@ -41,7 +41,7 @@
                         <a id="btnReg" href="register">Register</a>';
                     }else{
                         echo '<p id="welcome">'.' Welcome, '. $data["userName"] . '!</p>
-                        <a id="btnLogout">Logout</a>';
+                        <a href="logout" id="btnLogout">Logout</a>';
                     }
                 ?>
                 
