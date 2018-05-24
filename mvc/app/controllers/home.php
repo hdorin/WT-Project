@@ -11,11 +11,8 @@ class Home extends Controller
     public function check_authentication_cookie(){
         if(isset($_COOKIE["AuthenticationId"])) {
             $cookie_value=$_COOKIE["AuthenticationId"];
-            $link = mysqli_connect("localhost", "root", "", "test");
- 
-            if($link === false){
-                die("ERROR: Could not connect. " . mysqli_connect_error());
-            }
+            $cookie_value=md5($cookie_value);
+            $link = $this->auctiox_db_connect();
  
             $sql = $link->prepare('SELECT user_id,name FROM cookies c JOIN users u ON u.id=c.user_id WHERE value=?');
             $sql->bind_param('s', $cookie_value); 

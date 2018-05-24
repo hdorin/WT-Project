@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2018 at 10:13 PM
+-- Generation Time: May 24, 2018 at 02:10 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -32,7 +32,7 @@ CREATE TABLE `attributes` (
   `condition_` varchar(50) NOT NULL,
   `curr_price` int(20) UNSIGNED NOT NULL,
   `next_price` int(20) UNSIGNED NOT NULL,
-  `expires` date NOT NULL
+  `expires_on` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -44,7 +44,7 @@ CREATE TABLE `attributes` (
 CREATE TABLE `auctions` (
   `id` int(20) UNSIGNED NOT NULL,
   `user_id` int(20) UNSIGNED NOT NULL,
-  `created` date NOT NULL
+  `date_created` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -91,7 +91,8 @@ CREATE TABLE `categories` (
 CREATE TABLE `cookies` (
   `id` int(20) NOT NULL,
   `value` varchar(50) NOT NULL,
-  `user_id` int(20) NOT NULL
+  `user_id` int(20) NOT NULL,
+  `date_created` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -118,7 +119,7 @@ CREATE TABLE `orders` (
   `adress` varchar(50) NOT NULL,
   `total` int(20) NOT NULL,
   `bill_adress` varchar(50) NOT NULL,
-  `issued` date NOT NULL,
+  `date_issued` date NOT NULL,
   `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -180,7 +181,7 @@ CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `passw` varchar(50) NOT NULL,
   `type` char(1) NOT NULL,
-  `acc_created` date NOT NULL,
+  `date_created` date NOT NULL,
   `image` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -271,13 +272,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cookies`
 --
 ALTER TABLE `cookies`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=751;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

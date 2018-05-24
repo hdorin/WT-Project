@@ -19,22 +19,19 @@ class Register extends Controller
     
     public function process(){
         if(empty($_POST["nameField"])==1){
-            echo "You did not enter a name!";
             $this->reload("You did not enter a name!");
         }
         $name=$_POST["nameField"];
         if(empty($_POST["emailField"])==1){
-            echo "You did not enter an email!";
             $this->reload("You did not enter an email!");
         }
         $email=$_POST["emailField"];
         if(empty($_POST["passField1"])==1){
-            echo "You did not enter a password!";
             $this->reload("You did not enter a password!");
         }
         $pass1=$_POST["passField1"];
         if(empty($_POST["passField2"])==1){
-            echo "You did not confirm the password!";
+
             $this->reload("You did not confirm the password!");
         }
         $pass2=$_POST["passField2"];
@@ -45,21 +42,16 @@ class Register extends Controller
         if(strcmp($pass1,$pass2)!=0){
             $this->reload("Passwords do not match!");
         }
-        echo $name;
-        echo $email ;
-        echo $pass1;
+        //echo $name;
+        //echo $email ;
+        //echo $pass1;
         $pass1=md5($pass1);
         $this->create_account($name,$email,$pass1);
     }
     public function create_account($name,$email,$pass){
-        $link = mysqli_connect("localhost", "root", "", "test");
+        $link = $this->auctiox_db_connect();//simplify connection to the database
  
-        // Check connection
-        if($link === false){
-            die("ERROR: Could not connect. " . mysqli_connect_error());
-        }
- 
-        $sql = $link->prepare('INSERT INTO USERS (name, email, passw) VALUES (?, ?, ?)');
+        $sql = $link->prepare('INSERT INTO USERS (name, email, passw,type,date_created) VALUES (?, ?, ?, 1, now())');
         $sql->bind_param('sss', $name,$email,$pass); 
         if($sql->execute() == true){
             $newURL="../login";

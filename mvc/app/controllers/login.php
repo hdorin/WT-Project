@@ -18,21 +18,16 @@ class Login extends Controller
 
     }
     public function remember_user($userId){
-        $link = mysqli_connect("localhost", "root", "", "test");
- 
-        // Check connection
-        if($link === false){
-            die("ERROR: Could not connect. " . mysqli_connect_error());
-        }
-        
-        $sql = $link->prepare('INSERT INTO cookies (user_id,value) VALUES (?, ?)');
+        $link = $this->auctiox_db_connect();
+        $sql = $link->prepare('INSERT INTO cookies (user_id,value,date_created) VALUES (?, ?,now())');
         do{
             $cookie_value=(string)random_int(0,1000000000);
             $cookie_value=$cookie_value . (string)random_int(0,1000000000);
             $cookie_value=$cookie_value . (string)random_int(0,1000000000);
             setcookie("AuthenticationId", $cookie_value, time() + (86400 * 30), "/");
+            $cookie_value=md5($cookie_value);
             $sql->bind_param('ss', $userId,$cookie_value); 
-        }while($sql->execute() == false);
+        }while($sql->execute() == false);//in case cookie value already exists
         mysqli_close($link);
     }
     public function process(){
@@ -50,11 +45,7 @@ class Login extends Controller
         $this->check_data($email,$pass);
     }
     public function check_data($email,$pass){
-        $link = mysqli_connect("localhost", "root", "", "test");
- 
-        if($link === false){
-            die("ERROR: Could not connect. " . mysqli_connect_error());
-        }
+        $link = $this->auctiox_db_connect();
  
         $sql = $link->prepare('SELECT id FROM users WHERE email=? AND passw=?');
         $sql->bind_param('ss', $email,$pass); 
