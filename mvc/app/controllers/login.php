@@ -15,6 +15,7 @@ class Login extends Controller
         $_SESSION["error"]=$data;
         $newURL="../login";
         header('Location: '.$newURL);
+        die;
 
     }
     public function remember_user($userId){

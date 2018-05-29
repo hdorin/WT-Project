@@ -54,7 +54,7 @@
                     </tr>
                 </tbody>
             </table>
-            <button type="submit" id="removeBtn" onclick="window.location.href='checkout.php'">CHECKOUT</button>
+            <button type="submit" id="removeBtn" onclick="window.location.href='checkout'">CHECKOUT</button>
         </div>
 
 

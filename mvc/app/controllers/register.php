@@ -15,6 +15,7 @@ class Register extends Controller
         $_SESSION["error"]=$data;
         $newURL="../register";
         header('Location: '.$newURL);
+        die;
     }
     
     public function process(){
@@ -31,20 +32,16 @@ class Register extends Controller
         }
         $pass1=$_POST["passField1"];
         if(empty($_POST["passField2"])==1){
-
             $this->reload("You did not confirm the password!");
         }
         $pass2=$_POST["passField2"];
         if(isset($_POST["acceptEULA"])==0){
             $this->reload("You did not accept the EULA!");
         }
-        //$pass1=md5($pass);
         if(strcmp($pass1,$pass2)!=0){
             $this->reload("Passwords do not match!");
+            
         }
-        //echo $name;
-        //echo $email ;
-        //echo $pass1;
         $pass1=md5($pass1);
         $this->create_account($name,$email,$pass1);
     }
