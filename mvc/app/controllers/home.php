@@ -5,7 +5,6 @@ class Home extends Controller
     public function index()
     {
         $this->check_authentication_cookie();
-        //die ($_SESSION["userName"]."User");
         if(isset($_SESSION["userId"])==true){
             $userId=$_SESSION["userId"];
             $userName=$_SESSION["userName"];
@@ -13,7 +12,7 @@ class Home extends Controller
             $userName="";
             $userId="";
         }
-        $this->view('home/index', ['userName' => $userName,'userId' => $userId]);
+        $this->view('home/index');
         
     }
     public function check_authentication_cookie(){

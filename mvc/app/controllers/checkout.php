@@ -11,8 +11,11 @@ class Checkout extends Controller
     private $imagePath;
     public function index($data='')
     {
+        if(isset($_SESSION['userId'])==false){
+            echo "You must login!";
+            die;
+        }
         $this->orderId=$data;
-        
         $this->get_order_details();
         $this->get_product_details();
         $this->get_image_path();
@@ -48,6 +51,10 @@ class Checkout extends Controller
         $sql->execute();
         $sql->bind_result($this->buyerId,$this->shippingAddress,$this->productPrice,$this->productId);
         $sql->fetch();
+        if($this->buyerId!=$_SESSION['userId']){
+            echo "You can't access this!";
+            die;
+        }
         mysqli_close($link);
         
     }

@@ -20,7 +20,7 @@ class Logout extends Controller
             $this->delete_cookie_db($cookie_value);
             setcookie("AuthenticationId", "", time() - 3600, "/");
         }
-        $newURL="public";
+        $newURL="index";
         header('Location: '.$newURL);
     }
     

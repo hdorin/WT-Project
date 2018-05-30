@@ -36,11 +36,11 @@
                 
                 <a id="advsearch" href="advs">Advanced search</a>
                 <?php
-                    if(empty($data['userId'])==true){
+                    if(isset($_SESSION['userId'])==false){
                         echo '<a id="btnLogin" href="login">Login</a>
                         <a id="btnReg" href="register">Register</a>';
                     }else{
-                        echo '<p id="welcome">'.' Welcome, '. $data["userName"] . '!</p>
+                        echo '<p id="welcome">'.' Welcome, '. $_SESSION["userName"] . '!</p>
                         <a href="logout" id="btnLogout">Logout</a>';
                     }
                 ?>

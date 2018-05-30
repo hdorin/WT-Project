@@ -3,20 +3,23 @@ class Login extends Controller
 {
     public function index()
     {
-        if(empty($_SESSION["error"])==1){
+        if(isset($_SESSION["error"])==false){
             $error="";
         }else{
             $error=$_SESSION["error"];
         }
-        $this->view('home/login',['error' => $error]);
-        $_SESSION["error"]="";
+        if(isset($_SESSION['userId'])==false){
+            $this->view('home/login',['error' => $error]);
+        }else{
+            echo "You must first logout!";
+        }
+        unset($_SESSION["error"]);
     }
     public function reload($data=''){
         $_SESSION["error"]=$data;
         $newURL="../login";
         header('Location: '.$newURL);
         die;
-
     }
     public function remember_user($userId){
         $link = $this->auctiox_db_connect();
