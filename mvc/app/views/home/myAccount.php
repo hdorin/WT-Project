@@ -136,6 +136,7 @@
                 <input type="radio" id="radio-4" name="radio-accordion" />
                 <label for="radio-4">Your&nbsp;Addresses</label>
                 <div class="content">
+                    <a href="addAddressForm" class="addnewcard" style="margin-top: 7%">+ Add New Address</a>
                     <h3>Add addresses here beforehand</h3>
                     <ul class="addressbox">
                         <li><strong>Adrian Tiron - 0700000000</strong></li>
