@@ -1,4 +1,4 @@
- <hr style="margin-top:100px;width:100%" />
+<div id="pushDownward"></div>
     <div class="footer">
         <div class="left_footer">
             2018 Prototype™<br />
