@@ -3,38 +3,36 @@ class AddCreditCardForm extends Controller
 {
     public function index()
     {
-        $this->view('home/AddCreditCardForm',[]);
+    	if(isset($_SESSION["response"])==false){
+            $resp="";
+        }else{
+            $resp=$_SESSION["response"];
+        }
+
+        $this->view('home/AddCreditCardForm',['resp' => $resp]);
+
+        unset($_SESSION["response"]);
     }
 
-    public function luhn_check($number) {
-
-		  // Strip any non-digits (useful for credit card numbers with spaces and hyphens)
-		  $number=preg_replace('/\D/', '', $number);
-
-		  // Set the string length and parity
-		  $number_length=strlen($number);
-		  $parity=$number_length % 2;
-
-		  // Loop through each digit and do the maths
-		  $total=0;
-		  for ($i=0; $i<$number_length; $i++) {
-		    $digit=$number[$i];
-		    // Multiply alternate digits by two
-		    if ($i % 2 == $parity) {
-		      $digit*=2;
-		      // If the sum is two digits, add them together (in effect)
-		      if ($digit > 9) {
-		        $digit-=9;
-		      }
-		    }
-		    // Total up the digits
-		    $total+=$digit;
-		  }
-
-		  // If the total mod 10 equals 0, the number is valid
-		  return ($total % 10 == 0) ? TRUE : FALSE;
-
-	}
+	function check_cc($cc, $extra_check = FALSE){
+    $cards = array(
+        "visa" => "(4\d{12}(?:\d{3})?)",
+        "amex" => "(3[47]\d{13})",
+        "jcb" => "(35[2-8][89]\d\d\d{10})",
+        "maestro" => "((?:5020|5038|6304|6579|6761)\d{12}(?:\d\d)?)",
+        "solo" => "((?:6334|6767)\d{12}(?:\d\d)?\d?)",
+        "mastercard" => "(5[1-5]\d{14})",
+        "switch" => "(?:(?:(?:4903|4905|4911|4936|6333|6759)\d{12})|(?:(?:564182|633110)\d{10})(\d\d)?\d?)",
+    );
+    $names = array("Visa", "American Express", "JCB", "Maestro", "Solo", "Mastercard", "Switch");
+    $matches = array();
+    $pattern = "#^(?:".implode("|", $cards).")$#";
+    $result = preg_match($pattern, str_replace(" ", "", $cc), $matches);
+    if($extra_check && $result > 0){
+        $result = (validatecard($cc))?1:0;
+    }
+    return ($result>0)?$names[sizeof($matches)-2]:FALSE;
+}
 
     public function process()
     {
@@ -54,14 +52,23 @@ class AddCreditCardForm extends Controller
     	if (preg_match('/[^A-Za-z ]/', $name))
     		die("Name must contain english characters only!");
     	
-    	if ($this->luhn_check($number) == FALSE)
+    	$cc_checked = $this->check_cc($number);
+
+    	if ($cc_checked == FALSE)
     		die("Credit card number is not VALID!");
 
     	if (preg_match('/[^0-9]/', $cvv) || strlen((string)$cvv) != 3)
     		die("CVV not valid!");
 
-    	die("Credit card added successfully...");
+    	$resp = "CC detected: " . $cc_checked . " -- Credit card added successfully...";
+    	
+    	$this->reload($resp);
     }
 
- 	
+ 	public function reload($data=''){
+        $_SESSION["response"]=$data;
+        $newURL="../addCreditCardForm";
+        header('Location: '.$newURL);
+        die;
+    }
 }

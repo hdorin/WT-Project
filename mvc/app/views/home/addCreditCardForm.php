@@ -8,6 +8,7 @@
 <!--<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>-->
 <link rel="stylesheet" href="resources/stylesheets/add_forms.css" type="text/css" />
 
+<p id="responseMsg"><?=$data['resp']?></p>
 
 <form action="addCreditCardForm/process" method="POST" class="credit-card">
   <div class="form-header">
