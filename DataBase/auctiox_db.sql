@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06 Iun 2018 la 16:36
+-- Generation Time: 06 Iun 2018 la 17:53
 -- Versiune server: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -217,20 +217,23 @@ CREATE TABLE `prod_category` (
 
 CREATE TABLE `users` (
   `id` int(20) UNSIGNED NOT NULL,
-  `name` varchar(100) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `lname` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `dob` date NOT NULL,
   `passw` varchar(50) NOT NULL,
   `type` char(1) NOT NULL,
   `date_created` date NOT NULL,
-  `image` varchar(50) NOT NULL
+  `image` varchar(50) NOT NULL DEFAULT 'resources/images/userphotos/3.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Salvarea datelor din tabel `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `passw`, `type`, `date_created`, `image`) VALUES
-(3, 'adrian', 'tda_mda@yahoo.com', '8c4205ec33d8f6caeaaaa0c10a14138c', '1', '2018-06-06', '');
+INSERT INTO `users` (`id`, `name`, `lname`, `email`, `dob`, `passw`, `type`, `date_created`, `image`) VALUES
+(3, 'adrian', 'tiron', 'tda_mda@yahoo.com', '1998-01-08', '8c4205ec33d8f6caeaaaa0c10a14138c', '1', '2018-06-06', 'resources/images/userphotos/3.jpg'),
+(5, 'adrian', 'tiron', 'adrian@yahoo.com', '1998-01-08', '8c4205ec33d8f6caeaaaa0c10a14138c', '1', '2018-06-06', 'resources/images/userphotos/3.jpg');
 
 --
 -- Indexes for dumped tables
@@ -337,7 +340,7 @@ ALTER TABLE `cookies`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrictii pentru tabele sterse
