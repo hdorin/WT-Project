@@ -15,7 +15,7 @@
             <img src="resources/images/logo.jpg" alt="Site logo" />
         </a>
     </div>
-    <form id="lgnPanel" action="http://localhost/mvc/public/login/process" method="POST">
+    <form id="lgnPanel" action="login/process" method="POST">
 
         <h1>Login</h1>
         <p id="errorMsg"><?=$data['error']?></p>

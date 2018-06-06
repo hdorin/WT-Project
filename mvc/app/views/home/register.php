@@ -16,7 +16,7 @@
             <img src="resources/images/logo.jpg" alt="Site logo" />
         </a>
     </div>
-    <form id="regPanel" action="http://localhost/mvc/public/register/process" method="POST" >
+    <form id="regPanel" action="register/process" method="POST" >
         
         <h1>Register</h1>
         <p id="errorMsg"><?=$data['error']?></p>
