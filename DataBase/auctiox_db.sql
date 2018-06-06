@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06 Iun 2018 la 16:00
+-- Generation Time: 06 Iun 2018 la 16:36
 -- Versiune server: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -120,12 +120,20 @@ CREATE TABLE `cookies` (
 
 CREATE TABLE `creditcards` (
   `user_id` int(20) UNSIGNED NOT NULL,
-  `number` int(30) NOT NULL,
+  `number` bigint(20) NOT NULL,
   `name` varchar(50) NOT NULL,
   `exp_month` varchar(20) NOT NULL,
   `exp_year` int(4) NOT NULL,
   `cvv` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Salvarea datelor din tabel `creditcards`
+--
+
+INSERT INTO `creditcards` (`user_id`, `number`, `name`, `exp_month`, `exp_year`, `cvv`) VALUES
+(3, 4111111111111111, 'adr', 'february', 2020, 234),
+(3, 5105105105105100, 'adr', 'january', 2019, 123);
 
 -- --------------------------------------------------------
 
@@ -270,7 +278,7 @@ ALTER TABLE `cookies`
 -- Indexes for table `creditcards`
 --
 ALTER TABLE `creditcards`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`number`);
 
 --
 -- Indexes for table `images`
@@ -340,12 +348,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `addresses`
   ADD CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-
---
--- Restrictii pentru tabele `creditcards`
---
-ALTER TABLE `creditcards`
-  ADD CONSTRAINT `creditcards_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
