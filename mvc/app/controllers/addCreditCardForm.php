@@ -45,6 +45,8 @@ class AddCreditCardForm extends Controller
 
     	$name = $_POST["ccname"];
     	$number = $_POST["ccnumber"];
+    	$copy = $number;
+
     	$expmonth = $_POST["ccmonth"];
     	$expyear = $_POST["ccyear"];
     	$cvv = $_POST["ccver"];
@@ -52,13 +54,15 @@ class AddCreditCardForm extends Controller
     	if (preg_match('/[^A-Za-z ]/', $name))
     		die("Name must contain english characters only!");
     	
-    	$cc_checked = $this->check_cc($number);
+    	$cc_checked = $this->check_cc($copy);
 
     	if ($cc_checked == FALSE)
     		die("Credit card number is not VALID!");
 
     	if (preg_match('/[^0-9]/', $cvv) || strlen((string)$cvv) != 3)
     		die("CVV not valid!");
+
+    	$this->add_cc($number,$name,$expmonth,$expyear,$cvv);
 
     	$resp = "CC detected: " . $cc_checked . " -- Credit card added successfully...";
     	
@@ -70,5 +74,18 @@ class AddCreditCardForm extends Controller
         $newURL="../addCreditCardForm";
         header('Location: '.$newURL);
         die;
+    }
+
+    public function add_cc($number,$name,$expmonth,$expyear,$cvv){
+        $link = $this->auctiox_db_connect();//simplify connection to the database
+ 
+        $sql = $link->prepare('INSERT INTO creditcards VALUES (?, ?, ?, ?, ?, ?)');
+        $sql->bind_param('ssssss', $_SESSION['userId'], $number, $name, $expmonth, $expyear, $cvv); 
+        $status = $sql->execute();
+
+        if ($status == false)
+        	die("SQL query failed...");
+
+        mysqli_close($link);
     }
 }
