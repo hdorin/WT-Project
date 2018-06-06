@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06 Iun 2018 la 17:53
+-- Generation Time: 06 Iun 2018 la 18:38
 -- Versiune server: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -30,14 +30,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `addresses` (
   `user_id` int(20) UNSIGNED NOT NULL,
-  `fname` varchar(100) NOT NULL,
-  `lname` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `phone_no` varchar(20) NOT NULL,
   `address` varchar(255) NOT NULL,
   `city` varchar(30) NOT NULL,
   `county` varchar(30) NOT NULL,
   `country` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Salvarea datelor din tabel `addresses`
+--
+
+INSERT INTO `addresses` (`user_id`, `name`, `phone_no`, `address`, `city`, `county`, `country`) VALUES
+(5, 'Adrian Tiron', '0752374303', 'M-sal C-tin Prezan, Bl102, ScA, Ap9, Et2', 'Vaslui', 'Vaslui', 'Romania');
 
 -- --------------------------------------------------------
 
@@ -240,12 +246,6 @@ INSERT INTO `users` (`id`, `name`, `lname`, `email`, `dob`, `passw`, `type`, `da
 --
 
 --
--- Indexes for table `addresses`
---
-ALTER TABLE `addresses`
-  ADD PRIMARY KEY (`user_id`);
-
---
 -- Indexes for table `auctions`
 --
 ALTER TABLE `auctions`
@@ -341,16 +341,6 @@ ALTER TABLE `cookies`
 --
 ALTER TABLE `users`
   MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- Restrictii pentru tabele sterse
---
-
---
--- Restrictii pentru tabele `addresses`
---
-ALTER TABLE `addresses`
-  ADD CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
