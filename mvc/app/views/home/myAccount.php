@@ -29,14 +29,41 @@
                 <label for="radio-2">Security&nbsp;Settings</label>
                 <div class="content">
                     <h3>Here, you can change your password and email</h3>
+                    
                     <ul style="margin-top:40px">
-                        <li><Strong style="margin-right:10px">Your old password:</Strong> <input type="text" style="width:200px" /></li>
-                        <li style="float:right;position:relative; margin-right: 90px"><button type="submit" id="confirmBtn1">Confirm</button></li>
-                        <li style="margin-top:25px"><Strong style="margin-right:10px">Your new password:</Strong> <input type="text" style="width:200px" /></li>
-                        <li><br /></li>
-                        <li style="margin-top:30px"><Strong style="margin-right:10px">Your old email:</Strong> <input type="text" style="width:200px" /></li>
-                        <li style="float:right;position:relative; margin-right: 90px"><button type="submit" id="confirmBtn2">Confirm</button></li>
-                        <li style="margin-top:25px"><Strong style="margin-right:10px">Your new email:</Strong> <input type="text" style="width:200px" /></li>
+                    
+                    <form action="myAccount/pwdChange" method="POST">
+
+                        <li><Strong style="margin-right:10px">Your old password:</Strong> 
+                            <input name="oldPwd" type="password" required style="width:200px" />
+                        </li>
+
+                        <li style="float:right; position:relative; margin-right: 90px">
+                            <input value="Confirm" type="submit" id="confirmBtn1"/>
+                        </li>
+
+                        <li style="margin-top:25px"><Strong style="margin-right:10px">Your new password:</Strong> 
+                            <input name="newPwd" type="password" required style="width:200px" />
+                        </li>
+                    </form>
+
+                    <li><br /></li>
+
+                    <form action="myAccount/emailChange" method="POST">
+
+                        <li style="margin-top:30px"><Strong style="margin-right:10px">Your old email:</Strong> 
+                            <input name="oldEmail" type="email" required style="width:200px" />
+                        </li>
+
+                        <li style="float:right;position:relative; margin-right: 90px">
+                            <input value="Confirm" type="submit" id="confirmBtn2"/>
+                        </li>
+
+                        <li style="margin-top:25px"><Strong style="margin-right:10px">Your new email:</Strong> 
+                            <input name="newEmail" type="email" required style="width:200px" />
+                        </li>
+                    </form>
+
                     </ul>
                 </div>
             </li>
