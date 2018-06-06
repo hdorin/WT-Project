@@ -20,8 +20,12 @@
         
         <h1>Register</h1>
         <p id="errorMsg"><?=$data['error']?></p>
-        <h2>Name</h2>
+        <h2>First Name</h2>
         <input id="nameField" name="nameField" type="text" required/>
+        <h2>Last Name</h2>
+        <input id="nameField" name="lnameField" type="text" required/>
+        <h2>Date of Birth</h2>
+        <input id="nameField" name="dobField" type="Date" required/>
         <h2>Email</h2>
         <input id="emailField" name="emailField" type="email" required/>
         <h2>Password</h2>

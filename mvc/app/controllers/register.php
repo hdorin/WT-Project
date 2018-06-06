@@ -23,37 +23,35 @@ class Register extends Controller
     }
     
     public function process(){
-        if(empty($_POST["nameField"])==1){
-            $this->reload("You did not enter a name!");
+        if(empty($_POST["nameField"])==1 ||
+            empty($_POST["lnameField"])==1 ||
+            empty($_POST["emailField"])==1 ||
+            empty($_POST["dobField"])==1 ||
+            empty($_POST["passField1"])==1 ||
+            empty($_POST["passField2"])==1)
+        {
+            $this->reload("All fields required!");
         }
         $name=$_POST["nameField"];
-        if(empty($_POST["emailField"])==1){
-            $this->reload("You did not enter an email!");
-        }
+        $lname=$_POST["lnameField"];
         $email=$_POST["emailField"];
-        if(empty($_POST["passField1"])==1){
-            $this->reload("You did not enter a password!");
-        }
+        $dob=$_POST["dobField"];
         $pass1=$_POST["passField1"];
-        if(empty($_POST["passField2"])==1){
-            $this->reload("You did not confirm the password!");
-        }
         $pass2=$_POST["passField2"];
-        if(isset($_POST["acceptEULA"])==0){
-            $this->reload("You did not accept the EULA!");
-        }
+
         if(strcmp($pass1,$pass2)!=0){
             $this->reload("Passwords do not match!");
             
         }
         $pass1=md5($pass1);
-        $this->create_account($name,$email,$pass1);
+        $this->create_account($name,$lname,$email,$dob,$pass1);
     }
-    public function create_account($name,$email,$pass){
+    public function create_account($name,$lname,$email,$dob,$pass){
         $link = $this->auctiox_db_connect();//simplify connection to the database
  
-        $sql = $link->prepare('INSERT INTO USERS (name, email, passw,type,date_created) VALUES (?, ?, ?, 1, now())');
-        $sql->bind_param('sss', $name,$email,$pass); 
+        $sql = $link->prepare('INSERT INTO USERS (name,lname,email,dob,passw,type,date_created) VALUES (?,?,?,?,?, 1, now())');
+
+        $sql->bind_param('sssss', $name,$lname,$email,$dob,$pass); 
         if($sql->execute() == true){
             $newURL="../login";
             $_SESSION["error"]="Please login!";

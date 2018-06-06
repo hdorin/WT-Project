@@ -13,14 +13,59 @@
                 <label for="radio-1">User&nbsp;Profile</label>
                 <div class="content">
                     <h3>This section contains basic info about you</h3>
-                    <img src="resources/images/userphoto.png" alt="template user photo" width="256" height="256" style="float:right" />
+
+                    <?php
+                    $link = $this->auctiox_db_connect();
+
+                    $sql = $link->prepare('SELECT image FROM users WHERE id = ?');
+                    $sql->bind_param('s', $_SESSION['userId']); 
+                    $sql->execute();
+                    $sql->bind_result($image);
+                    $sql->fetch();
+                    mysqli_close($link);
+
+                    echo '<img src=" ' .$image. '" alt="template user photo" width="256" height="256" style="float:right" />';
+
+                    ?>
+
                     <ul id="innerUl">
-                        <li><strong>Username</strong>: loverboy17</li>
-                        <li><strong>Last Name</strong>: Tiron</li>
-                        <li><strong>First Name</strong>: Adrian</li>
-                        <li><strong>Mobile Phone</strong>: (+40) 000 000 000</li>
-                        <li><strong>Date of Birth</strong>: 1 January 1970</li>
-                        <li><strong>Education Level</strong>: College (present)</li>
+                        <?php
+                            $link = $this->auctiox_db_connect();
+
+                            $sql = $link->prepare('SELECT name, lname, email, dob, date_created, type FROM users WHERE id = ?');
+                            $sql->bind_param('s', $_SESSION['userId']); 
+                            $sql->execute();
+                            $sql->bind_result($name,$lname,$email,$dob,$date_created,$type);
+                            $sql->fetch();
+                            mysqli_close($link);
+
+                            switch ($type) {
+                                case '1':
+                                    $typen = "Normal";
+                                    break;
+                                case '2':
+                                    $typen = "Administrator";
+                                    break;
+                                case '3':
+                                    $typen = "Suspended";
+                                    break;   
+                                default:
+                                    break;
+                            }
+
+                            $dob = date("d-m-Y", strtotime($dob));
+                            $date_created = date("d-m-Y", strtotime($date_created));
+
+                            echo '
+                            <li><strong>Last Name</strong>: ' .$name. '</li>
+                            <li><strong>First Name</strong>: ' .$lname. '</li>
+                            <li><strong>Email</strong>: ' .$email. '</li>
+                            <li><strong>Date of Birth</strong>: ' .$dob. '</li>
+                            <li><strong>Account created on</strong>: ' .$date_created. '</li>
+                            <li><strong>User type</strong>: ' .$typen. '</li>'
+                        ?>
+
+                        
                     </ul>
                 </div>
             </li>
