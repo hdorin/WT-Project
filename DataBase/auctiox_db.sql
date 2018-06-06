@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2018 at 02:10 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Generation Time: 06 Iun 2018 la 16:00
+-- Versiune server: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `attributes`
+-- Structura de tabel pentru tabelul `addresses`
+--
+
+CREATE TABLE `addresses` (
+  `user_id` int(20) UNSIGNED NOT NULL,
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
+  `phone_no` varchar(20) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `city` varchar(30) NOT NULL,
+  `county` varchar(30) NOT NULL,
+  `country` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structura de tabel pentru tabelul `attributes`
 --
 
 CREATE TABLE `attributes` (
@@ -38,7 +55,7 @@ CREATE TABLE `attributes` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auctions`
+-- Structura de tabel pentru tabelul `auctions`
 --
 
 CREATE TABLE `auctions` (
@@ -50,7 +67,7 @@ CREATE TABLE `auctions` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auction_prod`
+-- Structura de tabel pentru tabelul `auction_prod`
 --
 
 CREATE TABLE `auction_prod` (
@@ -61,7 +78,7 @@ CREATE TABLE `auction_prod` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `brands`
+-- Structura de tabel pentru tabelul `brands`
 --
 
 CREATE TABLE `brands` (
@@ -72,7 +89,7 @@ CREATE TABLE `brands` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Structura de tabel pentru tabelul `categories`
 --
 
 CREATE TABLE `categories` (
@@ -85,7 +102,7 @@ CREATE TABLE `categories` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cookies`
+-- Structura de tabel pentru tabelul `cookies`
 --
 
 CREATE TABLE `cookies` (
@@ -98,7 +115,22 @@ CREATE TABLE `cookies` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `images`
+-- Structura de tabel pentru tabelul `creditcards`
+--
+
+CREATE TABLE `creditcards` (
+  `user_id` int(20) UNSIGNED NOT NULL,
+  `number` int(30) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `exp_month` varchar(20) NOT NULL,
+  `exp_year` int(4) NOT NULL,
+  `cvv` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structura de tabel pentru tabelul `images`
 --
 
 CREATE TABLE `images` (
@@ -110,7 +142,7 @@ CREATE TABLE `images` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Structura de tabel pentru tabelul `orders`
 --
 
 CREATE TABLE `orders` (
@@ -126,7 +158,7 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_prod`
+-- Structura de tabel pentru tabelul `order_prod`
 --
 
 CREATE TABLE `order_prod` (
@@ -137,7 +169,7 @@ CREATE TABLE `order_prod` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Structura de tabel pentru tabelul `products`
 --
 
 CREATE TABLE `products` (
@@ -150,7 +182,7 @@ CREATE TABLE `products` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prod_atributes`
+-- Structura de tabel pentru tabelul `prod_atributes`
 --
 
 CREATE TABLE `prod_atributes` (
@@ -161,7 +193,7 @@ CREATE TABLE `prod_atributes` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prod_category`
+-- Structura de tabel pentru tabelul `prod_category`
 --
 
 CREATE TABLE `prod_category` (
@@ -172,7 +204,7 @@ CREATE TABLE `prod_category` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structura de tabel pentru tabelul `users`
 --
 
 CREATE TABLE `users` (
@@ -186,8 +218,21 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Salvarea datelor din tabel `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `passw`, `type`, `date_created`, `image`) VALUES
+(3, 'adrian', 'tda_mda@yahoo.com', '8c4205ec33d8f6caeaaaa0c10a14138c', '1', '2018-06-06', '');
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `addresses`
+--
+ALTER TABLE `addresses`
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- Indexes for table `auctions`
@@ -220,6 +265,12 @@ ALTER TABLE `cookies`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `value` (`value`),
   ADD KEY `value_2` (`value`);
+
+--
+-- Indexes for table `creditcards`
+--
+ALTER TABLE `creditcards`
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- Indexes for table `images`
@@ -278,7 +329,23 @@ ALTER TABLE `cookies`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Restrictii pentru tabele sterse
+--
+
+--
+-- Restrictii pentru tabele `addresses`
+--
+ALTER TABLE `addresses`
+  ADD CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Restrictii pentru tabele `creditcards`
+--
+ALTER TABLE `creditcards`
+  ADD CONSTRAINT `creditcards_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
