@@ -72,7 +72,7 @@
                 <label for="radio-3">Payment&nbsp;Options</label>
                 <div class="content">
                     <h3>Add / Delete / Edit Credit Cards here</h3>
-                    <a href="" onclick="return false" class="addnewcard">+ Add New Card</a>
+                    <a href="addCreditCardForm" class="addnewcard">+ Add New Card</a>
 
                     <ul class="creditcard">
                         <li><strong>VISA</strong> **** 9999</li>
