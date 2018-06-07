@@ -13,6 +13,7 @@
         list-style: none;
         margin: 0;
         padding: 0;
+        margin-bottom: 3%;
     }
 
     .accordion li {
@@ -86,7 +87,7 @@
 }
 
 .vertical [type=radio]:checked ~ label ~ .content, .vertical [type=checkbox]:checked ~ label ~ .content {
-    height: 300px;
+    height: auto;
     border: 1px solid #542437;
 }
 
@@ -129,7 +130,12 @@
 }
 
 .accordion ul li .content .creditcard li {
-    
+    font-size: 16px;
+    font-family: Helvetica;
+}
+
+.accordion ul li .content .creditcard li:not(:first-child){
+    margin-top: 3%;
 }
 
 /****************************/
@@ -166,7 +172,8 @@
 
     /*******************************/
 
-.accordion ul li .content .addressbox .liSpec .transparent_btn {
+.accordion ul li .content .addressbox .liSpec .transparent_btn,
+ .accordion ul li .content .creditcard .liSpec .transparent_btn{
     display: inline-block;
     padding: 6px 10px;
     border: 1px solid #FFF;
@@ -181,7 +188,8 @@
     border-color: #aeddf5;
 }
 
-    .accordion ul li .content .addressbox .liSpec .transparent_btn:hover {
+    .accordion ul li .content .addressbox .liSpec .transparent_btn:hover,
+    .accordion ul li .content .creditcard .liSpec .transparent_btn:hover {
         background-color: rgba(174, 221, 245, 0.3);
         color: #FFF;
     }
@@ -193,9 +201,22 @@
     padding: 8px 8px 8px 8px;
 }
 
-    .accordion ul li .content .addressbox .liSpec {
+    .accordion ul li .content .addressbox .liSpec,
+    .accordion ul li .content .creditcard .liSpec {
         float: right;
         margin-left: 15px;
         position: relative;
         bottom: 6px;
     }
+    .accordion ul li .content .creditcard .liSpec{
+        bottom: 20px;
+    }
+
+#responseMsg{
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            color:red;
+            border-radius: 6px;
+            text-align: center;
+        }

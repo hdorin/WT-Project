@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06 Iun 2018 la 18:38
+-- Generation Time: 07 Iun 2018 la 12:49
 -- Versiune server: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -138,7 +138,7 @@ CREATE TABLE `creditcards` (
 --
 
 INSERT INTO `creditcards` (`user_id`, `number`, `name`, `exp_month`, `exp_year`, `cvv`) VALUES
-(3, 4111111111111111, 'adr', 'february', 2020, 234),
+(3, 4012888888881881, 'Tiron', 'april', 2027, 125),
 (3, 5105105105105100, 'adr', 'january', 2019, 123);
 
 -- --------------------------------------------------------
@@ -334,7 +334,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cookies`
 --
 ALTER TABLE `cookies`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

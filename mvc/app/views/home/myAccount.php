@@ -4,6 +4,7 @@
 ?>
     <link rel="stylesheet" href="resources/stylesheets/myAccount.css" type="text/css" />
 
+    <p id="responseMsg"><?=$data['resp']?></p>
 
     <br />
     <div class="accordion vertical">
@@ -119,6 +120,41 @@
                     <h3>Add / Delete / Edit Credit Cards here</h3>
                     <a href="addCreditCardForm" class="addnewcard">+ Add New Card</a>
 
+                    <?php
+                        $link = $this->auctiox_db_connect();
+                        $sql = $link->prepare('SELECT number,name,exp_month,exp_year FROM creditcards WHERE user_id = ?');
+                        $sql->bind_param('s', $_SESSION['userId']);
+                        $sql->execute();
+
+                        $ccno = null; $ccname = null; $ccm = null; $ccy = null;
+                        $sql->bind_result($ccno,$ccname,$ccm,$ccy);
+
+                        while ($sql->fetch()) {
+                            echo '
+                            <ul class="creditcard">
+                                <li><strong>'.strtoupper($ccname).'</strong> &emsp; &emsp; '
+                                .substr($ccno, 0, 4) ." ". str_repeat('*', strlen($ccno) - 8) ." ". substr($ccno, -4). '</li>
+                                <form method="POST" action="myAccount/deleteCC">
+                                <input type="hidden" name="ccno" value="'.$ccno.'"/>
+                                <li class="liSpec"><input type="submit" value="Delete" onclick="return confirm(\'Are you sure you wish to delete this item?\');" class="transparent_btn"/></li>
+                                </form>
+
+                                <form method="POST" action="modifyCreditCard">
+                                <input type="hidden" name="ccno" value="'.$ccno.'"/>
+                                <li class="liSpec"><input type="submit" value="Modify" class="transparent_btn"/></li>
+                                </form>
+                                
+                                <li>Expires in <strong> '.ucfirst($ccm) . ' - ' . $ccy.'</strong></li>
+                            </ul>';
+                        }
+
+                        $sql->close();
+                        mysqli_close($link);
+                    ?>
+
+
+
+                    <!--
                     <ul class="creditcard">
                         <li><strong>VISA</strong> **** 9999</li>
                         <li><img src="resources/images/visa.png" alt="Visa logo" style="float:right;width:64px;height:35px" /></li>
@@ -130,6 +166,7 @@
                         <li><img src="resources/images/maestro.png" alt="Visa logo" style="float:right;width:64px;height:50px" /></li>
                         <li>Expires in July 2021</li>
                     </ul>
+                    -->
                 </div>
             </li>
             <li>
