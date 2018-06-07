@@ -20,7 +20,7 @@ class ModifyAddress extends Controller
     	if(empty($_POST["name"])==1 || empty($_POST["phoneno"])==1 || empty($_POST["address"])==1
             || empty($_POST["city"])==1 || empty($_POST["county"])==1 || empty($_POST["country"])==1)
     	{
-            die("All fields required!");
+            $this->reload("All fields required!");
         }
 
         $id = $_POST['id'];
@@ -32,19 +32,19 @@ class ModifyAddress extends Controller
         $country = $_POST["country"];
 
     	if (preg_match('/[^A-Za-z ]/', $name))
-            die("Name must contain english characters only!");
+            $this->reload("Name must contain english characters only!");
 
         if (preg_match('/[^0-9]/', $phoneno))
-            die("Phone number must contain numbers only!");
+            $this->reload("Phone number must contain numbers only!");
 
         if (preg_match('/[^A-Za-z ]/', $city))
-            die("City must contain english characters only!");
+            $this->reload("City must contain english characters only!");
 
         if (preg_match('/[^A-Za-z ]/', $county))
-            die("County must contain english characters only!");
+            $this->reload("County must contain english characters only!");
 
         if (preg_match('/[^A-Za-z ]/', $country))
-            die("Country must contain english characters only!");
+            $this->reload("Country must contain english characters only!");
 
 
         $this->update_address($id,$name,$phoneno,$address,$city,$county,$country);
@@ -67,7 +67,7 @@ class ModifyAddress extends Controller
         $status = $sql->execute();
 
         if ($status == false)
-            die("SQL query failed...");
+            $this->reload("SQL query failed...");
 
         mysqli_close($link);
     }

@@ -17,22 +17,22 @@
  
   <div class="form-body">
   	<!-- Name -->
-  	<input name="name" type="text" class="card-number" placeholder="Name">
+  	<input name="name" type="text" class="card-number" placeholder="Name" required>
 
     <!-- Phone Number -->
-    <input name="phoneno" type="text" class="card-number" placeholder="Phone Number">
+    <input name="phoneno" type="text" class="card-number" placeholder="Phone Number" required>
  
     <!-- Address -->
-    <input name="address" type="address" class="card-number" placeholder="Address">
+    <input name="address" type="address" class="card-number" placeholder="Address" required>
 
     <!-- City -->
-    <input name="city" type="text" class="card-number" placeholder="City">
+    <input name="city" type="text" class="card-number" placeholder="City" required>
  
     <!-- County -->
-    <input name="county" type="text" class="card-number" placeholder="County">
+    <input name="county" type="text" class="card-number" placeholder="County" required>
  	  
     <!-- Country -->
-    <input name="country" type="text" class="card-number" placeholder="Country">
+    <input name="country" type="text" class="card-number" placeholder="Country" required>
 
     <!-- Buttons -->
     <input value="Proceed" type="submit" class="proceed-btn" />

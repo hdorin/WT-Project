@@ -20,7 +20,7 @@ class ModifyCreditCard extends Controller
     	if(empty($_POST["ccname"])==1 || empty($_POST["ccmonth"])==1
     		|| empty($_POST["ccyear"])==1 || empty($_POST["ccver"])==1)
     	{
-            die("All fields required!");
+            $this->reload("All fields required!");
         }
 
 
@@ -31,10 +31,10 @@ class ModifyCreditCard extends Controller
     	$cvv = $_POST["ccver"];
 
     	if (preg_match('/[^A-Za-z ]/', $name))
-    		die("Name must contain english characters only!");
+            $this->reload("Name must contain english characters only!");
 
     	if (preg_match('/[^0-9]/', $cvv) || strlen((string)$cvv) != 3)
-    		die("CVV not valid!");
+            $this->reload("CVV not valid!");
 
     	$this->update_cc($number,$name,$expmonth,$expyear,$cvv);
 
@@ -58,7 +58,7 @@ class ModifyCreditCard extends Controller
         $status = $sql->execute();
 
         if ($status == false)
-        	die("SQL query failed...");
+            $this->reload("SQL query failed...");
 
         $sql->close();
         mysqli_close($link);
