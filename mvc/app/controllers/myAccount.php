@@ -153,7 +153,25 @@ class MyAccount extends Controller
         $sql->execute();
         mysqli_close($link);
 
-        $_SESSION["response"]="Credit card deleted successfully";
+        $_SESSION["response"]="Credit card deleted successfully...";
+        $newURL="../myAccount";
+        header('Location: '.$newURL);
+        die;
+
+    }
+
+    public function deleteAddress()
+    {
+        $id = $_POST['id'];
+
+        $link = $this->auctiox_db_connect();
+        $sql = $link->prepare('DELETE FROM addresses WHERE id = ?');
+
+        $sql->bind_param('s', $id); 
+        $sql->execute();
+        mysqli_close($link);
+
+        $_SESSION["response"]="Address deleted successfully...";
         $newURL="../myAccount";
         header('Location: '.$newURL);
         die;

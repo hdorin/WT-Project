@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 07 Iun 2018 la 12:49
+-- Generation Time: 07 Iun 2018 la 13:42
 -- Versiune server: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `addresses` (
+  `id` int(20) UNSIGNED NOT NULL,
   `user_id` int(20) UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL,
   `phone_no` varchar(20) NOT NULL,
@@ -42,8 +43,9 @@ CREATE TABLE `addresses` (
 -- Salvarea datelor din tabel `addresses`
 --
 
-INSERT INTO `addresses` (`user_id`, `name`, `phone_no`, `address`, `city`, `county`, `country`) VALUES
-(5, 'Adrian Tiron', '0752374303', 'M-sal C-tin Prezan, Bl102, ScA, Ap9, Et2', 'Vaslui', 'Vaslui', 'Romania');
+INSERT INTO `addresses` (`id`, `user_id`, `name`, `phone_no`, `address`, `city`, `county`, `country`) VALUES
+(1, 5, 'Adrian Tiron', '0752374303', 'M-sal C-tin Prezan, Bl102, ScA, Ap9, Et2', 'Vaslui', 'Vaslui', 'Romania'),
+(3, 3, 'Dorin Haloca', '0720542823', 'Str. Trandafirilor 10,bl. 201,et.3,ap.21', 'Barlad', 'Vaslui', 'Romania');
 
 -- --------------------------------------------------------
 
@@ -246,6 +248,12 @@ INSERT INTO `users` (`id`, `name`, `lname`, `email`, `dob`, `passw`, `type`, `da
 --
 
 --
+-- Indexes for table `addresses`
+--
+ALTER TABLE `addresses`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `auctions`
 --
 ALTER TABLE `auctions`
@@ -329,6 +337,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `addresses`
+--
+ALTER TABLE `addresses`
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `cookies`
