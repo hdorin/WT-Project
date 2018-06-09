@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06 Iun 2018 la 18:38
+-- Generation Time: 07 Iun 2018 la 13:42
 -- Versiune server: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `addresses` (
+  `id` int(20) UNSIGNED NOT NULL,
   `user_id` int(20) UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL,
   `phone_no` varchar(20) NOT NULL,
@@ -42,8 +43,9 @@ CREATE TABLE `addresses` (
 -- Salvarea datelor din tabel `addresses`
 --
 
-INSERT INTO `addresses` (`user_id`, `name`, `phone_no`, `address`, `city`, `county`, `country`) VALUES
-(5, 'Adrian Tiron', '0752374303', 'M-sal C-tin Prezan, Bl102, ScA, Ap9, Et2', 'Vaslui', 'Vaslui', 'Romania');
+INSERT INTO `addresses` (`id`, `user_id`, `name`, `phone_no`, `address`, `city`, `county`, `country`) VALUES
+(1, 5, 'Adrian Tiron', '0752374303', 'M-sal C-tin Prezan, Bl102, ScA, Ap9, Et2', 'Vaslui', 'Vaslui', 'Romania'),
+(3, 3, 'Dorin Haloca', '0720542823', 'Str. Trandafirilor 10,bl. 201,et.3,ap.21', 'Barlad', 'Vaslui', 'Romania');
 
 -- --------------------------------------------------------
 
@@ -138,7 +140,7 @@ CREATE TABLE `creditcards` (
 --
 
 INSERT INTO `creditcards` (`user_id`, `number`, `name`, `exp_month`, `exp_year`, `cvv`) VALUES
-(3, 4111111111111111, 'adr', 'february', 2020, 234),
+(3, 4012888888881881, 'Tiron', 'april', 2027, 125),
 (3, 5105105105105100, 'adr', 'january', 2019, 123);
 
 -- --------------------------------------------------------
@@ -246,6 +248,12 @@ INSERT INTO `users` (`id`, `name`, `lname`, `email`, `dob`, `passw`, `type`, `da
 --
 
 --
+-- Indexes for table `addresses`
+--
+ALTER TABLE `addresses`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `auctions`
 --
 ALTER TABLE `auctions`
@@ -331,10 +339,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `addresses`
+--
+ALTER TABLE `addresses`
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `cookies`
 --
 ALTER TABLE `cookies`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -10,17 +10,18 @@
 
 <p id="responseMsg"><?=$data['resp']?></p>
 
-<form action="addCreditCardForm/process" method="POST" class="credit-card">
+<form action="modifyCreditCard/process" method="POST" class="credit-card">
   <div class="form-header">
-    <h4 class="title">Add a new credit card</h4>
+    <h4 class="title">Modify your credit card</h4>
   </div>
  
   <div class="form-body">
   	<!-- Name -->
-  	<input name="ccname" type="text" class="card-number" placeholder="Name" required>
+  	<input name="ccname" type="text" class="card-number" placeholder="Name">
 
     <!-- Card Number -->
-    <input name="ccnumber" type="text" class="card-number" placeholder="Card Number" required>
+    <input name="ccnumber" type="text" class="card-number" value="<?php if (isset($_POST['ccno']))echo $_POST['ccno']; else echo 'Card Number'; ?>" 
+    readonly >
  
     <!-- Date Field -->
     <div class="date-field">
@@ -61,7 +62,7 @@
     <!-- Card Verification Field -->
     <div class="card-verification">
       <div class="cvv-input">
-        <input name="ccver" type="text" placeholder="CVV" required>
+        <input name="ccver" type="text" placeholder="CVV">
       </div>
       <div class="cvv-details">
       </div>
