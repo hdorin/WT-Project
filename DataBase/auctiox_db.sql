@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10 Iun 2018 la 13:52
+-- Generation Time: 10 Iun 2018 la 13:59
 -- Versiune server: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -157,8 +157,10 @@ CREATE TABLE `products` (
   `id` int(20) UNSIGNED NOT NULL,
   `title` varchar(50) NOT NULL,
   `description` varchar(50) DEFAULT NULL,
+  `keywords` varchar(255) NOT NULL,
   `condition` varchar(50) NOT NULL,
   `brand` varchar(100) NOT NULL,
+  `country` varchar(100) NOT NULL,
   `curr_price` int(20) UNSIGNED NOT NULL,
   `next_price` int(20) UNSIGNED NOT NULL,
   `expires_on` date NOT NULL,
