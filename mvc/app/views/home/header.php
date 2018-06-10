@@ -123,7 +123,7 @@
                         <div class="dropdown-content2">
                             <a href="contact">Contact Us</a>
                             <a href="about">About Us</a>
-                            <a href="#">Shipping</a>
+                            <a href="shipping">Shipping</a>
 
                         </div>
                     </li>
@@ -132,7 +132,6 @@
                     <li class="currencies">
                         Currencies
                         <select>
-                            <option>RON</option>
                             <option>US Dollar</option>
                             <option>Euro</option>
                         </select>
