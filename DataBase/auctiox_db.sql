@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10 Iun 2018 la 13:59
+-- Generation Time: 10 Iun 2018 la 15:46
 -- Versiune server: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -289,6 +289,12 @@ ALTER TABLE `addresses`
   MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `auctions`
+--
+ALTER TABLE `auctions`
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `auction_prod`
 --
 ALTER TABLE `auction_prod`
@@ -301,9 +307,21 @@ ALTER TABLE `cookies`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `order_prod`
 --
 ALTER TABLE `order_prod`
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
   MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
