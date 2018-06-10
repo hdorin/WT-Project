@@ -17,10 +17,10 @@
  
   <div class="form-body">
   	<!-- Name -->
-  	<input name="ccname" type="text" class="card-number" placeholder="Name">
+  	<input name="ccname" type="text" class="card-number" placeholder="Name" required>
 
     <!-- Card Number -->
-    <input name="ccnumber" type="text" class="card-number" placeholder="Card Number">
+    <input name="ccnumber" type="text" class="card-number" placeholder="Card Number" required>
  
     <!-- Date Field -->
     <div class="date-field">
@@ -61,7 +61,7 @@
     <!-- Card Verification Field -->
     <div class="card-verification">
       <div class="cvv-input">
-        <input name="ccver" type="text" placeholder="CVV">
+        <input name="ccver" type="text" placeholder="CVV" required>
       </div>
       <div class="cvv-details">
       </div>
