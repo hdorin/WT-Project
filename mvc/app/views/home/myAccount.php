@@ -4,7 +4,6 @@
 ?>
     <link rel="stylesheet" href="resources/stylesheets/myAccount.css" type="text/css" />
 
-    <p id="responseMsg"><?=$data['resp']?></p>
 
     <br />
     <div class="accordion vertical">
@@ -120,38 +119,17 @@
                     <h3>Add / Delete / Edit Credit Cards here</h3>
                     <a href="addCreditCardForm" class="addnewcard">+ Add New Card</a>
 
-                    <?php
-                        $link = $this->auctiox_db_connect();
-                        $sql = $link->prepare('SELECT number,name,exp_month,exp_year FROM creditcards WHERE user_id = ?');
-                        $sql->bind_param('s', $_SESSION['userId']);
-                        $sql->execute();
+                    <ul class="creditcard">
+                        <li><strong>VISA</strong> **** 9999</li>
+                        <li><img src="resources/images/visa.png" alt="Visa logo" style="float:right;width:64px;height:35px" /></li>
+                        <li>Expires in February 2020</li>
+                    </ul>
 
-                        $ccno = null; $ccname = null; $ccm = null; $ccy = null;
-                        $sql->bind_result($ccno,$ccname,$ccm,$ccy);
-
-                        while ($sql->fetch()) {
-                            echo '
-                            <ul class="creditcard">
-                                <li><strong>'.strtoupper($ccname).'</strong> &emsp; &emsp; '
-                                .substr($ccno, 0, 4) ." ". str_repeat('*', strlen($ccno) - 8) ." ". substr($ccno, -4). '</li>
-                                <form method="POST" action="myAccount/deleteCC">
-                                <input type="hidden" name="ccno" value="'.$ccno.'"/>
-                                <li class="liSpec"><input type="submit" value="Delete" onclick="return confirm(\'Are you sure you wish to delete this item?\');" class="transparent_btn"/></li>
-                                </form>
-
-                                <form method="POST" action="modifyCreditCard">
-                                <input type="hidden" name="ccno" value="'.$ccno.'"/>
-                                <li class="liSpec"><input type="submit" value="Modify" class="transparent_btn"/></li>
-                                </form>
-
-                                <li>Expires in <strong> '.ucfirst($ccm) . ' - ' . $ccy.'</strong></li>
-                            </ul>';
-                        }
-
-                        $sql->close();
-                        mysqli_close($link);
-                    ?>
-
+                    <ul class="creditcard">
+                        <li><strong>Maestro</strong> **** 8888</li>
+                        <li><img src="resources/images/maestro.png" alt="Visa logo" style="float:right;width:64px;height:50px" /></li>
+                        <li>Expires in July 2021</li>
+                    </ul>
                 </div>
             </li>
             <li>
@@ -160,49 +138,6 @@
                 <div class="content">
                     <a href="addAddressForm" class="addnewcard" style="margin-top: 7%">+ Add New Address</a>
                     <h3>Add addresses here beforehand</h3>
-
-                    <?php
-                        $link = $this->auctiox_db_connect();
-                        $sql = $link->prepare('SELECT id,name,phone_no,address,city,county,country FROM addresses WHERE user_id = ?');
-                        $sql->bind_param('s', $_SESSION['userId']);
-                        $sql->execute();
-
-                        $id = null; $name = null; $address = null; $phone_no = null;
-                        $city = null; $county = null; $country = null;
-                        $sql->bind_result($id,$name,$phone_no,$address,$city,$county,$country);
-
-                        while ($sql->fetch()) {
-                            echo '
-                            <ul class="addressbox">
-                                <li><strong>'.ucfirst($name).' - '.$phone_no.'</strong></li>
-
-                                <form method="POST" action="myAccount/deleteAddress">
-                                <input type="hidden" name="id" value="'.$id.'"/>
-                                <li class="liSpec"><input type="submit" value="Delete" onclick="return confirm(\'Are you sure you wish to delete this item?\');" class="transparent_btn"/></li>
-                                </form>
-
-                                <form method="POST" action="modifyAddress">
-                                <input type="hidden" name="id" value="'.$id.'"/>
-                                <input type="hidden" name="name" value="'.$name.'"/>
-                                <input type="hidden" name="phone_no" value="'.$phone_no.'"/>
-                                <input type="hidden" name="address" value="'.$address.'"/>
-                                <input type="hidden" name="city" value="'.$city.'"/>
-                                <input type="hidden" name="county" value="'.$county.'"/>
-                                <input type="hidden" name="country" value="'.$country.'"/>
-                                <li class="liSpec"><input type="submit" value="Modify" class="transparent_btn"/></li>
-                                </form>
-    
-                                <li>'.$address.'</li>
-                                <li>'.$city.', '.$county.'</li>
-                                <li>'.$country.'</li>
-                            </ul>';
-                        }
-
-                        $sql->close();
-                        mysqli_close($link);
-                    ?>
-
-                    <!--
                     <ul class="addressbox">
                         <li><strong>Adrian Tiron - 0700000000</strong></li>
                         <li class="liSpec"><a href="" onclick="return false" class="transparent_btn">Delete</a></li>
@@ -218,8 +153,6 @@
                         <li>Str. Dorel Locotenent no. 2</li>
                         <li>Vaslui, Barlad</li>
                     </ul>
-                    -->
-
                 </div>
             </li>
         </ul>

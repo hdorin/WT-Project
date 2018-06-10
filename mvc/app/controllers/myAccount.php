@@ -3,18 +3,11 @@ class MyAccount extends Controller
 {
     public function index()
     {
-        if(isset($_SESSION["response"])==false){
-            $resp="";
-        }else{
-            $resp=$_SESSION["response"];
-        }
 
     	if (isset($_SESSION['userId'])==false)
     		die('You must first login to access this page!');
         else 
-        	$this->view('home/myaccount',['resp' => $resp]);
-
-        unset($_SESSION["response"]);
+        	$this->view('home/myaccount',[]);
     }
 
     public function reload($data=''){
@@ -140,42 +133,6 @@ class MyAccount extends Controller
             $newURL="../myAccount";
             header('Location: '.$newURL);
 		}
-    }
-
-    public function deleteCC()
-    {
-        $ccno = $_POST['ccno'];
-
-        $link = $this->auctiox_db_connect();
-        $sql = $link->prepare('DELETE FROM creditcards WHERE number = ?');
-
-        $sql->bind_param('s', $ccno); 
-        $sql->execute();
-        mysqli_close($link);
-
-        $_SESSION["response"]="Credit card deleted successfully...";
-        $newURL="../myAccount";
-        header('Location: '.$newURL);
-        die;
-
-    }
-
-    public function deleteAddress()
-    {
-        $id = $_POST['id'];
-
-        $link = $this->auctiox_db_connect();
-        $sql = $link->prepare('DELETE FROM addresses WHERE id = ?');
-
-        $sql->bind_param('s', $id); 
-        $sql->execute();
-        mysqli_close($link);
-
-        $_SESSION["response"]="Address deleted successfully...";
-        $newURL="../myAccount";
-        header('Location: '.$newURL);
-        die;
-
     }
 
 }
