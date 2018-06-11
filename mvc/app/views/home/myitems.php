@@ -11,7 +11,7 @@
     </div>
 
     <div id="txtHint">
-        <p>Items info will be listed here.</p>
+
     </div>
 
 

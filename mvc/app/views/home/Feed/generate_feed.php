@@ -25,15 +25,28 @@ if($feed_type == 'RSS') {
     foreach ($result as $d) {
 
         foreach ($d as $s) {
-            $id = $s['product_id'];
+            $id = $s['id'];
             $title = $s['title'];
             $desc = $s['description'];
-            $state = $s['is_active'];
+            $keyw = $s['keywords'];
+            $cond = $s['condition'];
+            $brand = $s['brand'];
+            $country = $s['country'];
+            $cur_p = $s['curr_price'];
+            $next_p = $s['next_price'];
+            $exp_on = $s['expires_on'];
 
             echo "  <item>\n";
-            echo "      <title>$title</title>
+            echo "      <id>$id</id>
+      <title>$title</title>
       <description>$desc</description>
-      <state>$state</state>
+      <keywords>$keyw</keywords>
+      <condition>$cond</condition>
+      <brand>$brand</brand>
+      <country>$country</country>
+      <current_price>$cur_p</current_price>
+      <next_price>$next_p</next_price>
+      <expires_on>$exp_on</expires_on>
       <link>link</link>\n";
             echo "  </item> \n";
         }
@@ -64,22 +77,33 @@ if($feed_type == 'Atom') {
   </author>\n\n";
 
 
+
     foreach ($result as $d) {
 
         foreach ($d as $s) {
-            $id = $s['product_id'];
+            $id = $s['id'];
             $title = $s['title'];
             $desc = $s['description'];
-            $state = $s['is_active'] == 1 ? 'active' : 'inacvtive';
-            $link = "localhost/product?id=$id";
-            $db_last_update = 'db_product_last_update';
+            $keyw = $s['keywords'];
+            $cond = $s['condition'];
+            $brand = $s['brand'];
+            $country = $s['country'];
+            $cur_p = $s['curr_price'];
+            $next_p = $s['next_price'];
+            $exp_on = $s['expires_on'];
 
             echo "  <entry>\n";
-            echo "      <title>$title</title>
-      <summary>$desc</summary>
-      <state>$state</state>
-      <link href = $link/>
-      <updated>$db_last_update</updated>\n";
+            echo "      <id>$id</id>
+      <title>$title</title>
+      <description>$desc</description>
+      <keywords>$keyw</keywords>
+      <condition>$cond</condition>
+      <brand>$brand</brand>
+      <country>$country</country>
+      <current_price>$cur_p</current_price>
+      <next_price>$next_p</next_price>
+      <expires_on>$exp_on</expires_on>
+      <link href = link/>\n";
             echo "  </entry> \n";
         }
     }
