@@ -39,7 +39,7 @@ class AddCreditCardForm extends Controller
     	if(empty($_POST["ccname"])==1 || empty($_POST["ccnumber"])==1 || empty($_POST["ccmonth"])==1
     		|| empty($_POST["ccyear"])==1 || empty($_POST["ccver"])==1)
     	{
-            $this->reload("All fields required!");
+            die("All fields required!");
         }
 
 
@@ -52,15 +52,15 @@ class AddCreditCardForm extends Controller
     	$cvv = $_POST["ccver"];
 
     	if (preg_match('/[^A-Za-z ]/', $name))
-            $this->reload("Name must contain english characters only!");
+    		die("Name must contain english characters only!");
     	
     	$cc_checked = $this->check_cc($copy);
 
     	if ($cc_checked == FALSE)
-            $this->reload("Credit card number is not VALID!");
+    		die("Credit card number is not VALID!");
 
     	if (preg_match('/[^0-9]/', $cvv) || strlen((string)$cvv) != 3)
-            $this->reload("CVV not valid!");
+    		die("CVV not valid!");
 
     	$this->add_cc($number,$name,$expmonth,$expyear,$cvv);
 
@@ -84,7 +84,7 @@ class AddCreditCardForm extends Controller
         $status = $sql->execute();
 
         if ($status == false)
-            $this->reload("SQL query failed...");
+        	die("SQL query failed...");
 
         mysqli_close($link);
     }

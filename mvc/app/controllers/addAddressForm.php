@@ -32,19 +32,19 @@ class AddAddressForm extends Controller
         $country = $_POST["country"];
 
     	if (preg_match('/[^A-Za-z ]/', $name))
-            $this->reload("Name must contain english characters only!");
-        
+    		die("Name must contain english characters only!");
+
         if (preg_match('/[^0-9]/', $phoneno))
-            $this->reload("Phone number must contain numbers only!");
+            die("Phone number must contain numbers only!");
 
         if (preg_match('/[^A-Za-z ]/', $city))
-            $this->reload("City must contain english characters only!");
+            die("City must contain english characters only!");
 
         if (preg_match('/[^A-Za-z ]/', $county))
-            $this->reload("County must contain english characters only!");
+            die("County must contain english characters only!");
 
         if (preg_match('/[^A-Za-z ]/', $country))
-            $this->reload("Country must contain english characters only!");
+            die("Country must contain english characters only!");
 
 
     	$this->add_address($name,$phoneno,$address,$city,$county,$country);
@@ -62,12 +62,12 @@ class AddAddressForm extends Controller
     public function add_address($name,$phoneno,$address,$city,$county,$country){
         $link = $this->auctiox_db_connect();//simplify connection to the database
  
-        $sql = $link->prepare('INSERT INTO addresses(user_id,name,phone_no,address,city,county,country) VALUES (?, ?, ?, ?, ?, ?, ?)');
+        $sql = $link->prepare('INSERT INTO addresses VALUES (?, ?, ?, ?, ?, ?, ?)');
         $sql->bind_param('sssssss', $_SESSION['userId'], $name,$phoneno,$address,$city,$county,$country); 
         $status = $sql->execute();
 
         if ($status == false)
-            $this->reload("SQL query failed...");
+        	die("SQL query failed...");
 
         mysqli_close($link);
     }
