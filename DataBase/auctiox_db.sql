@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13 Iun 2018 la 18:19
--- Versiune server: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Generation Time: Jun 13, 2018 at 06:47 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `addresses`
+-- Table structure for table `addresses`
 --
 
 CREATE TABLE `addresses` (
@@ -39,18 +39,10 @@ CREATE TABLE `addresses` (
   `country` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Salvarea datelor din tabel `addresses`
---
-
-INSERT INTO `addresses` (`id`, `user_id`, `name`, `phone_no`, `address`, `city`, `county`, `country`) VALUES
-(1, 5, 'Adrian Tiron', '0752374303', 'M-sal C-tin Prezan, Bl102, ScA, Ap9, Et2', 'Vaslui', 'Vaslui', 'Romania'),
-(3, 3, 'Dorin Haloca', '0720542823', 'Str. Trandafirilor 10,bl. 201,et.3,ap.21', 'Barlad', 'Vaslui', 'Romania');
-
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `auctions`
+-- Table structure for table `auctions`
 --
 
 CREATE TABLE `auctions` (
@@ -62,7 +54,7 @@ CREATE TABLE `auctions` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `auction_prod`
+-- Table structure for table `auction_prod`
 --
 
 CREATE TABLE `auction_prod` (
@@ -74,7 +66,7 @@ CREATE TABLE `auction_prod` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -87,7 +79,7 @@ CREATE TABLE `categories` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `cookies`
+-- Table structure for table `cookies`
 --
 
 CREATE TABLE `cookies` (
@@ -100,7 +92,7 @@ CREATE TABLE `cookies` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `creditcards`
+-- Table structure for table `creditcards`
 --
 
 CREATE TABLE `creditcards` (
@@ -112,18 +104,10 @@ CREATE TABLE `creditcards` (
   `cvv` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Salvarea datelor din tabel `creditcards`
---
-
-INSERT INTO `creditcards` (`user_id`, `number`, `name`, `exp_month`, `exp_year`, `cvv`) VALUES
-(3, 4012888888881881, 'Tiron', 'april', 2027, 125),
-(3, 5105105105105100, 'adr', 'january', 2019, 123);
-
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
@@ -138,7 +122,7 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `order_prod`
+-- Table structure for table `order_prod`
 --
 
 CREATE TABLE `order_prod` (
@@ -150,12 +134,13 @@ CREATE TABLE `order_prod` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
   `id` int(20) UNSIGNED NOT NULL,
   `sellerId` int(20) NOT NULL,
+  `winnerId` int(11) NOT NULL,
   `title` varchar(50) NOT NULL,
   `description` varchar(50) DEFAULT NULL,
   `keywords` varchar(255) NOT NULL,
@@ -165,22 +150,13 @@ CREATE TABLE `products` (
   `curr_price` int(20) UNSIGNED NOT NULL,
   `next_price` int(20) UNSIGNED NOT NULL,
   `expires_on` date NOT NULL,
-  `image` varchar(100) NOT NULL,
   `is_active` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Salvarea datelor din tabel `products`
---
-
-INSERT INTO `products` (`id`, `sellerId`, `title`, `description`, `keywords`, `condition`, `brand`, `country`, `curr_price`, `next_price`, `expires_on`, `image`, `is_active`) VALUES
-(1, 3, 'Speakers', 'Blast', 'audio device', 'Good', 'Shure', 'United States', 200, 220, '2018-06-17', 'speakers.jpg', 1),
-(4, 3, 'Handbag', 'Spacious', 'accessory', 'Like New', 'Gucci', 'United Kingdom', 5001, 5066, '2018-06-24', 'bag.jpg', 1);
 
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `prod_category`
+-- Table structure for table `prod_category`
 --
 
 CREATE TABLE `prod_category` (
@@ -192,7 +168,7 @@ CREATE TABLE `prod_category` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -206,14 +182,6 @@ CREATE TABLE `users` (
   `date_created` date NOT NULL,
   `image` varchar(50) NOT NULL DEFAULT 'resources/images/userphotos/3.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Salvarea datelor din tabel `users`
---
-
-INSERT INTO `users` (`id`, `name`, `lname`, `email`, `dob`, `passw`, `type`, `date_created`, `image`) VALUES
-(3, 'adrian', 'tiron', 'tda_mda@yahoo.com', '1998-01-08', '8c4205ec33d8f6caeaaaa0c10a14138c', '1', '2018-06-06', 'resources/images/userphotos/3.jpg'),
-(5, 'adrian', 'tiron', 'adrian@yahoo.com', '1998-01-08', '8c4205ec33d8f6caeaaaa0c10a14138c', '1', '2018-06-06', 'resources/images/userphotos/3.jpg');
 
 --
 -- Indexes for dumped tables
@@ -296,7 +264,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `auctions`
@@ -332,7 +300,7 @@ ALTER TABLE `order_prod`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `prod_category`
@@ -344,7 +312,7 @@ ALTER TABLE `prod_category`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

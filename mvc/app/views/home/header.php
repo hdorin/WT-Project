@@ -99,8 +99,8 @@
                     <li class="dropdown1">
                         <Button class="dropbtn1">Products</Button>
                         <div class="dropdown-content1">
-                            <a href="products">Link 1</a>
-                            <a href="products">Link 2</a>
+                            <a href="products">See feed</a>
+                            <a href="export/xml">Export XML</a>
                             <a href="products">Link 3</a>
                         </div>
                     </li>
