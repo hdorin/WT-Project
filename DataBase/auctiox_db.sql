@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10 Iun 2018 la 15:46
--- Versiune server: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Generation Time: Jun 13, 2018 at 05:13 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `addresses`
+-- Table structure for table `addresses`
 --
 
 CREATE TABLE `addresses` (
@@ -40,7 +40,7 @@ CREATE TABLE `addresses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Salvarea datelor din tabel `addresses`
+-- Dumping data for table `addresses`
 --
 
 INSERT INTO `addresses` (`id`, `user_id`, `name`, `phone_no`, `address`, `city`, `county`, `country`) VALUES
@@ -50,7 +50,7 @@ INSERT INTO `addresses` (`id`, `user_id`, `name`, `phone_no`, `address`, `city`,
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `auctions`
+-- Table structure for table `auctions`
 --
 
 CREATE TABLE `auctions` (
@@ -62,7 +62,7 @@ CREATE TABLE `auctions` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `auction_prod`
+-- Table structure for table `auction_prod`
 --
 
 CREATE TABLE `auction_prod` (
@@ -74,7 +74,7 @@ CREATE TABLE `auction_prod` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -87,7 +87,7 @@ CREATE TABLE `categories` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `cookies`
+-- Table structure for table `cookies`
 --
 
 CREATE TABLE `cookies` (
@@ -100,7 +100,7 @@ CREATE TABLE `cookies` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `creditcards`
+-- Table structure for table `creditcards`
 --
 
 CREATE TABLE `creditcards` (
@@ -113,7 +113,7 @@ CREATE TABLE `creditcards` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Salvarea datelor din tabel `creditcards`
+-- Dumping data for table `creditcards`
 --
 
 INSERT INTO `creditcards` (`user_id`, `number`, `name`, `exp_month`, `exp_year`, `cvv`) VALUES
@@ -123,7 +123,7 @@ INSERT INTO `creditcards` (`user_id`, `number`, `name`, `exp_month`, `exp_year`,
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
@@ -138,7 +138,7 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `order_prod`
+-- Table structure for table `order_prod`
 --
 
 CREATE TABLE `order_prod` (
@@ -150,11 +150,12 @@ CREATE TABLE `order_prod` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
   `id` int(20) UNSIGNED NOT NULL,
+  `sellerId` int(20) NOT NULL,
   `title` varchar(50) NOT NULL,
   `description` varchar(50) DEFAULT NULL,
   `keywords` varchar(255) NOT NULL,
@@ -170,7 +171,7 @@ CREATE TABLE `products` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `prod_category`
+-- Table structure for table `prod_category`
 --
 
 CREATE TABLE `prod_category` (
@@ -182,7 +183,7 @@ CREATE TABLE `prod_category` (
 -- --------------------------------------------------------
 
 --
--- Structura de tabel pentru tabelul `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -198,7 +199,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Salvarea datelor din tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `lname`, `email`, `dob`, `passw`, `type`, `date_created`, `image`) VALUES
