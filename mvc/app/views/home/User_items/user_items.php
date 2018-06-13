@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Dell
- * Date: 5/25/2018
- * Time: 10:17 PM
- */
 
 $q = isset($_GET['q'])? $_GET['q'] : 'my_uploaded_items';
 $result = $data['result'];
@@ -13,41 +7,79 @@ if($q === 'my_items') {
     echo 'inside my won items <br>';
 
     foreach ($result as $item){
-        echo '<div>';
-        echo '<p>' . $item['id'] . '</p>';
-        echo '<p>' . $item['title'] . '</p>';
-        echo '<p>' . $item['description'] . '</p>';
-        echo '<p>' . $item['keywords'] . '</p>';
-        echo '<p>' . $item['condition'] . '</p>';
-        echo '<p>' . $item['brand'] . '</p>';
-        echo '<p>' . $item['country'] . '</p>';
-        echo '<p>' . $item['curr_price'] . '</p>';
-        echo '<p>' . $item['next_price'] . '</p>';
-        echo '<p>' . $item['expires_on'] . '</p>';
+        echo '<div class="upl_items">
+        <img class="prod_img" src="resources/images/'.$item['image'].'" alt="product" />
+        <table class="table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Keywords</th>
+                        <th>Condition</th>
+                        <th>Brand</th>
+                        <th>Country</th>
+                        <th>Current Price</th>
+                        <th>Next Price</th>
+                        <th>Expires on</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>' . $item['title'] . '</td>
+                        <td>' . $item['description'] . '</td>
+                        <td>' . $item['keywords'] . '</td>
+                        <td>' . $item['condition'] . '</td>
+                        <td>' . $item['brand'] . '</td>
+                        <td>' . $item['country'] . '</td>
+                        <td>' . $item['curr_price'] . '</td>
+                        <td>' . $item['next_price'] . '</td>
+                        <td>' . $item['expires_on'] . '</td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>';
 
-        echo '</div>';
     }
 
 }
 
 if($q === 'my_uploaded_items') {
-    require_once 'user_item_form_upload.php';
-
+    
     foreach ($result as $item){
-        echo '<div>';
-        echo '<p>' . $item['id'] . '</p>';
-        echo '<p>' . $item['title'] . '</p>';
-        echo '<p>' . $item['description'] . '</p>';
-        echo '<p>' . $item['keywords'] . '</p>';
-        echo '<p>' . $item['condition'] . '</p>';
-        echo '<p>' . $item['brand'] . '</p>';
-        echo '<p>' . $item['country'] . '</p>';
-        echo '<p>' . $item['curr_price'] . '</p>';
-        echo '<p>' . $item['next_price'] . '</p>';
-        echo '<p>' . $item['expires_on'] . '</p>';
+        echo '<div class="upl_items">
+        <img class="prod_img" src="resources/images/'.$item['image'].'" alt="product" />
+        <table class="table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Keywords</th>
+                        <th>Condition</th>
+                        <th>Brand</th>
+                        <th>Country</th>
+                        <th>Current Price</th>
+                        <th>Next Price</th>
+                        <th>Expires on</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>' . $item['title'] . '</td>
+                        <td>' . $item['description'] . '</td>
+                        <td>' . $item['keywords'] . '</td>
+                        <td>' . $item['condition'] . '</td>
+                        <td>' . $item['brand'] . '</td>
+                        <td>' . $item['country'] . '</td>
+                        <td>' . $item['curr_price'] . '</td>
+                        <td>' . $item['next_price'] . '</td>
+                        <td>' . $item['expires_on'] . '</td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>';
 
-
-        echo '</div>';
     }
+
+    include 'user_item_form_upload.php';
 
 }
