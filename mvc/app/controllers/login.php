@@ -28,7 +28,7 @@ class Login extends Controller
             $cookie_value=(string)random_int(0,1000000000);
             $cookie_value=$cookie_value . (string)random_int(0,1000000000);
             $cookie_value=$cookie_value . (string)random_int(0,1000000000);
-            setcookie("AuthenticationId", $cookie_value, time() + (86400 * 30), "/");
+            setcookie("AuthenticationId", $cookie_value, time()+3600, "/");/* expire in 1 hour */
             $cookie_value=md5($cookie_value);
             $sql->bind_param('ss', $userId,$cookie_value); 
         }while($sql->execute() == false);//in case cookie value already exists
