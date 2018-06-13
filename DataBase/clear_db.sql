@@ -1,12 +1,11 @@
-DROP TABLE attributes;
+DROP TABLE addresses;
 DROP TABLE auctions;
 DROP TABLE auction_prod;
-DROP TABLE brands;
 DROP TABLE categories;
-DROP TABLE images;
+DROP TABLE cookies;
+DROP TABLE creditcards;
 DROP TABLE orders;
 DROP TABLE order_prod;
 DROP TABLE products;
-DROP TABLE prod_atributes;
 DROP TABLE prod_category;
 DROP TABLE users;

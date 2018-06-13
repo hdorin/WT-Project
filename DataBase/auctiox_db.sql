@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2018 at 05:13 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Generation Time: 13 Iun 2018 la 17:25
+-- Versiune server: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `addresses`
+-- Structura de tabel pentru tabelul `addresses`
 --
 
 CREATE TABLE `addresses` (
@@ -40,7 +40,7 @@ CREATE TABLE `addresses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `addresses`
+-- Salvarea datelor din tabel `addresses`
 --
 
 INSERT INTO `addresses` (`id`, `user_id`, `name`, `phone_no`, `address`, `city`, `county`, `country`) VALUES
@@ -50,7 +50,7 @@ INSERT INTO `addresses` (`id`, `user_id`, `name`, `phone_no`, `address`, `city`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auctions`
+-- Structura de tabel pentru tabelul `auctions`
 --
 
 CREATE TABLE `auctions` (
@@ -62,7 +62,7 @@ CREATE TABLE `auctions` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auction_prod`
+-- Structura de tabel pentru tabelul `auction_prod`
 --
 
 CREATE TABLE `auction_prod` (
@@ -74,7 +74,7 @@ CREATE TABLE `auction_prod` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Structura de tabel pentru tabelul `categories`
 --
 
 CREATE TABLE `categories` (
@@ -87,7 +87,7 @@ CREATE TABLE `categories` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cookies`
+-- Structura de tabel pentru tabelul `cookies`
 --
 
 CREATE TABLE `cookies` (
@@ -100,7 +100,7 @@ CREATE TABLE `cookies` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `creditcards`
+-- Structura de tabel pentru tabelul `creditcards`
 --
 
 CREATE TABLE `creditcards` (
@@ -113,7 +113,7 @@ CREATE TABLE `creditcards` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `creditcards`
+-- Salvarea datelor din tabel `creditcards`
 --
 
 INSERT INTO `creditcards` (`user_id`, `number`, `name`, `exp_month`, `exp_year`, `cvv`) VALUES
@@ -123,7 +123,7 @@ INSERT INTO `creditcards` (`user_id`, `number`, `name`, `exp_month`, `exp_year`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Structura de tabel pentru tabelul `orders`
 --
 
 CREATE TABLE `orders` (
@@ -138,7 +138,7 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_prod`
+-- Structura de tabel pentru tabelul `order_prod`
 --
 
 CREATE TABLE `order_prod` (
@@ -150,7 +150,7 @@ CREATE TABLE `order_prod` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Structura de tabel pentru tabelul `products`
 --
 
 CREATE TABLE `products` (
@@ -165,13 +165,14 @@ CREATE TABLE `products` (
   `curr_price` int(20) UNSIGNED NOT NULL,
   `next_price` int(20) UNSIGNED NOT NULL,
   `expires_on` date NOT NULL,
+  `image` varchar(100) NOT NULL,
   `is_active` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prod_category`
+-- Structura de tabel pentru tabelul `prod_category`
 --
 
 CREATE TABLE `prod_category` (
@@ -183,7 +184,7 @@ CREATE TABLE `prod_category` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structura de tabel pentru tabelul `users`
 --
 
 CREATE TABLE `users` (
@@ -199,7 +200,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Salvarea datelor din tabel `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `lname`, `email`, `dob`, `passw`, `type`, `date_created`, `image`) VALUES
