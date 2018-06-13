@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13 Iun 2018 la 17:25
+-- Generation Time: 13 Iun 2018 la 18:19
 -- Versiune server: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -169,6 +169,14 @@ CREATE TABLE `products` (
   `is_active` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Salvarea datelor din tabel `products`
+--
+
+INSERT INTO `products` (`id`, `sellerId`, `title`, `description`, `keywords`, `condition`, `brand`, `country`, `curr_price`, `next_price`, `expires_on`, `image`, `is_active`) VALUES
+(1, 3, 'Speakers', 'Blast', 'audio device', 'Good', 'Shure', 'United States', 200, 220, '2018-06-17', 'speakers.jpg', 1),
+(4, 3, 'Handbag', 'Spacious', 'accessory', 'Like New', 'Gucci', 'United Kingdom', 5001, 5066, '2018-06-24', 'bag.jpg', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -324,7 +332,7 @@ ALTER TABLE `order_prod`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `prod_category`
