@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2018 at 06:57 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Generation Time: 13 Iun 2018 la 19:58
+-- Versiune server: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `addresses`
+-- Structura de tabel pentru tabelul `addresses`
 --
 
 CREATE TABLE `addresses` (
@@ -40,7 +40,7 @@ CREATE TABLE `addresses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `addresses`
+-- Salvarea datelor din tabel `addresses`
 --
 
 INSERT INTO `addresses` (`id`, `user_id`, `name`, `phone_no`, `address`, `city`, `county`, `country`) VALUES
@@ -50,7 +50,7 @@ INSERT INTO `addresses` (`id`, `user_id`, `name`, `phone_no`, `address`, `city`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auctions`
+-- Structura de tabel pentru tabelul `auctions`
 --
 
 CREATE TABLE `auctions` (
@@ -62,7 +62,7 @@ CREATE TABLE `auctions` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auction_prod`
+-- Structura de tabel pentru tabelul `auction_prod`
 --
 
 CREATE TABLE `auction_prod` (
@@ -74,7 +74,7 @@ CREATE TABLE `auction_prod` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Structura de tabel pentru tabelul `categories`
 --
 
 CREATE TABLE `categories` (
@@ -87,7 +87,7 @@ CREATE TABLE `categories` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cookies`
+-- Structura de tabel pentru tabelul `cookies`
 --
 
 CREATE TABLE `cookies` (
@@ -100,7 +100,7 @@ CREATE TABLE `cookies` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `creditcards`
+-- Structura de tabel pentru tabelul `creditcards`
 --
 
 CREATE TABLE `creditcards` (
@@ -113,7 +113,7 @@ CREATE TABLE `creditcards` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `creditcards`
+-- Salvarea datelor din tabel `creditcards`
 --
 
 INSERT INTO `creditcards` (`user_id`, `number`, `name`, `exp_month`, `exp_year`, `cvv`) VALUES
@@ -123,7 +123,7 @@ INSERT INTO `creditcards` (`user_id`, `number`, `name`, `exp_month`, `exp_year`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Structura de tabel pentru tabelul `orders`
 --
 
 CREATE TABLE `orders` (
@@ -138,7 +138,7 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_prod`
+-- Structura de tabel pentru tabelul `order_prod`
 --
 
 CREATE TABLE `order_prod` (
@@ -150,13 +150,13 @@ CREATE TABLE `order_prod` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Structura de tabel pentru tabelul `products`
 --
 
 CREATE TABLE `products` (
   `id` int(20) UNSIGNED NOT NULL,
   `sellerId` int(20) NOT NULL,
-  `winnerId` int(11) NOT NULL,
+  `winnerId` int(20) UNSIGNED DEFAULT NULL,
   `title` varchar(50) NOT NULL,
   `description` varchar(50) DEFAULT NULL,
   `keywords` varchar(255) NOT NULL,
@@ -171,18 +171,17 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `products`
+-- Salvarea datelor din tabel `products`
 --
 
 INSERT INTO `products` (`id`, `sellerId`, `winnerId`, `title`, `description`, `keywords`, `condition`, `brand`, `country`, `curr_price`, `next_price`, `expires_on`, `image`, `is_active`) VALUES
-(1, 3, 0, 'Speakers', 'Blast', 'audio device', 'Good', 'Shure', 'United States', 200, 220, '2018-06-17', 'speakers.jpg', 1),
-(4, 3, 0, 'Handbag', 'Spacious', 'accessory', 'Like New', 'Gucci', 'United Kingdom', 5001, 5066, '2018-06-24', 'bag.jpg', 1),
-(5, 7, 0, 'Best', 'The best', 'best;', 'Good', 'Guci', 'Azerbaijan', 123, 124, '2018-06-22', 'XDDDDD.JPG', 1);
+(1, 3, NULL, 'Speakers', 'Blast', 'audio device', 'Good', 'Shure', 'United States', 200, 220, '2018-06-17', 'speakers.jpg', 1),
+(4, 3, NULL, 'Handbag', 'Spacious', 'accessory', 'Like New', 'Gucci', 'United Kingdom', 5001, 5066, '2018-06-24', 'bag.jpg', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prod_category`
+-- Structura de tabel pentru tabelul `prod_category`
 --
 
 CREATE TABLE `prod_category` (
@@ -194,7 +193,7 @@ CREATE TABLE `prod_category` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structura de tabel pentru tabelul `users`
 --
 
 CREATE TABLE `users` (
@@ -210,7 +209,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Salvarea datelor din tabel `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `lname`, `email`, `dob`, `passw`, `type`, `date_created`, `image`) VALUES
@@ -334,7 +333,7 @@ ALTER TABLE `order_prod`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `prod_category`
