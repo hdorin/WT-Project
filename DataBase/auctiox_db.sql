@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2018 at 06:47 PM
+-- Generation Time: Jun 13, 2018 at 06:57 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -38,6 +38,14 @@ CREATE TABLE `addresses` (
   `county` varchar(30) NOT NULL,
   `country` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `addresses`
+--
+
+INSERT INTO `addresses` (`id`, `user_id`, `name`, `phone_no`, `address`, `city`, `county`, `country`) VALUES
+(1, 5, 'Adrian Tiron', '0752374303', 'M-sal C-tin Prezan, Bl102, ScA, Ap9, Et2', 'Vaslui', 'Vaslui', 'Romania'),
+(3, 3, 'Dorin Haloca', '0720542823', 'Str. Trandafirilor 10,bl. 201,et.3,ap.21', 'Barlad', 'Vaslui', 'Romania');
 
 -- --------------------------------------------------------
 
@@ -104,6 +112,14 @@ CREATE TABLE `creditcards` (
   `cvv` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `creditcards`
+--
+
+INSERT INTO `creditcards` (`user_id`, `number`, `name`, `exp_month`, `exp_year`, `cvv`) VALUES
+(3, 4012888888881881, 'Tiron', 'april', 2027, 125),
+(3, 5105105105105100, 'adr', 'january', 2019, 123);
+
 -- --------------------------------------------------------
 
 --
@@ -150,8 +166,18 @@ CREATE TABLE `products` (
   `curr_price` int(20) UNSIGNED NOT NULL,
   `next_price` int(20) UNSIGNED NOT NULL,
   `expires_on` date NOT NULL,
+  `image` varchar(100) NOT NULL,
   `is_active` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `sellerId`, `winnerId`, `title`, `description`, `keywords`, `condition`, `brand`, `country`, `curr_price`, `next_price`, `expires_on`, `image`, `is_active`) VALUES
+(1, 3, 0, 'Speakers', 'Blast', 'audio device', 'Good', 'Shure', 'United States', 200, 220, '2018-06-17', 'speakers.jpg', 1),
+(4, 3, 0, 'Handbag', 'Spacious', 'accessory', 'Like New', 'Gucci', 'United Kingdom', 5001, 5066, '2018-06-24', 'bag.jpg', 1),
+(5, 7, 0, 'Best', 'The best', 'best;', 'Good', 'Guci', 'Azerbaijan', 123, 124, '2018-06-22', 'XDDDDD.JPG', 1);
 
 -- --------------------------------------------------------
 
@@ -182,6 +208,14 @@ CREATE TABLE `users` (
   `date_created` date NOT NULL,
   `image` varchar(50) NOT NULL DEFAULT 'resources/images/userphotos/3.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `lname`, `email`, `dob`, `passw`, `type`, `date_created`, `image`) VALUES
+(3, 'adrian', 'tiron', 'tda_mda@yahoo.com', '1998-01-08', '8c4205ec33d8f6caeaaaa0c10a14138c', '1', '2018-06-06', 'resources/images/userphotos/3.jpg'),
+(5, 'adrian', 'tiron', 'adrian@yahoo.com', '1998-01-08', '8c4205ec33d8f6caeaaaa0c10a14138c', '1', '2018-06-06', 'resources/images/userphotos/3.jpg');
 
 --
 -- Indexes for dumped tables
@@ -264,7 +298,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `auctions`
@@ -300,7 +334,7 @@ ALTER TABLE `order_prod`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `prod_category`
@@ -312,7 +346,7 @@ ALTER TABLE `prod_category`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
