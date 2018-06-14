@@ -67,10 +67,10 @@
             <div class="firstrow">
                 <a href="index"><img id="logo" src="resources/images/logo.jpg" alt="Site Logo" /></a>
 
-                <div class="searchbarUnit">
-                    <form class="form-wrapper ">
-                        <input type="text" placeholder="What are you looking for?" required>
-                        <button type="submit">Search</button>
+                <div class="searchbarUnit" >
+                    <form class="form-wrapper" action="advs">
+                        <input type="text" placeholder="What are you looking for?" name="src" id="src" required>
+                        <button  type="submit" onclick="showProducts()"  >Search</button>
                     </form>
                 </div>
                 

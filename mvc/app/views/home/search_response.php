@@ -25,13 +25,9 @@
     <button>Bid</button>
 </div>
 <?php
-    echo "<br><br>";
-    echo "SRV QUERR" . $_SERVER['QUERY_STRING'];
-    echo "<br><br>";
+    echo "TESSST";
     $srv = $_SERVER['QUERY_STRING'];
     if (strpos ($_SERVER['QUERY_STRING'], "&src")) {
-//        echo "WE GOT SRC<br><br>";
-//        if ($_GET['src']) echo "SRC NOT EMPTY?<br><br>";
         $q = explode ("&", $srv);
         $Bad_cond = $_GET["Q1"];
         $Good_cond = $_GET["Q2"];
@@ -40,12 +36,7 @@
         $Max_value=$_GET["MA"];
         $country=$_GET["CTCHO"];
         $TEST_COND=$Bad_cond.$Good_cond.$New_cond;
-
-        echo $Bad_cond;
-        echo $Good_cond;
-        echo $New_cond;
         if($TEST_COND == ''){
-                echo "EMPTY";
             $Bad_cond="Bad";
             $Good_cond="Good";
             $New_cond="Like New";
@@ -72,29 +63,45 @@
             $t = '%' . $_GET['src'] . '%';
             $t = str_replace (" ", "%", $t);
             if ($country="NONE") {
-
-//                $stmt = $conn->prepare ('SELECT * FROM products WHERE keywords LIKE ? AND (`condition` =? OR `condition` =? OR `condition` =?) AND curr_price=>?  AND curr_price<=?')
-//                $stmt->bind_param ("ssssii", $t, $Bad_cond, $Good_cond, $New_cond, $Min_value, $Max_value);
                 $stmt = $conn->prepare ('SELECT * FROM products WHERE (keywords LIKE ?  OR title LIKE ?)AND (`condition`=? OR `condition`=? OR `condition`=?) AND `curr_price`>=? AND `curr_price`<=?');
-                echo 'SELECT * FROM products WHERE keywords LIKE ? AND `condition`=? ';
                 $stmt->bind_param ("sssssii", $t,$t,$Good_cond,$Bad_cond,$New_cond,$Min_value,$Max_value);
-
-
             }
             else{
                 $stmt = $conn->prepare ('SELECT * FROM products WHERE (keywords LIKE ?  OR title LIKE ?)AND (`condition`=? OR `condition`=? OR `condition`=?) AND `curr_price`>=? AND `curr_price`<=? AND `country`=?');
-                echo 'SELECT * FROM products WHERE keywords LIKE ? AND `condition`=? ';
                 $stmt->bind_param ("sssssiis", $t,$t,$Good_cond,$Bad_cond,$New_cond,$Min_value,$Max_value,$country);
             }
             $stmt->execute ();
-
             $results = $stmt->get_result ();
-            echo "<br>" . $results->num_rows . "<br>";
             if ($results->num_rows > 0) {
-                echo "we got results<br>";
-                foreach ($results as $row)
-                    echo $row["country"];
+                echo '<div class="resultz">';
+                foreach ($results as $row) {
+                    echo'<div class="product" >';
+                    echo '<a href="#">';
+                    echo '<h2>'.$row["title"]."[".$row["condition"]."]</h2>";
+                    echo '<img src="resources/images/'.$row["image"].' alt="alternative" /></a>';
+                    echo '<div class="rightSide">';
+                    echo '<div id="desc" class="desc" onclick="coll()">';
+                    echo '<p><strong>DESCRIPTION</strong>:</p>';
+                    echo $row['description'];
+                    echo '</div>';
+                    echo '<div class="inner">';
+                    echo '<p><strong>Brand</strong>:'.$row['brand'].'</p>';
+                    echo '<p><strong>Country of provenance</strong>:'.$row['country'].'</p>';
+                    echo '<p><strong>Keywords</strong>:'.$row['keywords'].'</p>';
+                    echo '<p><strong>Expiration Date</strong>:'.$row['expires_on'].'</p>';
+                    echo '</div>';
+                    echo '<div class="prices">';
+                    echo '<p>Current Price - '.$row['curr_price' ].'$</p>';
+                    echo '<p>Next Price - '.$row["next_price"].'$</p>';
+                    echo '</div>';
+                    echo '<button class="button" style="vertical-align:middle"><span>Bid </span></button>';
+                    echo '</div>';
+                    echo '<br style="clear:both;"/>';
+                    echo '</div>';
+                }
+                echo '</div>';
             }
+            else echo "No Items Found with such criteria";
 
         }
     }

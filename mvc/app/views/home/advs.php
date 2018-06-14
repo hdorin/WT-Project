@@ -46,8 +46,7 @@ require_once 'header.php';
             var Max_price = document.getElementById("MaxVal");
             var Min_price = document.getElementById("MinVal");
             var ctr_chose = document.getElementById("country");
-            // Get the output text
-            // var text = document.getElementById("text");
+
             var C1_Value="";
             var C2_Value="";
             var C3_Value="";
@@ -235,11 +234,8 @@ require_once 'header.php';
                                 if ($result) {
 //                                    $DB_country =$DB_country+ "<select name=\"country\" id=\"country\">";
                                     echo "<select name=\"country\" id=\"country\">";
-//                                    if($result){ echo  "ya";}
-//                                    else{echo "no";}
                                     echo "<option value=\"NONE\">NONE</option>";
                                     while ($row = $result->fetch_assoc()) {
-//                                        echo '<option value="' + $row + '">' + $row + '</option>';
                                         echo "<option value=\"".$row['country']."\">".$row['country']."</option>";
                                     }
                                     echo "</select>";
@@ -310,14 +306,6 @@ require_once 'header.php';
 
     <div id="TBCLR">
         <?php
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-
-        // Create connection
-//        echo $_GET['src'];
         if(strpos($_SERVER['QUERY_STRING'],"src")) {
             $conn = new mysqli("localhost", "root", "", "auctiox_db");
             if ($conn->connect_error) {
@@ -327,74 +315,52 @@ require_once 'header.php';
                 $t ='%'.$_GET['src'].'%';
                 $t=str_replace (" ","%",$t);
                 $stmt = $conn->prepare ('SELECT * FROM products WHERE keywords LIKE ? OR title LIKE ?');
-                echo $t."<br>";
+//                echo $t."<br>";
                 ;
                 $stmt->bind_param ("ss", $t,$t);
                 $stmt->execute ();
 
                     $results = $stmt->get_result ();
-                    echo "<br>".$results->num_rows."<br>";
+//                    echo "<br>".$results->num_rows."<br>";
                     if ($results->num_rows>0) {
-                        echo "we got results<br>";
+//                        echo "we got results<br>";
                         foreach ($results as $row)
-                            echo $row["title"];
+                            echo '<div class="resultz">';
+                        foreach ($results as $row) {
+                            echo'<div class="product" >';
+                            echo '<a href="#">';
+                            echo '<h2>'.$row["title"]."[".$row["condition"]."]</h2>";
+                            echo '<img src="resources/images/'.$row["image"].' alt="alternative" /></a>';
+                            echo '<div class="rightSide">';
+                            echo '<div id="desc" class="desc" onclick="coll()">';
+                            echo '<p><strong>DESCRIPTION</strong>:</p>';
+                            echo $row['description'];
+                            echo '</div>';
+                            echo '<div class="inner">';
+                            echo '<p><strong>Brand</strong>:'.$row['brand'].'</p>';
+                            echo '<p><strong>Country of provenance</strong>:'.$row['country'].'</p>';
+                            echo '<p><strong>Keywords</strong>:'.$row['keywords'].'</p>';
+                            echo '<p><strong>Expiration Date</strong>:'.$row['expires_on'].'</p>';
+                            echo '</div>';
+                            echo '<div class="prices">';
+                            echo '<p>Current Price - '.$row['curr_price' ].'$</p>';
+                            echo '<p>Next Price - '.$row["next_price"].'$</p>';
+                            echo '</div>';
+                            echo '<button class="button" style="vertical-align:middle"><span>Bid </span></button>';
+                            echo '</div>';
+                            echo '<br style="clear:both;"/>';
+                            echo '</div>';
                         }
+                        echo '</div>';
+                        }
+                        else{echo "NO Results Found!";}
 
                 }
             }
 
         ?>
     </div>
-<?php//$_GET['money_sort1']?>
-        <div id="txtHint"></div>
-<!--<!--    <div class="se
-<?php
-//
-//echo $_SERVER['QUERY_STRING']
-//?>
-<?php
-//echo $_SERVER['QUERY_STRING'];
-//echo '<br>';
-//echo $_GET['url'];
-//if(strpos($_GET['url'],'advs')!==false)
-//    echo '               ';
-//
-//
-//echo $_GET['src'];
-//?>
-<?php
-//$servername = "localhost";
-//$username = "root";
-//$password = "";
-//$dbname = "auctiox_db";
-//
-//// Create connection
-//$conn = mysqli_connect ($servername, $username, $password, $dbname);
-//// Check connection
-//if (!$conn) {
-//    die("Connection failed: " . mysqli_connect_error ());
-//}
-//
-//
-//echo $_GET['src'];
-//$sql = "SELECT id,title,description,is_active FROM products where title like ". $_GET['q'] ;
-//
-//if (isset($_GET['submit1']))
-//    echo 'button pressed';
-//
-//
-//$result = mysqli_query ($conn, $sql);
-//
-//if (mysqli_num_rows ($result) > 0) {
-//    // output data of each row
-//    while ($row = mysqli_fetch_assoc ($result)) {
-//        echo '<h3>' .$row["id"] .  '</h3>';
-//        echo " id: " . $row["id"] . " - title: " . $row["title"] . " - description " . $row["description"] . " -is_active " . $row["is_active"] . "<br>";
-//    }
-//} else {
-//    echo "0 results";
-//}
-//?>
+
 <?php
 
 require_once 'footer.php';
