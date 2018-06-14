@@ -18,6 +18,26 @@ class Products extends Controller
         $sth->execute();
         $products = $sth->fetchAll();
 
+        foreach ($products as $product) {
+        	$date1 = $product['expires_on'];
+        	$date2 = date("Y-m-d");
+
+        	$datetime1 = date_create($date1);
+    		$datetime2 = date_create($date2);
+
+        	$interval = date_diff($datetime2, $datetime1);
+
+        	if ($interval->format('%R') == '-'){
+					$sql = $link->prepare("UPDATE products SET is_active=0 WHERE id=".$product['id']);
+					$sql->execute();
+        	}
+        }
+
+        $sth = $link->prepare("SELECT * FROM products WHERE is_active=1");
+        $sth->execute();
+        $products = $sth->fetchAll();
+
+
         $this->view('home/products', ['products' => $products, 'resp' => $resp]);
 
         unset($_SESSION["response"]);
