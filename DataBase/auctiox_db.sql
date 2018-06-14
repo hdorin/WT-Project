@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 14 Iun 2018 la 16:31
+-- Generation Time: 14 Iun 2018 la 21:28
 -- Versiune server: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -179,10 +179,10 @@ INSERT INTO `products` (`id`, `sellerId`, `winnerId`, `title`, `description`, `k
 (4, 3, NULL, 'Handbag', 'Luxurious handbag with lots of space', 'accessory', 'Like New', 'Gucci', 'United Kingdom', 5001, 5066, '2018-06-24', 'bag.jpg', 1),
 (5, 5, 3, 'Speakers2', 'Very hi-tech system with lots of bass', 'audio device', 'Acceptable', 'Shure', 'United States', 300, 400, '2018-05-23', 'speakers2.jpg', 0),
 (6, 5, 3, 'Flashlight', 'Our Ultrafire T6 50000 lm 5-Mode Waterproof Lotus ', 'device light flashlight', 'Good', 'Ultrafire', 'United Kingdom', 100, 110, '2018-03-28', 'flashlight1.jpg', 0),
-(7, 5, NULL, 'Flashlight', 'Our Ultrafire T6 50000 lm 5-Mode Waterproof Lotus Head LED Flashlight Suit Black is a cost-effective trade-off. Its most outstanding feature should be the variable focus, so you can adjust it to meet your demand. Also, with a strap, it is convenient to carry. Most all, this flashlight is ideal for mountain climbing, camping, hiking, forest exploring, caves exploring; Also widely used at home like repairing or finding small things.', 'device light flashlight', 'Good', 'Ultrafire', 'United Kingdom', 100, 130, '2018-07-28', 'flashlight2.jpg', 1),
+(7, 5, 3, 'Flashlight', 'Our Ultrafire T6 50000 lm 5-Mode Waterproof Lotus Head LED Flashlight Suit Black is a cost-effective trade-off. Its most outstanding feature should be the variable focus, so you can adjust it to meet your demand. Also, with a strap, it is convenient to carry. Most all, this flashlight is ideal for mountain climbing, camping, hiking, forest exploring, caves exploring; Also widely used at home like repairing or finding small things.', 'device light flashlight', 'Good', 'Ultrafire', 'United Kingdom', 130, 160, '2018-07-28', 'flashlight2.jpg', 1),
 (8, 3, 5, 'Book', 'How to kill a mockinbird', 'book read', 'Bad', 'No brand', 'Romania', 200, 205, '2018-01-12', 'book1.jpg', 0),
 (9, 3, 5, 'Vase', 'Very fragile and ancient vase, please treat with care', 'vase porcelain greece', 'Acceptable', 'Unknown', 'Greece', 900, 1000, '2017-07-28', 'vase1.jpg', 0),
-(10, 5, NULL, 'Knife', 'Beautifully engraved piece of art', 'knife art framed', 'Good', 'Unknown', 'Congo', 100, 150, '2018-07-28', 'knife1.jpg', 1),
+(10, 5, 3, 'Knife', 'Beautifully engraved piece of art', 'knife art framed', 'Good', 'Unknown', 'Congo', 150, 200, '2018-07-28', 'knife1.jpg', 1),
 (11, 5, 3, 'Painting', 'Red Moon, Miniature Night Sky Oil', 'painting art', 'Acceptable', 'Unknown', 'France', 4000, 4500, '2018-05-11', 'painting1.jpg', 0),
 (12, 5, 3, 'Painting', '\"DREAM GARDEN\" by Marina Petro', 'painting art', 'Acceptable', 'Unknown', 'France', 5000, 5500, '2018-05-10', 'painting2.jpg', 0),
 (13, 3, 5, 'Bracelet', 'It has diamonds and is made of gold', 'jewelry bracelet gold', 'Like New', 'Merraeni', 'Italy', 4010, 4020, '2018-04-30', 'bracelet1.jpg', 0),
@@ -223,8 +223,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `lname`, `email`, `dob`, `passw`, `type`, `date_created`, `image`) VALUES
-(3, 'adrian', 'tiron', 'tda_mda@yahoo.com', '1998-01-08', '8c4205ec33d8f6caeaaaa0c10a14138c', '1', '2018-06-06', 'resources/images/userphotos/3.jpg'),
-(5, 'adrian', 'tiron', 'adrian@yahoo.com', '1998-01-08', '8c4205ec33d8f6caeaaaa0c10a14138c', '1', '2018-06-06', 'resources/images/userphotos/3.jpg');
+(3, 'adrian', 'tiron', 'tda_mda@yahoo.com', '1998-01-08', '8c4205ec33d8f6caeaaaa0c10a14138c', '1', '2018-06-06', 'resources/images/userphoto.png'),
+(5, 'adrian', 'tiron', 'adrian@yahoo.com', '1998-01-08', '8c4205ec33d8f6caeaaaa0c10a14138c', '1', '2018-06-06', 'resources/images/userphoto.png');
 
 --
 -- Indexes for dumped tables
