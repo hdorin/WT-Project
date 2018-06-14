@@ -74,15 +74,109 @@
 .product{
     border-left: 6px solid blue;
     background-color: lightblue;
-    width: 60%;
-    margin-top: 0%;
+    width: 95%;
     overflow-x: hidden;
     font-size: 20px;
     font-family: Helvetica;
     text-rendering: optimizeLegibility;
     padding: 15px;
     border-radius: 10px 30px 10px;
-    padding-right: 16%;
+    display: inline-block;
+    position: relative;
+}
+
+.product a{
+    text-align: center;
+    display: block;
+    float: left;
+    color: black;
+    float: left;
+    width: 40%;
+
+
+}
+
+
+.product a:hover{
+    color: #5e5e5e;
+}
+
+.product a img{
+    margin-top: 10%;
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+
+}
+
+.product .rightSide{
+    display: block;
+    text-align: center;
+    margin-top: 3%;
+    float: right;
+    width: 60%;
+}
+.product .rightSide .inner{
+    margin-top: 3%;
+}
+.product .rightSide .prices{
+    display: block;
+    margin-top: 4%;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  margin-top: 1%;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/******************************************************/
+
+.product{
+    border-left: 6px solid blue;
+    background-color: lightblue;
+    width: 95%;
+    margin-top: 5%;
+    overflow-x: hidden;
+    font-size: 20px;
+    font-family: Helvetica;
+    text-rendering: optimizeLegibility;
+    padding: 15px;
+    border-radius: 10px 30px 10px;
     display: inline-block;
     position: relative;
 }
