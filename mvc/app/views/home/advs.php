@@ -5,10 +5,10 @@ require_once 'header.php';
 <!--if urlempty draw search and custom_serach-->
 <!--if not empty display itemsbased on link-->
 <!--<form action="advs">-->
-
+    <link rel="stylesheet" href="resources/stylesheets/products.css" type="text/css"/>
 
     <script>
-        function getElem(st){
+        function src(st){
             print( document.getElementById("st").value);
         }
     </script>
@@ -34,16 +34,64 @@ require_once 'header.php';
         }
     </script>
     <script>
-        function src(str)
+        function clearBox()
         {
-            s=window.location.search.split('+');
-            document.getElementById('TBCLR').innerHTML = s;
+
+
+            var checkBox_C1 = document.getElementById("C1");
+            var checkBox_C2 = document.getElementById("C2");
+            var checkBox_C3 = document.getElementById("C3");
+            var checkBox_S1 = document.getElementById("S1");
+            var checkBox_S2 = document.getElementById("S2");
+            var Max_price = document.getElementById("MaxVal");
+            var Min_price = document.getElementById("MinVal");
+            var ctr_chose = document.getElementById("country");
+            // Get the output text
+            // var text = document.getElementById("text");
+            var C1_Value="";
+            var C2_Value="";
+            var C3_Value="";
+            var S1_Value="";
+            var S2_Value="";
+            var Mi_Value="";
+            var Ma_Value="";
+            var ctr_chosen="";
+
+            if (checkBox_C1.checked == true){C1_Value=C1.value;}
+            if (checkBox_C2.checked == true){C2_Value=C2.value;}
+            if (checkBox_C3.checked == true){C3_Value=C3.value;}
+            if (checkBox_S1.checked == true){S1_Value=S1.value;}
+            if (checkBox_S2.checked == true){S2_Value=S2.value;}
+            Ma_Value=MaxVal.value;
+            Mi_Value=MinVal.value;
+            ctr_chosen=ctr_chose.value;
+
+            s=window.location.search;
+            document.getElementById('TBCLR').innerHTML =C1_Value+"\n"+C2_Value+"\n"+C3_Value+"\n"+S1_Value+"\n"+S2_Value+"\n"+Mi_Value+"\n"+Ma_Value+"\n"+ctr_chosen+"\n"+s ;
+
+
+
+            let xmlhttp;
+            if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+            else { // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "search_response"+s+"&Q1="+C1_Value+"&Q2="+C2_Value+"&Q3="+C3_Value+"&S1="+S1_Value+"&S2="+S2_Value+"&MN="+Mi_Value+"&MA="+Ma_Value+"&CTCHO="+ctr_chosen, true);
+            xmlhttp.send();
+
+
+
+
         }
     </script>
 
         <div class="lgdLiv">
             <div class="pad">
-<!--                <form  method="get">-->
                 <table>
 <!--                    <tr>-->
 <!--                        <table>-->
@@ -103,19 +151,19 @@ require_once 'header.php';
                                 <th class="table_title" style="text-align: left">Search by Condition</th>
                             </tr>
                             <td>
-                                <input type="checkbox" value="bc">
+                                <input type="checkbox" id="C1" value="bc">
                                 <label class="advSlbl">Bad Condition</label>
                             </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="checkbox" value="gc">
+                                    <input type="checkbox" id="C2" value="gc">
                                     <label class="advSlbl">Good Condition</label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="checkbox" value="ln">
+                                    <input type="checkbox" id="C3" value="ln">
                                     <label class="advSlbl">Like New</label>
                                 </td>
                             </tr>
@@ -128,13 +176,13 @@ require_once 'header.php';
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="checkbox" value="fs">
+                                    <input type="checkbox" id="S1" value="fs">
                                     <label class="advSlbl">With free shiping</label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="checkbox" value="wfs">
+                                    <input type="checkbox" id="S2" value="wfs">
                                     <label class="advSlbl">Without free shiping</label>
                                 </td>
                             </tr>
@@ -146,7 +194,7 @@ require_once 'header.php';
                                 <th class="table_title" style="text-align: left">Min value:</th>
                             </tr>
                             <td>
-                                <input type="text" name="MinVal" id="MinVal">
+                                <input type="number" min="0" max="999999" name="MinVal" id="MinVal">
                             </td>
                         </table>
                     </tr>
@@ -156,7 +204,7 @@ require_once 'header.php';
                                 <th class="table_title" style="text-align: left">Max value:</th>
                             </tr>
                             <td>
-                                <input type="text" name="MinVal" id="MaxVal">
+                                <input type="number" min="0" max="999999" name="MinVal" id="MaxVal">
                             </td>
                         </table>
                     </tr>
@@ -166,16 +214,7 @@ require_once 'header.php';
                                 <th class="table_title" style="text-align: left">Country</th>
                             </tr>
                             <td>
-
-<!--                                <select name="country" id="country">-->
-<!--                                    <option value="volvo">Volvo</option>-->
-<!--                                    <option value="saab">Saab</option>-->
-<!--                                    <option value="fiat">Fiat</option>-->
-<!--                                    <option value="audi">Audi</option>-->
-<!--                                </select>-->
                                 <?php
-
-
                                 $servername = "localhost";
                                 $username = "root";
                                 $password = "";
@@ -198,52 +237,117 @@ require_once 'header.php';
                                     echo "<select name=\"country\" id=\"country\">";
 //                                    if($result){ echo  "ya";}
 //                                    else{echo "no";}
+                                    echo "<option value=\"NONE\">NONE</option>";
                                     while ($row = $result->fetch_assoc()) {
 //                                        echo '<option value="' + $row + '">' + $row + '</option>';
                                         echo "<option value=\"".$row['country']."\">".$row['country']."</option>";
                                     }
                                     echo "</select>";
-//                                    echo $DB_country;
                                 }
-                                    echo $DB_country;
+
                                     $conn->close ();
                                 }
-
-
-
-
                                 ?>
                             </td>
                         </table>
                     </tr>
                     <tr>
-<!--                        <form>-->
-<!--                        <table><Button type="submit" class="sort_btn">Sort</Button></table>-->
                         <table><tr>
                                 <button onclick="clearBox('TBCLR');showProducts();" class="sort_btn" value="text" >SORT</button>
                             </tr></table>
-<!--                        </form>-->
                     </tr>
                 </table>
-<!--                </form>-->
             </div>
         </div>
-<div id="TBCLR"> <?php echo 'some textgoes here hope it will dissapear' ?></div>
-<?php//$_GET['money_sort1']?>
-<!---->
-        <div id="txtHint"></div>
-<!--<!--    <div class="searchbarUnit">-->-->
-<!--<!--        <div class="form-wrapper">-->-->
-<!--<!--            <input type="text" placeholder="What are you looking for?" name="src" id="src" required>-->-->
-<!--<!--            <button  type="submit"  >Search</button>-->-->
-<!--<!--        </div>-->-->
-<!--<!--    </div>-->-->
-<!--<!--</form>-->-->
-<!---->
-<!--<div id="txtHint">-->
-<!--    <p>here is texthint.</p>-->
+
+<?php
+//    echo $_GET['src']
+
+?>
+<!--        <div id="TBCLR">-->
+<!--    --><?php
+//    $servername = "localhost";
+//    $username = "root";
+//    $password = "";
+//    $database = "auctiox_db";
+////echo $_GET['src'];
+//    // Create connection
+//    $conn = new mysqli($servername, $username, $password, $database);
+//    if(strpos($_SERVER['QUERY_STRING'],"src")) {
+////        echo "this is src";
+////        echo $_querry;
+////        echo "end_src";
+//        // Check connection
+//
+//        if ($conn->connect_error) {
+//            die("Connection failed: " . $conn->connect_error);
+//        } else {
+//            $keyword=$_GET['src'];
+//            $sql = 'SELECT * FROM products WHERE 1 ';
+//            $result = $conn->query ($sql);
+//            $DB_country = " ";
+//            if ($result) {
+//                //                                    $DB_country =$DB_country+ "<select name=\"country\" id=\"country\">";
+//                echo "<div>";
+//                //                                    if($result){ echo  "ya";}
+//                //                                    else{echo "no";}
+//                while ($row = $result->fetch_assoc ()) {
+//                    //                                        echo '<option value="' + $row + '">' + $row + '</option>';
+//                    echo "<option value=\"" . $row['country'] . "\">" . $row['country'] . "</option>";
+//                }
+//                echo "</div>";
+//            }
+//            else {
+//                echo "No Such Items Found!";
+//            }
+//            $conn->close ();
+//        }
+//    }
+//        ?>
 <!--</div>-->
-<!---->
+
+
+
+    <div id="TBCLR">
+        <?php
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+
+        // Create connection
+//        echo $_GET['src'];
+        if(strpos($_SERVER['QUERY_STRING'],"src")) {
+            $conn = new mysqli("localhost", "root", "", "auctiox_db");
+            if ($conn->connect_error) {
+                die ("Connection Failed");
+            } else {
+
+                $t ='%'.$_GET['src'].'%';
+                $t=str_replace (" ","%",$t);
+                $stmt = $conn->prepare ('SELECT * FROM products WHERE keywords LIKE ? OR title LIKE ?');
+                echo $t."<br>";
+                ;
+                $stmt->bind_param ("ss", $t,$t);
+                $stmt->execute ();
+
+                    $results = $stmt->get_result ();
+                    echo "<br>".$results->num_rows."<br>";
+                    if ($results->num_rows>0) {
+                        echo "we got results<br>";
+                        foreach ($results as $row)
+                            echo $row["title"];
+                        }
+
+                }
+            }
+
+        ?>
+    </div>
+<?php//$_GET['money_sort1']?>
+        <div id="txtHint"></div>
+<!--<!--    <div class="se
 <?php
 //
 //echo $_SERVER['QUERY_STRING']
