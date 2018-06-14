@@ -1,13 +1,17 @@
 <?php
 
 $q = isset($_GET['q'])? $_GET['q'] : 'my_uploaded_items';
-$result = $data['result'];
+$link = $this->auctiox_db_connect();
+
 
 if($q === 'my_items') {
-    echo 'inside my won items <br>';
+
+    $sql = "SELECT * FROM products WHERE winnerId = ".$_SESSION['userId'];
+    $result = mysqli_query($link, $sql);
+    $link->close();
 
     foreach ($result as $item){
-        echo '<div class="upl_items">
+        echo '<div class="won_items">
         <img class="prod_img" src="resources/images/'.$item['image'].'" alt="product" />
         <table class="table">
                 <thead>
@@ -44,7 +48,11 @@ if($q === 'my_items') {
 }
 
 if($q === 'my_uploaded_items') {
-    
+
+    $sql = "SELECT * FROM products WHERE sellerId = ".$_SESSION['userId'];
+    $result = mysqli_query($link, $sql);
+    $link->close();
+
     foreach ($result as $item){
         echo '<div class="upl_items">
         <img class="prod_img" src="resources/images/'.$item['image'].'" alt="product" />
