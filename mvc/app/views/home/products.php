@@ -6,6 +6,7 @@
 
 <link rel="stylesheet" href="resources/stylesheets/products.css" type="text/css"/>
 
+<p id="responseMsg"><?=$data['resp']?></p>
 
             <?php 
             $products = $data['products'];
@@ -38,7 +39,12 @@
                             echo '<p>Next Price - ' . $product['next_price'] . '$</p>';
 		                echo '</div>';
 
-		                echo '<button class="button" style="vertical-align:middle"><span>Bid </span></button>';
+		                echo '
+                        <form action="products/bidBtn" method="POST" id="form'.$product['id'].'">
+                              <input type="hidden" name="id_post" value="' . $product['id'] . '"/>
+                        </form>
+
+                        <button class="button" form="form'.$product['id'].'" style="vertical-align:middle"><span>Bid </span></button>';
 		            echo '</div>';
 		        echo '<br style="clear:both;"/>';
                 echo '</div>';
