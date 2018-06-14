@@ -74,14 +74,15 @@
 .product{
     border-left: 6px solid blue;
     background-color: lightblue;
-    width: 95%;
-    margin-top: 5%;
+    width: 60%;
+    margin-top: 0%;
     overflow-x: hidden;
     font-size: 20px;
     font-family: Helvetica;
     text-rendering: optimizeLegibility;
     padding: 15px;
     border-radius: 10px 30px 10px;
+    padding-right: 16%;
     display: inline-block;
     position: relative;
 }
