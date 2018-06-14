@@ -8,24 +8,8 @@
     <link rel="stylesheet" href="resources/stylesheets/products.css" type="text/css" />
 </head>
 <body>
-<div class="product" >
-    <a href="#">
-        <img src="html.jpg" alt="cevapoza" />
-        <h2>Title product</h2>
-    </a>
-    <div id="desc" class="desc" onclick="coll()">
-        This is some long text that will not fit in the box. This is some long text that will not fit in the box.
-    </div>
 
-    <div>
-        <p>Tags</p>
-        <p>Expiration Date - xx-xx-xxxx</p>
-    </div>
-    <p>Price - ??$</p>
-    <button>Bid</button>
-</div>
 <?php
-    echo "TESSST";
     $srv = $_SERVER['QUERY_STRING'];
     if (strpos ($_SERVER['QUERY_STRING'], "&src")) {
         $q = explode ("&", $srv);
@@ -40,8 +24,12 @@
             $Bad_cond="Bad";
             $Good_cond="Good";
             $New_cond="Like New";
-
+        }else {
+            if($Bad_cond!="Bad"&&$Bad_cond!="")$Bad_cond="Bad";
+            if($Good_cond!="Good"&&$Good_cond!="")$Good_cond="Good";
+            if($New_cond!="Like New"&&$New_cond!="")$New_cond="Like New";
         }
+
         if($Max_value==''){
             $Max_value=999999;
         }
@@ -53,7 +41,7 @@
             $Max_value=$Max_value;
             $Min_value=$ss;
         }
-
+//        echo $Good_cond;
         $conn = new mysqli("localhost", "root", "", "auctiox_db");
         if ($conn->connect_error) {
             die ("Connection Failed");
@@ -62,11 +50,12 @@
 
             $t = '%' . $_GET['src'] . '%';
             $t = str_replace (" ", "%", $t);
-            if ($country="NONE") {
+            if ($country=="NONE") {
                 $stmt = $conn->prepare ('SELECT * FROM products WHERE (keywords LIKE ?  OR title LIKE ?)AND (`condition`=? OR `condition`=? OR `condition`=?) AND `curr_price`>=? AND `curr_price`<=?');
                 $stmt->bind_param ("sssssii", $t,$t,$Good_cond,$Bad_cond,$New_cond,$Min_value,$Max_value);
             }
             else{
+
                 $stmt = $conn->prepare ('SELECT * FROM products WHERE (keywords LIKE ?  OR title LIKE ?)AND (`condition`=? OR `condition`=? OR `condition`=?) AND `curr_price`>=? AND `curr_price`<=? AND `country`=?');
                 $stmt->bind_param ("sssssiis", $t,$t,$Good_cond,$Bad_cond,$New_cond,$Min_value,$Max_value,$country);
             }
@@ -78,7 +67,7 @@
                     echo'<div class="product" >';
                     echo '<a href="#">';
                     echo '<h2>'.$row["title"]."[".$row["condition"]."]</h2>";
-                    echo '<img src="resources/images/'.$row["image"].' alt="alternative" /></a>';
+                    echo '<img src="resources/images/'.$row["image"].'"'.' alt="alternative" /></a>';
                     echo '<div class="rightSide">';
                     echo '<div id="desc" class="desc" onclick="coll()">';
                     echo '<p><strong>DESCRIPTION</strong>:</p>';
@@ -105,6 +94,7 @@
 
         }
     }
+    else echo "something went wrong";
 ?>
 
 </body>

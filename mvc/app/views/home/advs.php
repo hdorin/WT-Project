@@ -36,8 +36,6 @@ require_once 'header.php';
     <script>
         function clearBox()
         {
-
-
             var checkBox_C1 = document.getElementById("C1");
             var checkBox_C2 = document.getElementById("C2");
             var checkBox_C3 = document.getElementById("C3");
@@ -66,7 +64,8 @@ require_once 'header.php';
             ctr_chosen=ctr_chose.value;
 
             s=window.location.search;
-            document.getElementById('TBCLR').innerHTML =C1_Value+"\n"+C2_Value+"\n"+C3_Value+"\n"+S1_Value+"\n"+S2_Value+"\n"+Mi_Value+"\n"+Ma_Value+"\n"+ctr_chosen+"\n"+s ;
+            // document.getElementById('TBCLR').innerHTML =C1_Value+"\n"+C2_Value+"\n"+C3_Value+"\n"+S1_Value+"\n"+S2_Value+"\n"+Mi_Value+"\n"+Ma_Value+"\n"+ctr_chosen+"\n"+s ;
+            document.getElementById('TBCLR').innerHTML ="" ;
 
 
 
@@ -77,7 +76,7 @@ require_once 'header.php';
             }
             xmlhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
-                    document.getElementById("txtHint").innerHTML = this.responseText;
+                    document.getElementById("TBCLR").innerHTML = this.responseText;
                 }
             };
             xmlhttp.open("GET", "search_response"+s+"&Q1="+C1_Value+"&Q2="+C2_Value+"&Q3="+C3_Value+"&S1="+S1_Value+"&S2="+S2_Value+"&MN="+Mi_Value+"&MA="+Ma_Value+"&CTCHO="+ctr_chosen, true);
@@ -249,7 +248,7 @@ require_once 'header.php';
                     </tr>
                     <tr>
                         <table><tr>
-                                <button onclick="clearBox('TBCLR');showProducts();" class="sort_btn" value="text" >SORT</button>
+                                <button onclick="clearBox('TBCLR');" class="sort_btn" value="text" >SORT</button>
                             </tr></table>
                     </tr>
                 </table>
@@ -330,7 +329,7 @@ require_once 'header.php';
                             echo'<div class="product" >';
                             echo '<a href="#">';
                             echo '<h2>'.$row["title"]."[".$row["condition"]."]</h2>";
-                            echo '<img src="resources/images/'.$row["image"].' alt="alternative" /></a>';
+                            echo '<img src="resources/images/'.$row["image"].'" alt="alternative" /></a>';
                             echo '<div class="rightSide">';
                             echo '<div id="desc" class="desc" onclick="coll()">';
                             echo '<p><strong>DESCRIPTION</strong>:</p>';
