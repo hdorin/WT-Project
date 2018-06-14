@@ -14,7 +14,8 @@ $result = $data['result'];
 if($feed_type == 'RSS') {
 
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>
-<rss version=\"2.0\">\n";
+<rss version=\"2.0\">\n
+<?xml-stylesheet type=\"text/css\" href=\"resources/stylesheets/wrapperFeed.css\"?>\n";
 
     echo "<channel>
   <title>AuctioX Home Page</title>
@@ -36,7 +37,7 @@ if($feed_type == 'RSS') {
             $next_p = $s['next_price'];
             $exp_on = $s['expires_on'];
 
-            echo "  <item>\n";
+            echo "<br/>  <item>\n";
             echo "      <id>$id</id>
       <title>$title</title>
       <description>$desc</description>
@@ -59,7 +60,8 @@ if($feed_type == 'RSS') {
 if($feed_type == 'Atom') {
 
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>
-<atom version=\"2.0\">\n";
+<atom version=\"2.0\">\n
+<?xml-stylesheet type=\"text/css\" href=\"/resources/stylesheets/wrapperFeed.css\"?>\n";
 
     $d = new DateTime();
     $last_update = date('Y-m-d H:i:s', $d->getTimestamp());
@@ -74,7 +76,8 @@ if($feed_type == 'Atom') {
   <author>
     <name>Auctiox</name>
     <email>auctiox@example.com</email>
-  </author>\n\n";
+  </author>\n\n
+  <products>";
 
 
 
@@ -92,7 +95,7 @@ if($feed_type == 'Atom') {
             $next_p = $s['next_price'];
             $exp_on = $s['expires_on'];
 
-            echo "  <entry>\n";
+            echo "<br/>  <entry>\n";
             echo "      <id>$id</id>
       <title>$title</title>
       <description>$desc</description>
@@ -107,7 +110,7 @@ if($feed_type == 'Atom') {
             echo "  </entry> \n";
         }
     }
-    echo "</channel>";
+    echo "</products>\n</channel>";
 
     exit();
 }
