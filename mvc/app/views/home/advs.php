@@ -5,7 +5,7 @@ require_once 'header.php';
 <!--if urlempty draw search and custom_serach-->
 <!--if not empty display itemsbased on link-->
 <!--<form action="advs">-->
-    <link rel="stylesheet" href="resources/stylesheets/products.css" type="text/css"/>
+    <link rel="stylesheet" href="resources/stylesheets/dsp.css" type="text/css"/>
 
     <script>
         function src(st){
@@ -39,8 +39,8 @@ require_once 'header.php';
             var checkBox_C1 = document.getElementById("C1");
             var checkBox_C2 = document.getElementById("C2");
             var checkBox_C3 = document.getElementById("C3");
-            var checkBox_S1 = document.getElementById("S1");
-            var checkBox_S2 = document.getElementById("S2");
+            // var checkBox_S1 = document.getElementById("S1");
+            // var checkBox_S2 = document.getElementById("S2");
             var Max_price = document.getElementById("MaxVal");
             var Min_price = document.getElementById("MinVal");
             var ctr_chose = document.getElementById("country");
@@ -57,8 +57,8 @@ require_once 'header.php';
             if (checkBox_C1.checked == true){C1_Value=C1.value;}
             if (checkBox_C2.checked == true){C2_Value=C2.value;}
             if (checkBox_C3.checked == true){C3_Value=C3.value;}
-            if (checkBox_S1.checked == true){S1_Value=S1.value;}
-            if (checkBox_S2.checked == true){S2_Value=S2.value;}
+            // if (checkBox_S1.checked == true){S1_Value=S1.value;}
+            // if (checkBox_S2.checked == true){S2_Value=S2.value;}
             Ma_Value=MaxVal.value;
             Mi_Value=MinVal.value;
             ctr_chosen=ctr_chose.value;
@@ -167,25 +167,25 @@ require_once 'header.php';
                             </tr>
                         </table>
                     </tr>
-                    <tr>
-                        <table>
-                            <tr>
-                                <th class="table_title" style="text-align: left">Free shiping</th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" id="S1" value="fs">
-                                    <label class="advSlbl">With free shiping</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" id="S2" value="wfs">
-                                    <label class="advSlbl">Without free shiping</label>
-                                </td>
-                            </tr>
-                        </table>
-                    </tr>
+<!--                    <tr>-->
+<!--                        <table>-->
+<!--                            <tr>-->
+<!--                                <th class="table_title" style="text-align: left">Free shiping</th>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td>-->
+<!--                                    <input type="checkbox" id="S1" value="fs">-->
+<!--                                    <label class="advSlbl">With free shiping</label>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td>-->
+<!--                                    <input type="checkbox" id="S2" value="wfs">-->
+<!--                                    <label class="advSlbl">Without free shiping</label>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                        </table>-->
+<!--                    </tr>-->
                     <tr>
                         <table>
                             <tr>
@@ -306,6 +306,7 @@ require_once 'header.php';
     <div id="TBCLR">
         <?php
         if(strpos($_SERVER['QUERY_STRING'],"src")) {
+        if($_GET['src']!='') {
             $conn = new mysqli("localhost", "root", "", "auctiox_db");
             if ($conn->connect_error) {
                 die ("Connection Failed");
@@ -323,29 +324,29 @@ require_once 'header.php';
 //                    echo "<br>".$results->num_rows."<br>";
                     if ($results->num_rows>0) {
 //                        echo "we got results<br>";
-                        foreach ($results as $row)
+
                             echo '<div class="resultz">';
                         foreach ($results as $row) {
-                            echo'<div class="product" >';
-                            echo '<a href="#">';
+                            echo'<div class="product2" >';
+                            echo '<a href=product_page/item/"'.$row["id"].'">';
                             echo '<h2>'.$row["title"]."[".$row["condition"]."]</h2>";
                             echo '<img src="resources/images/'.$row["image"].'" alt="alternative" /></a>';
-                            echo '<div class="rightSide">';
-                            echo '<div id="desc" class="desc" onclick="coll()">';
+                            echo '<div class="rightSide2">';
+                            echo '<div id="desc" class="desc2" onclick="coll()">';
                             echo '<p><strong>DESCRIPTION</strong>:</p>';
                             echo $row['description'];
                             echo '</div>';
-                            echo '<div class="inner">';
+                            echo '<div class="inner2">';
                             echo '<p><strong>Brand</strong>:'.$row['brand'].'</p>';
                             echo '<p><strong>Country of provenance</strong>:'.$row['country'].'</p>';
                             echo '<p><strong>Keywords</strong>:'.$row['keywords'].'</p>';
                             echo '<p><strong>Expiration Date</strong>:'.$row['expires_on'].'</p>';
                             echo '</div>';
-                            echo '<div class="prices">';
+                            echo '<div class="prices2">';
                             echo '<p>Current Price - '.$row['curr_price' ].'$</p>';
                             echo '<p>Next Price - '.$row["next_price"].'$</p>';
                             echo '</div>';
-                            echo '<button class="button" style="vertical-align:middle"><span>Bid </span></button>';
+//                            echo '<button class="button2" style="vertical-align:middle"><span>Bid </span></button>';
                             echo '</div>';
                             echo '<br style="clear:both;"/>';
                             echo '</div>';
@@ -356,6 +357,7 @@ require_once 'header.php';
 
                 }
             }
+        }
 
         ?>
     </div>
