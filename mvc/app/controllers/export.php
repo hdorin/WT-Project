@@ -11,7 +11,39 @@ class Export extends Controller
         $format=$data;
         if($format=='xml'){
             $this->export_xml();
+        }else if($format=='json'){
+            $this->export_json();
+        }else if($format=='pdf'){
+
+        }else{
+            die("Page not found!");
         }
+    }
+    public function export_json(){
+        $link = $this->auctiox_db_connect();
+ 
+        $sql = $link->prepare('SELECT title,description,`condition`,keywords,brand,country,curr_price,next_price,expires_on FROM products WHERE is_active=1');
+        $sql->execute();
+        $sql->bind_result($titleRow,$descriptionRow,$conditionRow,$keywordsRow,$brandRow,$countryRow,$curr_priceRow,$next_priceRow,$expires_onRow);
+        $sql->fetch();
+        $json_array=array();
+        while($sql->fetch()){
+            $row[]=array(
+                'title' => $titleRow,
+                'description' => $descriptionRow,
+                'condition' => $conditionRow,
+                'keywords' => $keywordsRow,
+                'brand' => $brandRow,
+                'countryRow' => $conditionRow,
+                'curr_price' => $curr_priceRow,
+                'next_price' => $next_priceRow,
+                'expires_on' => $expires_onRow
+            );  
+        }
+        echo json_encode($row);
+        
+        mysqli_close($link);
+        
     }
     public function export_xml(){
         
