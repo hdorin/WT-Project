@@ -51,7 +51,7 @@
                         $sql->bind_result($addressId,$addressName,$addressCity,$addressCounty,$addressCountry);
 
                         while ($sql->fetch()) {
-                            echo '<option value=' . $addressId . 'class="strada" label="Prescurtare">' . $addressName . ' (' . $addressCity . ',' . $addressCounty . ',' . $addressCountry . ')' .'</option>';
+                            echo '<option value=' . $addressId . '>' . $addressName . ' (' . $addressCity . ',' . $addressCounty . ',' . $addressCountry . ')' .'</option>';
                         }
             ?>
             </select> </td></tr>
