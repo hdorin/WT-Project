@@ -14,7 +14,7 @@
 
             foreach ($products as $product) {
                 echo '<div class="product">';
-                    echo '<a href="product_page">';
+                    echo '<a href="product_page?prod=' . $product['id'] . '">';
                         echo '<h2>'. $product['title'] .  ' [' . $product['condition'] . ']</h2>';
                         echo '<img src="resources/images/' . $product['image'] . '" alt="alternative" />';
                     echo '</a>';

@@ -2,7 +2,7 @@
 
 include 'header.php';
 ?>
-    <link rel="stylesheet" href="resources/stylesheets/product.css" type="text/css" />
+    <link rel="stylesheet" href="resources/stylesheets/product.css" type="text/css"/>
 
     <main>
         <div class="wrapper">
@@ -24,19 +24,34 @@ include 'header.php';
     <div class="whole">
 
         <div class="right">
-            <h1> <?=$data['result']['title']?> </h1>
+            <h1>
+                <?= $data['result']['title'] ?>
+            </h1>
             <p><strong> Description</strong>: </p>
             <p>
-                <?=$data['result']['description']?></p>
+                <?= $data['result']['description'] ?>
+            </p>
 
-            <p><strong>Brand</strong>: <?=$data['result']['brand']?></p>
-            <p><strong>Country of provenance</strong>: <?=$data['result']['country']?></p>
-            <p><strong>Keywords</strong>: <?=$data['result']['keywords']?></p>
-            <p><strong>Expiration Date</strong>: <?=$data['result']['expires_on']?></p>
-<!--            <p><strong>OWNER`S ID</strong>: [3]</p>-->
+            <p><strong>Brand</strong>:
+                <?= $data['result']['brand'] ?>
+            </p>
+            <p><strong>Country of provenance</strong>:
+                <?= $data['result']['country'] ?>
+            </p>
+            <p><strong>Keywords</strong>:
+                <?= $data['result']['keywords'] ?>
+            </p>
+            <p><strong>Expiration Date</strong>:
+                <?= $data['result']['expires_on'] ?>
+            </p>
+                        <p><strong>OWNER`S ID</strong>: [3]</p>
             <div class="prices">
-                <p>Current Price - <?=$data['result']['curr_price']?>$</p>
-                <p>Next Price - <?=$data['result']['next_price']?>$</p>
+                <p>Current Price -
+                    <?= $data['result']['curr_price'] ?>
+                    $</p>
+                <p>Next Price -
+                    <?= $data['result']['next_price'] ?>
+                    $</p>
             </div>
             <button class="button" style="vertical-align:middle"><span>Bid </span></button>
         </div>

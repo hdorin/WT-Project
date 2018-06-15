@@ -69,7 +69,7 @@ if(isset($_SESSION['userId'])==false){
                     echo '<div class="resultz">';
                     foreach ($results as $row) {
                         echo '<div class="product2" >';
-                        echo '<a href=product_page/item/"' . $row["id"] . '">';
+                        echo '<a href=product_page?prod=' . $row["id"] . '>';
                         echo '<h2>' . $row["title"] . "[" . $row["condition"] . "]</h2>";
                         echo '<img src="resources/images/' . $row["image"] . '" alt="alternative" /></a>';
                         echo '<div class="rightSide2">';
