@@ -77,7 +77,12 @@
               <figcaption>
                 <p class="team_name">Mihaita Manolache</p>
                 <p class="team_title">-database-</p>
-                <p class="team_description">Vestassapede et donec ut est liberos sus et eget sed eget. Quisqueta habitur augue magnisl magna phas ellus sagit titor ant curabi turpis.</p>
+                <p class="team_description">
+				    _asm{<br>
+                    push 10<br>
+                    add eax,10<br>
+                    nop<br>
+                    ud2</p>
               </figcaption>
             </figure>
           </li>
