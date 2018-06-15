@@ -82,7 +82,8 @@
                     push 10<br>
                     add eax,10<br>
                     nop<br>
-                    ud2</p>
+                    ud2</br>
+                }</p>
               </figcaption>
             </figure>
           </li>
