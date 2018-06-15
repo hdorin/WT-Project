@@ -305,60 +305,64 @@ require_once 'header.php';
 
     <div id="TBCLR">
         <?php
-        if(strpos($_SERVER['QUERY_STRING'],"src")) {
-        if($_GET['src']!='') {
-            $conn = new mysqli("localhost", "root", "", "auctiox_db");
-            if ($conn->connect_error) {
-                die ("Connection Failed");
-            } else {
+        if(isset($_SESSION['userId'])==false){
+            echo "You must login!";
+            die;
+        }else {
+            if (strpos ($_SERVER['QUERY_STRING'], "src")) {
+                if ($_GET['src'] != '') {
+                    $conn = new mysqli("localhost", "root", "", "auctiox_db");
+                    if ($conn->connect_error) {
+                        die ("Connection Failed");
+                    } else {
 
-                $t ='%'.$_GET['src'].'%';
-                $t=str_replace (" ","%",$t);
-                $stmt = $conn->prepare ('SELECT * FROM products WHERE keywords LIKE ? OR title LIKE ?');
-//                echo $t."<br>";
-                ;
-                $stmt->bind_param ("ss", $t,$t);
-                $stmt->execute ();
+                        $t = '%' . $_GET['src'] . '%';
+                        $t = str_replace (" ", "%", $t);
+                        $stmt = $conn->prepare ('SELECT * FROM products WHERE keywords LIKE ? OR title LIKE ?');//                echo $t."<br>";
+                        ;
+                        $stmt->bind_param ("ss", $t, $t);
+                        $stmt->execute ();
 
-                    $results = $stmt->get_result ();
+                        $results = $stmt->get_result ();
 //                    echo "<br>".$results->num_rows."<br>";
-                    if ($results->num_rows>0) {
+                        if ($results->num_rows > 0) {
 //                        echo "we got results<br>";
 
                             echo '<div class="resultz">';
-                        foreach ($results as $row) {
-                            echo'<div class="product2" >';
-                            echo '<a href=product_page/item/"'.$row["id"].'">';
-                            echo '<h2>'.$row["title"]."[".$row["condition"]."]</h2>";
-                            echo '<img src="resources/images/'.$row["image"].'" alt="alternative" /></a>';
-                            echo '<div class="rightSide2">';
-                            echo '<div id="desc" class="desc2" onclick="coll()">';
-                            echo '<p><strong>DESCRIPTION</strong>:</p>';
-                            echo $row['description'];
-                            echo '</div>';
-                            echo '<div class="inner2">';
-                            echo '<p><strong>Brand</strong>:'.$row['brand'].'</p>';
-                            echo '<p><strong>Country of provenance</strong>:'.$row['country'].'</p>';
-                            echo '<p><strong>Keywords</strong>:'.$row['keywords'].'</p>';
-                            echo '<p><strong>Expiration Date</strong>:'.$row['expires_on'].'</p>';
-                            echo '</div>';
-                            echo '<div class="prices2">';
-                            echo '<p>Current Price - '.$row['curr_price' ].'$</p>';
-                            echo '<p>Next Price - '.$row["next_price"].'$</p>';
-                            echo '</div>';
+                            foreach ($results as $row) {
+                                echo '<div class="product2" >';
+                                echo '<a href=product_page/item/"' . $row["id"] . '">';
+                                echo '<h2>' . $row["title"] . "[" . $row["condition"] . "]</h2>";
+                                echo '<img src="resources/images/' . $row["image"] . '" alt="alternative" /></a>';
+                                echo '<div class="rightSide2">';
+                                echo '<div id="desc" class="desc2" onclick="coll()">';
+                                echo '<p><strong>DESCRIPTION</strong>:</p>';
+                                echo $row['description'];
+                                echo '</div>';
+                                echo '<div class="inner2">';
+                                echo '<p><strong>Brand</strong>:' . $row['brand'] . '</p>';
+                                echo '<p><strong>Country of provenance</strong>:' . $row['country'] . '</p>';
+                                echo '<p><strong>Keywords</strong>:' . $row['keywords'] . '</p>';
+                                echo '<p><strong>Expiration Date</strong>:' . $row['expires_on'] . '</p>';
+                                echo '</div>';
+                                echo '<div class="prices2">';
+                                echo '<p>Current Price - ' . $row['curr_price'] . '$</p>';
+                                echo '<p>Next Price - ' . $row["next_price"] . '$</p>';
+                                echo '</div>';
 //                            echo '<button class="button2" style="vertical-align:middle"><span>Bid </span></button>';
+                                echo '</div>';
+                                echo '<br style="clear:both;"/>';
+                                echo '</div>';
+                            }
                             echo '</div>';
-                            echo '<br style="clear:both;"/>';
-                            echo '</div>';
+                        } else {
+                            echo "NO Results Found!";
                         }
-                        echo '</div>';
-                        }
-                        else{echo "NO Results Found!";}
 
+                    }
                 }
             }
         }
-
         ?>
     </div>
 
