@@ -10,9 +10,13 @@
 <body>
 
 <?php
+if(isset($_SESSION['userId'])==false){
+    echo "You must login!";
+    die;
+}else {
     $srv = $_SERVER['QUERY_STRING'];
     if (strpos ($_SERVER['QUERY_STRING'], "&src")) {
-        if($_GET['src']!='') {
+        if ($_GET['src'] != '') {
             $q = explode ("&", $srv);
             $Bad_cond = $_GET["Q1"];
             $Good_cond = $_GET["Q2"];
@@ -93,8 +97,8 @@
 
             }
         }
-    }
-    else echo "Please search for something";
+    } else echo "Please search for something";
+}
 ?>
 
 </body>
