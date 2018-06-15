@@ -12,6 +12,7 @@ $result = $data['result'];
 
 
 if($feed_type == 'RSS') {
+    echo '<xmp>';
 
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>
 <rss version=\"2.0\">\n
@@ -21,7 +22,6 @@ if($feed_type == 'RSS') {
   <title>AuctioX Home Page</title>
   <link>https://www.localhost.com</link>
   <description>Auction Web Site</description>\n";
-
 
     foreach ($result as $d) {
 
@@ -48,16 +48,17 @@ if($feed_type == 'RSS') {
       <current_price>$cur_p</current_price>
       <next_price>$next_p</next_price>
       <expires_on>$exp_on</expires_on>
-      <link>link</link>\n";
+      <link>product_page?prod=$id</link>\n";
             echo "  </item> \n";
         }
     }
     echo "</channel>";
-
+    echo '</xmp>';
     exit();
 }
 
 if($feed_type == 'Atom') {
+    echo '<xmp>';
 
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>
 <atom version=\"2.0\">\n
@@ -106,11 +107,12 @@ if($feed_type == 'Atom') {
       <current_price>$cur_p</current_price>
       <next_price>$next_p</next_price>
       <expires_on>$exp_on</expires_on>
-      <link href = link/>\n";
+      <link href = product_page?prod=$id/>\n";
             echo "  </entry> \n";
         }
     }
     echo "</products>\n</channel>";
+    echo '</xmp>';
 
     exit();
 }
