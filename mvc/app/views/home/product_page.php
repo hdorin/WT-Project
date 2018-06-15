@@ -1,6 +1,7 @@
-﻿<?php
-
-include 'header.php';
+﻿
+<?php
+    
+    include 'header.php';
 ?>
     <link rel="stylesheet" href="resources/stylesheets/product.css" type="text/css" />
 
@@ -20,29 +21,33 @@ include 'header.php';
         </div>
     </main>
 
+    
+<div class="whole">
 
-    <div class="whole">
+	<div class="right">
+		<h1> SPEAKERS </h1>
+		<p><strong> Description</strong>: </p>
+		<p> 
+			A lot of text. A lot of text.A lot of text.A lot of text.A lot of text.A lot of text.A lot of text.A lot of text.A lot of text.A lot of text.
+			A lot of text.A lot of text.A lot of text.A lot of text.A lot of text.A lot of text.A lot of text.A lot of text.A lot of text.
+		A lot of text.A lot of text.A lot of text.A lot of text.A lot of text.</p>
 
-        <div class="right">
-            <h1> <?=$data['result']['title']?> </h1>
-            <p><strong> Description</strong>: </p>
-            <p>
-                <?=$data['result']['description']?></p>
-
-            <p><strong>Brand</strong>: <?=$data['result']['brand']?></p>
-            <p><strong>Country of provenance</strong>: <?=$data['result']['country']?></p>
-            <p><strong>Keywords</strong>: <?=$data['result']['keywords']?></p>
-            <p><strong>Expiration Date</strong>: <?=$data['result']['expires_on']?></p>
-<!--            <p><strong>OWNER`S ID</strong>: [3]</p>-->
+			<p><strong>Brand</strong>: Shure</p>
+            <p><strong>Country of provenance</strong>: United States</p>
+            <p><strong>Keywords</strong>: audio device</p>
+            <p><strong>Expiration Date</strong>: 2018-06-17</p>
+            <p><strong>OWNER`S ID</strong>: [3]</p>
             <div class="prices">
-                <p>Current Price - <?=$data['result']['curr_price']?>$</p>
-                <p>Next Price - <?=$data['result']['next_price']?>$</p>
-            </div>
-            <button class="button" style="vertical-align:middle"><span>Bid </span></button>
-        </div>
-    </div>
+	            <p>Current Price - 200$</p>
+	            <p>Next Price - 220$</p>
+	         </div>
+	        <button class="button" style="vertical-align:middle"><span>Bid </span></button>
+	</div>
+</div>
 
 
 <?php
-include 'footer.php';
+
+    include 'footer.php';
+
 ?>

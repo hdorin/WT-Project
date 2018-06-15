@@ -12,8 +12,6 @@ if($q === 'my_items') {
 
     foreach ($result as $item){
         echo '<div class="won_items">
-        <form action="checkout/'.$item['id'].'" method="POST" id="form'.$item['id'].'"></form>
-        <button class="button" form="form'.$item['id'].'"><span>Checkout </span></button>
         <img class="prod_img" src="resources/images/'.$item['image'].'" alt="product" />
         <table class="table">
                 <thead>
