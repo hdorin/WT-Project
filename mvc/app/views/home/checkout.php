@@ -19,7 +19,7 @@
         </div>
         <div id="infoBox">
             <div id="productImage">
-                <img src="<?=$data['productImage']?>" alt="Product Image" />
+                <img src="../resources/images/<?=$data['productImage']?>" alt="Product Image" />
             </div>
             <div id="detailsList">
                 <ul>
@@ -40,6 +40,7 @@
             <input type="hidden" name="hosted_button_id" value="HRNYJXXCDTPR6">
             <table>
             <tr><td><input type="hidden" name="on0" value="ShippingAddressId">Shipping Address</td></tr><tr><td><select name="os0">
+            <class id="equals">
             <?php
                 $link = $this->auctiox_db_connect();
                         $sql = $link->prepare('SELECT id,address,city,county,country FROM addresses WHERE user_id = ?');
@@ -50,7 +51,7 @@
                         $sql->bind_result($addressId,$addressName,$addressCity,$addressCounty,$addressCountry);
 
                         while ($sql->fetch()) {
-                            echo '<option value=' . $addressId . '>' . $addressName . ' (' . $addressCity . ',' . $addressCounty . ',' . $addressCountry . ')' .'</option>';
+                            echo '<option value=' . $addressId . 'class="strada">' . $addressName . ' (' . $addressCity . ',' . $addressCounty . ',' . $addressCountry . ')' .'</option>';
                         }
             ?>
             </select> </td></tr>

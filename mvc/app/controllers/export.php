@@ -14,10 +14,40 @@ class Export extends Controller
         }else if($format=='json'){
             $this->export_json();
         }else if($format=='pdf'){
-
+            $this->export_pdf();
         }else{
             die("Page not found!");
         }
+    }
+    public function export_pdf(){
+        $pdf=$this->model('FPDF');
+        $pdf->AddPage();
+        $pdf->SetFont("Arial","B",16);
+        $pdf->Cell(0,10,"Auctions situation:",0,1);
+
+        $link = $this->auctiox_db_connect();
+ 
+        $sql = $link->prepare('SELECT title,description,`condition`,keywords,brand,country,curr_price,next_price,expires_on FROM products WHERE is_active=1');
+        $sql->execute();
+        $sql->bind_result($titleRow,$descriptionRow,$conditionRow,$keywordsRow,$brandRow,$countryRow,$curr_priceRow,$next_priceRow,$expires_onRow);
+        
+        $pdf->SetFont("Arial","B",12);
+        while($sql->fetch()){
+            $pdf->Cell(0,10,"Title:" . $titleRow,0,1);
+            $pdf->Cell(0,10,"Description:" . $descriptionRow,0,1);
+            $pdf->Cell(0,10,"Condition:" . $conditionRow,0,1);
+            $pdf->Cell(0,10,"Keywords:" . $keywordsRow,0,1);
+            $pdf->Cell(0,10,"Brand:" . $brandRow,0,1);
+            $pdf->Cell(0,10,"Country:" . $countryRow,0,1);
+            $pdf->Cell(0,10,"Current price:" . $curr_priceRow,0,1);
+            $pdf->Cell(0,10,"Next price:" . $next_priceRow,0,1);
+            $pdf->Cell(0,10,"Expires on:" . $expires_onRow,0,1);
+
+            $pdf->Cell(0,10,"",0,1);
+
+        }
+        
+        $pdf->output();
     }
     public function export_json(){
         $link = $this->auctiox_db_connect();
