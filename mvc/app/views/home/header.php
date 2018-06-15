@@ -101,7 +101,8 @@
                         <div class="dropdown-content1">
                             <a href="products">See feed</a>
                             <a href="export/xml">Export XML</a>
-                            <a href="products">Link 3</a>
+                            <a href="export/json">Export JSON</a>
+                            <a href="export/pdf">Export PDF</a>
                         </div>
                     </li>
                     <!--Drop down menue-hover for products END-->
